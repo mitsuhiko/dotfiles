@@ -21,7 +21,8 @@ if has("gui_running")
   colorscheme fruity
   set guifont=Consolas:h13
   set fuoptions=maxvert,maxhorz
-  au GUIEnter * set fullscreen
+  " does not work properly on os x
+  " au GUIEnter * set fullscreen
 else
   colorscheme myterm
 endif
