@@ -2,15 +2,13 @@
 # -*- coding: utf-8 -*-
 version = "0.1.3"
 
-import os
-import fileinput
 import getopt
 import sys
 import re
 
 # =============================================================================== 
 
-class Dialect:
+class Dialect(object):
     shortcuts = {}
     synonyms = {}
     required = {}
@@ -36,8 +34,8 @@ class HtmlDialect(Dialect):
                 '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">\n' +
                 '<html lang="en">\n' +
                 '<head>\n' +
-                '    ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
-                '    ' + '<title></title>\n' + 
+                '  ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">\n' +
+                '  ' + '<title></title>\n' + 
                 '</head>\n' +
                 '<body>',
             'closing_tag':
@@ -49,8 +47,8 @@ class HtmlDialect(Dialect):
                 '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">\n' +
                 '<html lang="en">\n' +
                 '<head>\n' +
-                '    ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
-                '    ' + '<title></title>\n' + 
+                '  ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">\n' +
+                '  ' + '<title></title>\n' + 
                 '</head>\n' +
                 '<body>',
             'closing_tag':
@@ -62,8 +60,8 @@ class HtmlDialect(Dialect):
                 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n' +
                 '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">\n' +
                 '<head>\n' +
-                '    ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
-                '    ' + '<title></title>\n' + 
+                '  ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
+                '  ' + '<title></title>\n' + 
                 '</head>\n' +
                 '<body>',
             'closing_tag':
@@ -75,8 +73,8 @@ class HtmlDialect(Dialect):
                 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">\n' +
                 '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">\n' +
                 '<head>\n' +
-                '    ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
-                '    ' + '<title></title>\n' + 
+                '  ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
+                '  ' + '<title></title>\n' + 
                 '</head>\n' +
                 '<body>',
             'closing_tag':
@@ -88,8 +86,8 @@ class HtmlDialect(Dialect):
                 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">\n' +
                 '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">\n' +
                 '<head>\n' +
-                '    ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
-                '    ' + '<title></title>\n' + 
+                '  ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
+                '  ' + '<title></title>\n' + 
                 '</head>\n' +
                 '<body>',
             'closing_tag':
@@ -98,11 +96,11 @@ class HtmlDialect(Dialect):
         'html:5': {
             'expand': True,
             'opening_tag':
-                '<!DOCTYPE html>\n' +
+                '<!doctype html>\n' +
                 '<html lang="en">\n' +
                 '<head>\n' +
-                '    ' + '<meta charset="UTF-8" />\n' +
-                '    ' + '<title></title>\n' + 
+                '  ' + '<meta charset="UTF-8">\n' +
+                '  ' + '<title></title>\n' + 
                 '</head>\n' +
                 '<body>',
             'closing_tag':
@@ -273,17 +271,18 @@ class HtmlDialect(Dialect):
         'meta':   {'content': ''},
     }
 
-class Parser:
+class Parser(object):
     """The parser.
     """
 
     # Constructor
     # --------------------------------------------------------------------------- 
 
-    def __init__(self, options=None, str='', dialect=HtmlDialect()):
+    def __init__(self, options=None, str='', dialect=None):
         """Constructor.
         """
-
+        if dialect is None:
+            dialect = HtmlDialect()
         self.tokens = []
         self.str = str
         self.options = options
@@ -474,7 +473,7 @@ class Parser:
 
 # =============================================================================== 
 
-class Element:
+class Element(object):
     """An element.
     """
 
@@ -583,7 +582,7 @@ class Element:
                 except: end_guide = (format + " " + guide_str).strip()
                 end_guide = "\n%s<!-- %s -->" % (indent, end_guide)
 
-        # Short, self-closing tags (<br />)
+        # Short, self-closing tags (<br>)
         short_tags = self.parser.dialect.short_tags
 
         # When it should be expanded..
@@ -618,9 +617,9 @@ class Element:
                          guide + end_guide + "\n"
             
 
-        # Short, self-closing tags (<br />)
+        # Short, self-closing tags (<br>)
         elif self.name in short_tags: 
-            output = "%s<%s />\n" % (indent, self.get_default_tag())
+            output = "%s<%s>\n" % (indent, self.get_default_tag())
 
         # Tags with text, possibly
         elif self.name != '' or \
