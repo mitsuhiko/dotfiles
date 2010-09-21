@@ -56,6 +56,8 @@ class blackhole(object):
 
 def check(buffer):
     filename = buffer.name
+    if filename is None:
+        filename = '<string>'
     contents = buffer[:]
 
     # shebang usually found at the top of the file, followed by source code encoding marker.
