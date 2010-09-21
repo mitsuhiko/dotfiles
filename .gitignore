@@ -1,2 +1,4 @@
 *.o
+*.pyc
+*.pyo
 vim/sessions
