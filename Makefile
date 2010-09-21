@@ -1,4 +1,5 @@
-install: install-vim install-bash install-virtualenvwrapper
+install: install-vim install-bash install-virtualenvwrapper \
+         install-terminal-settings
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
@@ -12,3 +13,10 @@ install-bash:
 install-virtualenvwrapper:
 	mkdir -p ~/.virtualenvs
 	ln -s `pwd`/virtualenvwrapper/* ~/.virtualenvs
+
+dump-terminal-settings:
+	cp ~/Library/Preferences/com.apple.Terminal.plist terminal
+	plutil -convert xml1 terminal/com.apple.Terminal.plist
+
+install-terminal-settings:
+	cp terminal/com.apple.Terminal.plist ~/Library/Preferences
