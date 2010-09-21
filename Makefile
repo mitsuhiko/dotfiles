@@ -19,4 +19,6 @@ dump-terminal-settings:
 	plutil -convert xml1 terminal/com.apple.Terminal.plist
 
 install-terminal-settings:
+	cp ~/Library/Preferences/com.apple.Terminal.plist terminal/old-settings.bak
 	cp terminal/com.apple.Terminal.plist ~/Library/Preferences
+	@echo "Old terminal settings were saved in terminal folder"
