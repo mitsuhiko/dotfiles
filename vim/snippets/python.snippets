@@ -1,0 +1,55 @@
+snippet #!
+	#!/usr/bin/env python
+snippet imp
+	import ${1:module}
+snippet from
+	from ${1:module} import ${2:object}
+snippet mod
+	# -*- coding: utf-8 -*-
+	"""
+		${1:`Filename('', 'module name')`}
+
+		${2:Description goes here...}
+	
+		:copyright: (c) `strftime('%Y')` by the ${3:Project Name} Team, see AUTHORS for more details.
+		:license: ${4:BSD}, see LICENSE for more details.
+	"""
+	${5}
+snippet wh
+	while ${1:condition}:
+		${2:pass}
+snippet for
+	for ${1:needle} in ${2:haystack}:
+		${3:pass}
+snippet cls
+	class ${1:ClassName}(${2:object}):
+		"""${3:Docstring for $1}"""
+
+		def __init__(self, ${4:arg}):
+			${5}
+snippet def
+	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
+		${3:pass}
+snippet repr
+	def __repr__(self):
+		return '<%s %s>' % (
+			self.__class__.__name__,
+			${1}
+		)
+
+	${2}
+snippet ld
+	lambda ${2}: ${3:action}
+snippet .
+	self.
+snippet @
+	@${1:staticmethod}
+	${2}
+snippet main
+	def main():
+		${1:pass}
+
+	if __name__ == '__main__':
+		main(sys.argv[1:])
+snippet _
+	__${1:init}__${2}

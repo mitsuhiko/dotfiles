@@ -1,0 +1,3 @@
+#!/bin/bash
+# This hook is run before every virtualenv is deactivated.
+

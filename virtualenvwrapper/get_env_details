@@ -1,0 +1,3 @@
+#!/bin/bash
+# This hook is run when the list of virtualenvs is printed so each name can include details.
+
