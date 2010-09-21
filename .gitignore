@@ -1,4 +1,6 @@
 *.o
 *.pyc
 *.pyo
+*.bak
+vim/.netrwhist
 vim/sessions
