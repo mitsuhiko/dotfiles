@@ -63,9 +63,6 @@ if has("gui_running")
 endif
 set ttyfast
 
-" show a column at 79
-set colorcolumn=79
-
 " customize the wildmenu
 set wildmenu
 set wildignore=*.dll,*.o,*.pyc,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif,*$py.class,*.class
@@ -133,8 +130,10 @@ nnoremap <leader>p :Lodgeit<CR>
 nnoremap <leader>. :lcd %:p:h<CR>
 
 " Easy switching
-nnoremap <leader>tj :set ft=htmljinja<CR>
+nnoremap <leader>th :set ft=htmljinja<CR>
 nnoremap <leader>tp :set ft=python<CR>
+nnoremap <leader>tj :set ft=javascript<CR>
+nnoremap <leader>tr :set ft=rst<CR>
 
 " Command-T support
 nnoremap <leader>o :CommandT<CR>
@@ -217,12 +216,16 @@ set incsearch
 let g:BufClose_AltBuffer = '.'
 cnoreabbr <expr> bq 'BufClose' 
 
+" Disable the colorcolumn when switching modes.  Make sure this is the
+" first autocmd for the filetype here
+autocmd FileType * setlocal colorcolumn=0
+
 " python support
 " --------------
 "  don't highlight exceptions and builtins. I love to override them in local
 "  scopes and it sucks ass if it's highlighted then. And for exceptions I
 "  don't really want to have different colors for my own exceptions ;-)
-autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8
+autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
 \ formatoptions+=croq softtabstop=4 smartindent
 \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 let python_highlight_all=1
@@ -232,7 +235,7 @@ autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 s
 
 " ruby support
 " ------------
-autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=79
 
 " go support
 " ----------
@@ -310,8 +313,8 @@ autocmd FileType rst setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType cs setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
 " C/C++
-autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
+autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
 
 " vim
 " ---
@@ -319,7 +322,7 @@ autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 
 " Javascript
 " ----------
-autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=79
 let javascript_enable_domhtmlcss=1
 
 " D
