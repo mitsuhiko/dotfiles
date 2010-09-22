@@ -1,5 +1,5 @@
 #!/bin/bash
 # This hook is run after every virtualenv is activated.
 
-PS1="$MITSUHIKOS_BASEPROMPT \033[37;40mworkon \033[31;40m\$(basename '${VIRTUAL_ENV}')\033[00m
+PS1="$MITSUHIKOS_BASEPROMPT \033[37mworkon \033[31m\$(basename '${VIRTUAL_ENV}')\033[00m
 $ "
