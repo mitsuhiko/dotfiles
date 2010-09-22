@@ -42,6 +42,8 @@ set hidden
 
 " enable automatic title setting for terminals
 set title
+set titleold="Terminal"
+set titlestring=%F\ -\ Vim
 
 " Enable filetype plugins and indention
 filetype on
