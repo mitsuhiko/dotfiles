@@ -261,11 +261,6 @@ while n < 50 && n < line("$")
     set ft=htmljinja
     return
   endif
-  " check for django
-  if getline(n) =~ '{%\s*\(extends\|block\|comment\|ssi\|if\|for\|blocktrans\)\>'
-    set ft=htmldjango
-    return
-  endif
   " check for mako
     if getline(n) =~ '<%\(def\|inherit\)'
       set ft=mako

@@ -32,7 +32,7 @@ hi Folded       guifg=#111111   guibg=#8090a0
 hi IncSearch    guifg=#708090   guibg=#f0e68c
 hi Pmenu        guifg=#ffffff   guibg=#cb2f27
 hi SignColumn   guibg=#111111
-hi CursorLine   guibg=#181818
+hi CursorLine   guibg=#001A21
 hi ColorColumn  guibg=#00252e
 hi LineNr       guifg=#aaaaaa   guibg=#00252e
 hi MatchParen   guifg=#b1b711   guibg=NONE      gui=bold
@@ -71,11 +71,11 @@ hi pythonExClass        guifg=#66cd66           gui=bold
 hi pythonSpaceError     guibg=#270000
 hi pythonDocTest    guifg=#3c8e68   guibg=#02101d
 hi pythonDocTest2   guifg=#3c8e68   guibg=#02101d
-hi pythonFunction   guifg=#ee0000               gui=bold
+hi pythonFunction   guifg=#82C100               gui=bold
 hi pythonClass      guifg=#ff0086               gui=bold
-hi pythonString     guifg=#0086d2   guibg=#02101d
-hi pythonEscape     guifg=#fd8900   guibg=#02101d
-hi pythonStrFormat  guifg=#fd8900   guibg=#02101d
+hi pythonString     guifg=#0086d2   guibg=#031526
+hi pythonEscape     guifg=#fd8900   guibg=#031526
+hi pythonStrFormat  guifg=#fd8900   guibg=#031526
 
 " JavaScript Highlighting
 hi javaScript                   guifg=#ffffff
