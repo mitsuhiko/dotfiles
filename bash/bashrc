@@ -50,4 +50,6 @@ alias git=hub
 alias rvim="gvim --remote-silent"
 shopt -s histappend
 
-. /usr/local/git/contrib/completion/git-completion.bash
+if [ -f /usr/local/git/contrib/completion ]; then
+  . /usr/local/git/contrib/completion/git-completion.bash
+fi
