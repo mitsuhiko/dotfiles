@@ -19,10 +19,14 @@ set viminfo=!,'100,\"100,:20,<50,s10,h,n~/.viminfo
 syntax on
 if has("gui_running")
   colorscheme fruity
-  set guifont=Consolas:h13
-  set fuoptions=maxvert,maxhorz
-  " does not work properly on os x
-  " au GUIEnter * set fullscreen
+  if has("mac")
+    set guifont=Consolas:h13
+    set fuoptions=maxvert,maxhorz
+    " does not work properly on os x
+    " au GUIEnter * set fullscreen
+  else
+    set guifont=DejaVu\ Sans\ Mono\ 10
+  endif
 else
   colorscheme myterm
 endif
