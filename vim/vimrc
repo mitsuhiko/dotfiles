@@ -133,10 +133,10 @@ nnoremap <leader>p :Lodgeit<CR>
 nnoremap <leader>. :lcd %:p:h<CR>
 
 " Easy switching
-nnoremap <leader>th :set ft=htmljinja<CR>
-nnoremap <leader>tp :set ft=python<CR>
-nnoremap <leader>tj :set ft=javascript<CR>
-nnoremap <leader>tr :set ft=rst<CR>
+nnoremap <leader>Th :set ft=htmljinja<CR>
+nnoremap <leader>Tp :set ft=python<CR>
+nnoremap <leader>Tj :set ft=javascript<CR>
+nnoremap <leader>Tr :set ft=rst<CR>
 
 " Command-T support
 nnoremap <leader>o :CommandT<CR>
@@ -150,6 +150,9 @@ function! ToggleRelativeAbsoluteNumber()
     set number
   endif
 endfunction
+
+" gundo
+nnoremap <Leader>u :GundoToggle<CR>
 
 " Make the command line two lines high and change the statusline display to
 " something that looks useful.
