@@ -56,8 +56,12 @@ $ "
 export TERM=xterm-color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
-export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
-export LC_CTYPE=en_US.utf-8
+if [ `uname` == "Darwin" ]; then
+  export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
+  export LC_CTYPE=en_US.utf-8
+else
+  alias ls='ls --color=auto'
+fi
 export PATH=/usr/local/bin:$PATH
 export IGNOREEOF=1
 export PYTHONDONTWRITEBYTECODE=1
@@ -128,4 +132,9 @@ alias rvim="gvim --remote-silent"
 alias ..='cd ..'
 shopt -s histappend
 
-. /usr/local/git/contrib/completion/git-completion.bash
+if [ -f /usr/local/git/contrib/completion ]; then
+  . /usr/local/git/contrib/completion/git-completion.bash
+fi
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
