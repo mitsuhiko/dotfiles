@@ -92,6 +92,37 @@ unp() {
   fi
 }
 
+# start a socks proxy on ayreal
+browsesecure() {
+  python <<SWITCH
+import sys
+from subprocess import Popen, call, PIPE
+
+old_location = None
+out = Popen(['scselect'], stdout=PIPE, stderr=PIPE).communicate()[1]
+for line in out.splitlines():
+    line = line.strip()
+    if line.startswith('*'):
+        old_location = line[line.find('(') + 1:-1]
+
+if old_location is None:
+    print >> sys.stderr, "Can't find old network location"
+    sys.exit(1)
+
+def switch_location(name):
+    call(['scselect', name], stdout=open('/dev/null', 'w'))
+
+switch_location('SOCK Proxied Public')
+print 'SOCKS Proxy on localhost:7890'
+print 'Switched network configuration'
+try:
+    call(['ssh', '-ND', '7890', '78.46.64.175'])
+except (KeyboardInterrupt, EOFError):
+    print 'Switched back to', old_location
+    switch_location(old_location)
+SWITCH
+}
+
 alias git=hub
 alias rvim="gvim --remote-silent"
 alias ..='cd ..'
