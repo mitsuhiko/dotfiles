@@ -285,7 +285,7 @@ while n < 50 && n < line("$")
 endfun
 
 autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd BufNewFile,BufRead *.rhtml setlocal ft=eruby
+autocmd bufnewfile,bufread *.rhtml setlocal ft=eruby
 autocmd BufNewFile,BufRead *.mako setlocal ft=mako
 autocmd BufNewFile,BufRead *.tmpl setlocal ft=htmljinja
 autocmd BufNewFile,BufRead *.py_tmpl setlocal ft=python
@@ -295,6 +295,11 @@ let html_no_rendering=1
 let g:closetag_default_xml=1
 autocmd FileType html,htmldjango,htmljinja,eruby,mako let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako source ~/.vim/scripts/closetag.vim
+
+" GLSL
+" ----
+autocmd bufnewfile,bufread *.frag,*.fragment,*.vert,*.vertex,*.shader,*.glsl setlocal ft=glsl
+autocmd FileType glsl setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 
 " Verilog
 " -------
@@ -333,3 +338,7 @@ let javascript_enable_domhtmlcss=1
 " D
 " -
 autocmd FileType d setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
+
+" cmake support
+" -------------
+autocmd BufNewFile,BufRead CMakeLists.txt setlocal ft=cmake

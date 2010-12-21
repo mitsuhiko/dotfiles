@@ -30,7 +30,7 @@ mitsuhikos_lastcommandfailed() {
 }
 
 mitsuhikos_backgroundjobs() {
-  jobs|python -Sc 'if 1:
+  jobs|python -c 'if 1:
     import sys
     items = ["\033[36m%s\033[37m" % x.split()[2]
              for x in sys.stdin.read().splitlines()]
