@@ -89,6 +89,7 @@ unp() {
       *.bz2)             bunzip2 "$1" ;;
       *.tar)             tar zvf "$1" ;;
       *.zip|*.egg|*.jar) unzip "$1" ;;
+      *.rar)             unrar e "$1" ;;
       *) echo "'$1' is an unknown archive" ;;
     esac
   else
