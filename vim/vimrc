@@ -218,6 +218,9 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+" sudo write this
+cmap w!! w !sudo tee % >/dev/null
+
 " Better Search
 set hlsearch
 set incsearch
@@ -254,7 +257,7 @@ autocmd FileType go setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 
 " php support
 " -----------
-autocmd FileType php setlocal shiftwidth=8 tabstop=8 softtabstop=8
+autocmd FileType php setlocal shiftwidth=4 tabstop=8 softtabstop=4 expandtab
 
 " template language support (SGML / XML too)
 " ------------------------------------------
@@ -293,6 +296,7 @@ autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
 let html_no_rendering=1
 
 let g:closetag_default_xml=1
+let g:sparkupNextMapping='<c-l>'
 autocmd FileType html,htmldjango,htmljinja,eruby,mako let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako source ~/.vim/scripts/closetag.vim
 
@@ -320,11 +324,12 @@ autocmd FileType rst setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 \ formatoptions+=nqt textwidth=74
 
 " C#
-autocmd FileType cs setlocal tabstop=4 softtabstop=4 shiftwidth=4
+autocmd FileType cs setlocal tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 
-" C/C++
+" C/Obj-C/C++
 autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
 autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
+autocmd FileType objc setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
 
 " vim
 " ---
