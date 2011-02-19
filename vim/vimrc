@@ -213,6 +213,9 @@ nnoremap <leader>s :new<CR>
 " ; is an alias for :
 nnoremap ; :
 
+" Thank you vi
+nnoremap Y y$
+
 " When I'm working on a thinkpad
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>

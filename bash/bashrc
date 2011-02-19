@@ -62,9 +62,10 @@ if [ `uname` == "Darwin" ]; then
 else
   alias ls='ls --color=auto'
 fi
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:~/Development/cli-tools/bin:$PATH
 export IGNOREEOF=1
 export PYTHONDONTWRITEBYTECODE=1
+export PYTHONPATH=~/Development/pygments-main/
 export LESS=FRSX
 
 # virtualenvwrapper and pip
@@ -75,27 +76,6 @@ if [ `id -u` != '0' ]; then
   #export PIP_VIRTUALENV_BASE=$WORKON_HOME
   #export PIP_RESPECT_VIRTUALENV=true
 fi
-
-# easy unpacking
-unp() {
-  if [ x == x$1 ]; then
-    echo 'usage: unp [filename]'
-  elif [ -f "$1" ]; then
-    case "$1" in
-      *.tar.gz)          tar xvzf "$1" ;;
-      *.tgz)             tar xvzf "$1" ;;
-      *.tar.bz2)         tar xvjf "$1" ;;
-      *.gz)              gunzip "$1" ;;
-      *.bz2)             bunzip2 "$1" ;;
-      *.tar)             tar zvf "$1" ;;
-      *.zip|*.egg|*.jar) unzip "$1" ;;
-      *.rar)             unrar e "$1" ;;
-      *) echo "'$1' is an unknown archive" ;;
-    esac
-  else
-    echo "'$1' is not a valid archive"
-  fi
-}
 
 # start a socks proxy on ayreal
 browsesecure() {
