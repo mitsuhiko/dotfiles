@@ -222,7 +222,7 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " sudo write this
-cmap w!! w !sudo tee % >/dev/null
+cmap W! w !sudo tee % >/dev/null
 
 " Better Search
 set hlsearch
@@ -333,6 +333,7 @@ autocmd FileType cs setlocal tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
 autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
 autocmd FileType objc setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
+let c_no_curly_error=1
 
 " vim
 " ---
@@ -341,6 +342,7 @@ autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 " Javascript
 " ----------
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=79
+autocmd BufNewFile,BufRead *.json setlocal ft=javascript
 let javascript_enable_domhtmlcss=1
 
 " D

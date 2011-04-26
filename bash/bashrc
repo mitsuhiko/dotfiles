@@ -62,7 +62,7 @@ if [ `uname` == "Darwin" ]; then
 else
   alias ls='ls --color=auto'
 fi
-export PATH=/usr/local/bin:~/Development/cli-tools/bin:$PATH
+export PATH=/usr/local/bin:~/.bin:$PATH
 export IGNOREEOF=1
 export PYTHONDONTWRITEBYTECODE=1
 export PYTHONPATH=~/Development/pygments-main/
@@ -109,7 +109,9 @@ SWITCH
 }
 
 alias git=hub
+alias mq='hg -R $(hg root)/.hg/patches'
 alias rvim="gvim --remote-silent"
+alias pypy-jitlog="PYPYLOG=jit-log-opt,jit-backend-counts:pypyjitlog.log pypy-c"
 alias ..='cd ..'
 shopt -s histappend
 
@@ -119,3 +121,6 @@ fi
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
+
+# for the lulz
+alias bitch,=sudo
