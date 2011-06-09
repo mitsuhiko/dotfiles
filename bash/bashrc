@@ -101,7 +101,8 @@ switch_location('SOCK Proxied Public')
 print 'SOCKS Proxy on localhost:7890'
 print 'Switched network configuration'
 try:
-    call(['ssh', '-ND', '7890', '78.46.64.175'])
+    #call(['ssh', '-ND', '7890', '78.46.64.175'])
+    call(['ssh', '-ND', '7890', 'flaskbot'])
 except (KeyboardInterrupt, EOFError):
     print 'Switched back to', old_location
     switch_location(old_location)
@@ -124,3 +125,6 @@ fi
 
 # for the lulz
 alias bitch,=sudo
+
+# hack to get ppc out of that thing
+export ARCHFLAGS="-arch i386 -arch x86_64"

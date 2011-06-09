@@ -335,6 +335,9 @@ autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab col
 autocmd FileType objc setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
 let c_no_curly_error=1
 
+" Octave/Matlab
+autocmd FileType matlab setlocal tabstop=8 softtabstop=2 shiftwidth=2 expandtab colorcolumn=79
+
 " vim
 " ---
 autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
