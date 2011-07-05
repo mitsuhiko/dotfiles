@@ -43,12 +43,21 @@ mitsuhikos_backgroundjobs() {
   '
 }
 
+mitsuhikos_virtualenv() {
+  if [ x$VIRTUAL_ENV != x ]; then
+    echo -n $' \033[37mworkon \033[31m'
+    basename "${VIRTUAL_ENV}"
+    echo -n $'\033[00m'
+  fi
+}
+
 export MITSUHIKOS_BASEPROMPT='\n\e${MITSUHIKOS_USER_COLOR}\u \
 \e${MITSUHIKOS_GRAY_COLOR}at \e${MITSUHIKOS_ORANGE_COLOR}\h \
 \e${MITSUHIKOS_GRAY_COLOR}in \e${MITSUHIKOS_GREEN_COLOR}\w\
 `mitsuhikos_lastcommandfailed`\
 \e${MITSUHIKOS_GRAY_COLOR}$(mitsuhikos_vcprompt)\
 `mitsuhikos_backgroundjobs`\
+`mitsuhikos_virtualenv`\
 \e${MITSUHIKOS_DEFAULT_COLOR}'
 export PS1="${MITSUHIKOS_BASEPROMPT}
 $ "
@@ -122,6 +131,9 @@ fi
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
+
+# don't let virtualenv show prompts by itself
+VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # for the lulz
 alias bitch,=sudo
