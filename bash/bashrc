@@ -71,7 +71,7 @@ if [ `uname` == "Darwin" ]; then
 else
   alias ls='ls --color=auto'
 fi
-export PATH=/usr/local/bin:~/.bin:$PATH
+export PATH=/usr/local/bin:~/.bin:$PATH:~/.gem/ruby/1.8/bin
 export IGNOREEOF=1
 export PYTHONDONTWRITEBYTECODE=1
 export PYTHONPATH=~/Development/pygments-main/
@@ -140,3 +140,7 @@ alias bitch,=sudo
 
 # hack to get ppc out of that thing
 export ARCHFLAGS="-arch i386 -arch x86_64"
+
+# ctrl+w and slashes
+stty werase undef
+bind '"\C-w": unix-filename-rubout'
