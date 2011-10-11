@@ -1,5 +1,5 @@
 install: install-vim install-bash install-virtualenvwrapper \
-         install-terminal-settings
+         install-terminal-settings install-git
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
@@ -9,6 +9,10 @@ install-vim:
 install-bash:
 	rm -f ~/.bashrc
 	ln -s `pwd`/bash/bashrc ~/.bashrc
+
+install-git:
+	rm -f ~/.gitconfig
+	ln -s `pwd`/git/gitconfig ~/.gitconfig
 
 install-virtualenvwrapper:
 	mkdir -p ~/.virtualenvs
