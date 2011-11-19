@@ -156,3 +156,7 @@ export ARCHFLAGS="-arch i386 -arch x86_64"
 # ctrl+w and slashes
 stty werase undef
 bind '"\C-w": unix-filename-rubout'
+
+if [ x`which ack-grep` != x ]; then
+  alias ack=ack-grep
+fi
