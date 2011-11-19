@@ -52,8 +52,9 @@ mitsuhikos_backgroundjobs() {
 
 mitsuhikos_virtualenv() {
   if [ x$VIRTUAL_ENV != x ]; then
+    ENV_NAME=`basename "${VIRTUAL_ENV}"`
     echo -n $' \033[37mworkon \033[31m'
-    basename "${VIRTUAL_ENV}"
+    echo -n $ENV_NAME
     echo -n $'\033[00m'
   fi
 }
