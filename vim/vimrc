@@ -38,6 +38,9 @@ autocmd BufEnter * :syntax sync fromstart
 set backupdir=~/.vim/sessions
 set dir=~/.vim/sessions
 
+" Pathogen
+call pathogen#infect() 
+
 " Remember cursor position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
@@ -349,6 +352,10 @@ autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufNewFile,BufRead *.json setlocal ft=javascript
 let javascript_enable_domhtmlcss=1
+
+" CoffeeScript
+" ------------
+autocmd FileType coffee setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " D
 " -
