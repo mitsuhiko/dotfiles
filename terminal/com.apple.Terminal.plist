@@ -2,40 +2,99 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CommandHistory</key>
+	<array>
+		<string>bash --noprofile --norc</string>
+		<string>bash --noinit</string>
+	</array>
 	<key>Default Window Settings</key>
 	<string>Dark</string>
+	<key>DefaultProfilesVersion</key>
+	<integer>1</integer>
 	<key>HasMigratedDefaults</key>
 	<true/>
+	<key>Man Page Window Settings</key>
+	<string>Man Page</string>
 	<key>NSColorPanelMode</key>
 	<string>3</string>
 	<key>NSColorPickerSlidersDefaults</key>
 	<string>3</string>
+	<key>NSNavBrowserPreferedColumnContentWidth</key>
+	<real>186</real>
+	<key>NSNavLastRootDirectory</key>
+	<string>~/Pictures/Wallpapers</string>
+	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{982, 574}</string>
 	<key>NSWindow Frame NSColorPanel</key>
-	<string>367 330 214 321 0 0 1680 1028 </string>
+	<string>803 211 214 321 0 0 1680 1028 </string>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1169 88 445 270 0 0 1680 1028 </string>
 	<key>NSWindow Frame TTAppPreferences</key>
-	<string>166 232 590 399 0 0 1680 1028 </string>
+	<string>985 469 590 478 0 0 1680 1028 </string>
+	<key>NSWindow Frame TTFindPanel</key>
+	<string>4 0 483 144 0 0 1680 1028 </string>
 	<key>NSWindow Frame TTWindow</key>
-	<string>1100 24 524 349 0 0 1680 1028 </string>
+	<string>277 292 585 437 0 0 1680 1028 </string>
 	<key>NSWindow Frame TTWindow Basic</key>
 	<string>904 354 585 437 0 0 1680 1028 </string>
 	<key>NSWindow Frame TTWindow Bright</key>
-	<string>847 326 585 437 0 0 1680 1028 </string>
+	<string>1680 282 1019 768 1680 282 1024 768 </string>
 	<key>NSWindow Frame TTWindow Dark</key>
-	<string>114 499 585 437 0 0 1680 1028 </string>
+	<string>88 488 585 437 0 0 1680 1028 </string>
+	<key>NSWindow Frame TTWindow Man Page</key>
+	<string>4 326 585 702 0 0 1680 1028 </string>
+	<key>NewWindowSettingsBehavior</key>
+	<integer>2</integer>
 	<key>ProfileCurrentVersion</key>
-	<real>2.0099999999999998</real>
+	<real>2.02</real>
 	<key>SecureKeyboardEntry</key>
+	<false/>
+	<key>Shell</key>
+	<string></string>
+	<key>ShowTabBar</key>
 	<false/>
 	<key>Startup Window Settings</key>
 	<string>Dark</string>
 	<key>TTAppPreferences Selected Tab</key>
 	<integer>1</integer>
+	<key>TTInspector Selected Pane</key>
+	<string>Settings</string>
+	<key>VisorHotKey</key>
+	<dict>
+		<key>DoubleModifier</key>
+		<false/>
+		<key>KeyCode</key>
+		<integer>50</integer>
+		<key>Modifiers</key>
+		<integer>262144</integer>
+	</dict>
+	<key>VisorHotKey2</key>
+	<dict>
+		<key>DoubleModifier</key>
+		<true/>
+		<key>KeyCode</key>
+		<integer>0</integer>
+		<key>Modifiers</key>
+		<integer>262144</integer>
+	</dict>
+	<key>VisorHotKey2Enabled</key>
+	<false/>
+	<key>VisorHotKeyEnabled</key>
+	<true/>
 	<key>Window Settings</key>
 	<dict>
 		<key>Basic</key>
 		<dict>
+			<key>CursorColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhABTxAeMC40OTk5MzY2OTk5
+			IDAuNSAwLjQ5OTkyMDYwNjYA0hAREhNaJGNsYXNzbmFtZVgkY2xh
+			c3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hp
+			dmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZoeMl6Coq7TGyc4A
+			AAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA0A==
+			</data>
 			<key>Font</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -53,7 +112,7 @@
 			<key>Linewrap</key>
 			<true/>
 			<key>ProfileCurrentVersion</key>
-			<real>2.0099999999999998</real>
+			<real>2.02</real>
 			<key>blackColour</key>
 			<data>
 			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
@@ -281,7 +340,11 @@
 			<key>Linewrap</key>
 			<true/>
 			<key>ProfileCurrentVersion</key>
-			<real>2.0099999999999998</real>
+			<real>2.02</real>
+			<key>ShowCommandKeyInTitle</key>
+			<true/>
+			<key>WindowTitle</key>
+			<string></string>
 			<key>blackColour</key>
 			<data>
 			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
@@ -482,17 +545,180 @@
 		</dict>
 		<key>Dark</key>
 		<dict>
+			<key>ANSIBlueColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAnMC4xMTA1NDExODMy
+			IDAuNDU2NTY5OTM0NiAwLjc3MTk4MzM0ODUA0hAREhNaJGNsYXNz
+			bmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNL
+			ZXllZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZpCV
+			oKmxtL3P0tcAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA
+			2Q==
+			</data>
+			<key>ANSIBrightBlackColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAnMC4xOTMxNDU1Mjky
+			IDAuMTkzMTQ1NTI5MiAwLjE5MzE0NTUyOTIA0hAREhNaJGNsYXNz
+			bmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNL
+			ZXllZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZpCV
+			oKmxtL3P0tcAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA
+			2Q==
+			</data>
+			<key>ANSIBrightBlueColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAnMC4yNDczODExODcz
+			IDAuNjEwNDEwNzAwMyAwLjk0MTMyMDcxMTcA0hAREhNaJGNsYXNz
+			bmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNL
+			ZXllZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZpCV
+			oKmxtL3P0tcAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA
+			2Q==
+			</data>
+			<key>ANSIBrightCyanColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAcMC41OTIxNTMyODQ3
+			IDAuOTE5MjI2NjkzOCAxANIQERITWiRjbGFzc25hbWVYJGNsYXNz
+			ZXNXTlNDb2xvcqISFFhOU09iamVjdF8QD05TS2V5ZWRBcmNoaXZl
+			ctEXGFRyb290gAEIERojLTI3O0FIT1xiZGaFipWepqmyxMfMAAAA
+			AAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAAM4=
+			</data>
+			<key>ANSIBrightGreenColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAmMC41ODAzODM3NDQg
+			MC45MzkxODIyNTM2IDAuNTU2MTkzNDEzOADSEBESE1okY2xhc3Nu
+			YW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3RfEA9OU0tl
+			eWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSE9cYmRmj5Sf
+			qLCzvM7R1gAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAADY
+			</data>
+			<key>ANSIBrightMagentaColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAnMC45ODAzOTIxNTY5
+			IDAuNDA2MzkwODg2NiAwLjY3ODcyMzg3NDkA0hAREhNaJGNsYXNz
+			bmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNL
+			ZXllZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZpCV
+			oKmxtL3P0tcAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA
+			2Q==
+			</data>
+			<key>ANSIBrightRedColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAnMC44OTgwMzkyMTU3
+			IDAuMjQyMjU0NDc3MSAwLjI1MzE4NDIyMjcA0hAREhNaJGNsYXNz
+			bmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNL
+			ZXllZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZpCV
+			oKmxtL3P0tcAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA
+			2Q==
+			</data>
+			<key>ANSIBrightWhiteColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAnMC45NDQyMDA1MDE4
+			IDAuOTQ0MjAwNTAxOCAwLjk0NDIwMDUwMTgA0hAREhNaJGNsYXNz
+			bmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNL
+			ZXllZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZpCV
+			oKmxtL3P0tcAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA
+			2Q==
+			</data>
+			<key>ANSIBrightYellowColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAnMC45ODgyMzUyOTQx
+			IDAuNjgwMTUwNzIxNSAwLjMyNDIwODM1MTIA0hAREhNaJGNsYXNz
+			bmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNL
+			ZXllZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZpCV
+			oKmxtL3P0tcAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA
+			2Q==
+			</data>
+			<key>ANSICyanColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAbMC4zMzM4NTYwNjc1
+			IDAuODY4MDcxMzk2IDEA0hAREhNaJGNsYXNzbmFtZVgkY2xhc3Nl
+			c1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy
+			0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZoSJlJ2lqLHDxssAAAAA
+			AAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAAzQ==
+			</data>
+			<key>ANSIGreenColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAmMC4zOTM5MzQ5NTkg
+			MC45MzkxODIyNTM2IDAuMzU3MTc0MTgxNwDSEBESE1okY2xhc3Nu
+			YW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3RfEA9OU0tl
+			eWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSE9cYmRmj5Sf
+			qLCzvM7R1gAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAADY
+			</data>
+			<key>ANSIMagentaColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAcMC44OTQxNjA1ODM5
+			IDAgMC40ODg1NTUxMzA1ANIQERITWiRjbGFzc25hbWVYJGNsYXNz
+			ZXNXTlNDb2xvcqISFFhOU09iamVjdF8QD05TS2V5ZWRBcmNoaXZl
+			ctEXGFRyb290gAEIERojLTI3O0FIT1xiZGaFipWepqmyxMfMAAAA
+			AAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAAM4=
+			</data>
+			<key>ANSIRedColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAnMC44OTgwMzkyMTU3
+			IDAuMTMzMzMzMzMzMyAwLjEzMzMzMzMzMzMA0hAREhNaJGNsYXNz
+			bmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNL
+			ZXllZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZpCV
+			oKmxtL3P0tcAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA
+			2Q==
+			</data>
+			<key>ANSIWhiteColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACRjEgMSAxANIQERITWiRj
+			bGFzc25hbWVYJGNsYXNzZXNXTlNDb2xvcqISFFhOU09iamVjdF8Q
+			D05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERojLTI3O0FIT1xi
+			ZGZtcn2GjpGarK+0AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAA
+			AAAAALY=
+			</data>
+			<key>ANSIYellowColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAnMC45ODgyMzUyOTQx
+			IDAuNTg0MzEzNzI1NSAwLjExNzY0NzA1ODgA0hAREhNaJGNsYXNz
+			bmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNL
+			ZXllZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZpCV
+			oKmxtL3P0tcAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA
+			2Q==
+			</data>
+			<key>BackgroundBlur</key>
+			<real>0.49053375912408759</real>
 			<key>BackgroundColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
 			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
-			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhABTxAvMC4wMjA0MDgxNjMy
-			NyAwLjAyMDQwODE2MzI3IDAuMDIwNDA4MTYzMjcgMC45NQDSEBES
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhABTxAvMC4wMjA0MDE4NzA4
+			MyAwLjAxMTM5ODQwNTc3IDAuMDM5OTI2MDIyMjkgMC45NADSEBES
 			E1okY2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmpl
 			Y3RfEA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztB
 			SE9cYmRmmJ2osbm8xdfa3wAAAAAAAAEBAAAAAAAAABkAAAAAAAAA
 			AAAAAAAAAADh
 			</data>
+			<key>BackgroundSettingsForInactiveWindows</key>
+			<false/>
 			<key>CursorColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -520,22 +746,22 @@
 			<key>Linewrap</key>
 			<true/>
 			<key>ProfileCurrentVersion</key>
-			<real>2.0099999999999998</real>
+			<real>2.02</real>
+			<key>ScrollbackLines</key>
+			<real>50000</real>
 			<key>SelectionColor</key>
 			<data>
-			YnBsaXN0MDDUAQIDBAUGISJYJHZlcnNpb25YJG9iamVjdHNZJGFy
-			Y2hpdmVyVCR0b3ASAAGGoKUHCBMXHlUkbnVsbNUJCgsMDQ4PEBES
-			XE5TQ29tcG9uZW50c1ZOU0NNWUtfEBJOU0N1c3RvbUNvbG9yU3Bh
-			Y2VWJGNsYXNzXE5TQ29sb3JTcGFjZU8QHjAuMjI5OTI3MDA3MyAw
-			IDAgMC45MDE0NTk4NTQgMU8QHjAuMjI5OTI3MDAzNCAwIDAgMC45
-			MDE0NTk4NzI3AIACgAQQBdIMFBUWVE5TSUSAAxAD0hgZGhtaJGNs
-			YXNzbmFtZVgkY2xhc3Nlc1xOU0NvbG9yU3BhY2WiHB1cTlNDb2xv
-			clNwYWNlWE5TT2JqZWN00hgZHyBXTlNDb2xvcqIfHV8QD05TS2V5
-			ZWRBcmNoaXZlctEjJFRyb290gAEACAARABoAIwAtADIANwA9AEMA
-			TgBbAGIAdwB+AIsArADNAM8A0QDTANgA3QDfAOEA5gDxAPoBBwEK
-			ARcBIAElAS0BMAFCAUUBSgAAAAAAAAIBAAAAAAAAACUAAAAAAAAA
-			AAAAAAAAAAFM
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhABTxAsMC44MTg0NzkxMjA3
+			IDAuNzQ4NDA0MzgzNyAwLjk1MjgyOTI0MTggMC4wOADSEBESE1ok
+			Y2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3Rf
+			EA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSE9c
+			YmRmlZqlrra5wtTX3AAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAA
+			AAAAAADe
 			</data>
+			<key>ShouldLimitScrollback</key>
+			<integer>1</integer>
 			<key>ShowCommandKeyInTitle</key>
 			<true/>
 			<key>ShowShellCommandInTitle</key>
@@ -563,6 +789,8 @@
 			</data>
 			<key>UseBrightBold</key>
 			<false/>
+			<key>WindowTitle</key>
+			<string></string>
 			<key>blackColour</key>
 			<data>
 			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
@@ -798,7 +1026,7 @@
 			<key>FontAntialias</key>
 			<true/>
 			<key>ProfileCurrentVersion</key>
-			<real>2.0099999999999998</real>
+			<real>2.02</real>
 			<key>SelectionColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -953,7 +1181,7 @@
 			<key>FontAntialias</key>
 			<false/>
 			<key>ProfileCurrentVersion</key>
-			<real>2.0099999999999998</real>
+			<real>2.02</real>
 			<key>SelectionColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -1069,6 +1297,41 @@
 			ZWN0AIWEAWMChARmZmZmg83MTD+DzcxMPwABhg==
 			</data>
 		</dict>
+		<key>Man Page</key>
+		<dict>
+			<key>BackgroundColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAmMC45OTYwNzg0OTEy
+			IDAuOTU2ODYyODA3MyAwLjYxMTc2NDcyOQDSEBESE1okY2xhc3Nu
+			YW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3RfEA9OU0tl
+			eWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSE9cYmRmj5Sf
+			qLCzvM7R1gAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAADY
+			</data>
+			<key>Font</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKQHCBESVSRudWxs1AkKCwwNDg8QViRj
+			bGFzc1ZOU05hbWVWTlNTaXplWE5TZkZsYWdzgAOAAiNAJgAAAAAA
+			ABAQXU1lbmxvLVJlZ3VsYXLSExQVFlokY2xhc3NuYW1lWCRjbGFz
+			c2VzVk5TRm9udKIVF1hOU09iamVjdF8QD05TS2V5ZWRBcmNoaXZl
+			ctEaG1Ryb290gAEIERojLTI3PEJLUllgaWttdniGi5afpqmyxMfM
+			AAAAAAAAAQEAAAAAAAAAHAAAAAAAAAAAAAAAAAAAAM4=
+			</data>
+			<key>FontAntialias</key>
+			<true/>
+			<key>FontWidthSpacing</key>
+			<real>1.004032258064516</real>
+			<key>ProfileCurrentVersion</key>
+			<real>2.02</real>
+			<key>name</key>
+			<string>Man Page</string>
+			<key>rowCount</key>
+			<integer>48</integer>
+			<key>type</key>
+			<string>Window Settings</string>
+		</dict>
 		<key>Novel</key>
 		<dict>
 			<key>BackgroundColor</key>
@@ -1105,7 +1368,7 @@
 			<key>FontAntialias</key>
 			<true/>
 			<key>ProfileCurrentVersion</key>
-			<real>2.0099999999999998</real>
+			<real>2.02</real>
 			<key>SelectionColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -1236,6 +1499,16 @@
 			Y2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZoqPmqOrrrfJ
 			zNEAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA0w==
 			</data>
+			<key>CursorColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhABTxAeMC40OTk5MzY2OTk5
+			IDAuNSAwLjQ5OTkyMDYwNjYA0hAREhNaJGNsYXNzbmFtZVgkY2xh
+			c3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hp
+			dmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZoeMl6Coq7TGyc4A
+			AAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA0A==
+			</data>
 			<key>Font</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -1251,7 +1524,7 @@
 			<key>FontWidthSpacing</key>
 			<real>0.99596774193548387</real>
 			<key>ProfileCurrentVersion</key>
-			<real>2.0099999999999998</real>
+			<real>2.02</real>
 			<key>SelectionColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -1371,6 +1644,8 @@
 		</dict>
 		<key>Pro</key>
 		<dict>
+			<key>BackgroundBlur</key>
+			<real>0.0</real>
 			<key>BackgroundColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -1406,7 +1681,7 @@
 			<key>FontWidthSpacing</key>
 			<real>0.99596774193548387</real>
 			<key>ProfileCurrentVersion</key>
-			<real>2.0099999999999998</real>
+			<real>2.02</real>
 			<key>SelectionColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -1566,7 +1841,7 @@
 			<key>FontWidthSpacing</key>
 			<real>1.004032258064516</real>
 			<key>ProfileCurrentVersion</key>
-			<real>2.0099999999999998</real>
+			<real>2.02</real>
 			<key>SelectionColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -1682,6 +1957,429 @@
 			<data>
 			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
 			ZWN0AIWEAWMChARmZmZmg83MTD+DzcxMPwABhg==
+			</data>
+		</dict>
+		<key>Silver Aerogel</key>
+		<dict>
+			<key>BackgroundAlphaInactive</key>
+			<real>0.5</real>
+			<key>BackgroundBlur</key>
+			<real>1</real>
+			<key>BackgroundBlurInactive</key>
+			<real>0.0</real>
+			<key>BackgroundColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGHyBYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKUHCBEVHFUkbnVsbNQJCgsMDQ4PEF8Q
+			Ek5TQ3VzdG9tQ29sb3JTcGFjZVYkY2xhc3NcTlNDb2xvclNwYWNl
+			V05TV2hpdGWAAoAEEANIMC41IDAuNQDSChITFFROU0lEgAMQAtIW
+			FxgZWiRjbGFzc25hbWVYJGNsYXNzZXNcTlNDb2xvclNwYWNlohob
+			XE5TQ29sb3JTcGFjZVhOU09iamVjdNIWFx0eV05TQ29sb3KiHRtf
+			EA9OU0tleWVkQXJjaGl2ZXLRISJUcm9vdIABAAgAEQAaACMALQAy
+			ADcAPQBDAEwAYQBoAHUAfQB/AIEAgwCMAJEAlgCYAJoAnwCqALMA
+			wADDANAA2QDeAOYA6QD7AP4BAwAAAAAAAAIBAAAAAAAAACMAAAAA
+			AAAAAAAAAAAAAAEF
+			</data>
+			<key>BackgroundSettingsForInactiveWindows</key>
+			<true/>
+			<key>CursorColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VXTlNXaGl0ZYACEANFMC44NQDSEBESE1ok
+			Y2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3Rf
+			EA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSE9c
+			ZGZobnN+h4+Sm62wtQAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAA
+			AAAAAAC3
+			</data>
+			<key>Font</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKQHCBESVSRudWxs1AkKCwwNDg8QViRj
+			bGFzc1ZOU05hbWVWTlNTaXplWE5TZkZsYWdzgAOAAiNAJgAAAAAA
+			ABAQXU1lbmxvLVJlZ3VsYXLSExQVFlokY2xhc3NuYW1lWCRjbGFz
+			c2VzVk5TRm9udKIVF1hOU09iamVjdF8QD05TS2V5ZWRBcmNoaXZl
+			ctEaG1Ryb290gAEIERojLTI3PEJLUllgaWttdniGi5afpqmyxMfM
+			AAAAAAAAAQEAAAAAAAAAHAAAAAAAAAAAAAAAAAAAAM4=
+			</data>
+			<key>FontAntialias</key>
+			<true/>
+			<key>FontWidthSpacing</key>
+			<real>1.004032258064516</real>
+			<key>ProfileCurrentVersion</key>
+			<real>2.02</real>
+			<key>SelectionColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhABTxAkMC4zOTQ0MzAwNzEx
+			IDAuMzk5NjQ2Njk5NCAwLjU0MDQyODQA0hAREhNaJGNsYXNzbmFt
+			ZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNLZXll
+			ZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZo2Snaau
+			sbrMz9QAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA1g==
+			</data>
+			<key>TextBoldColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGHyBYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKUHCBEVHFUkbnVsbNQJCgsMDQ4PEF8Q
+			Ek5TQ3VzdG9tQ29sb3JTcGFjZVYkY2xhc3NcTlNDb2xvclNwYWNl
+			V05TV2hpdGWAAoAEEANCMQDSChITFFROU0lEgAMQAtIWFxgZWiRj
+			bGFzc25hbWVYJGNsYXNzZXNcTlNDb2xvclNwYWNlohobXE5TQ29s
+			b3JTcGFjZVhOU09iamVjdNIWFx0eV05TQ29sb3KiHRtfEA9OU0tl
+			eWVkQXJjaGl2ZXLRISJUcm9vdIABCBEaIy0yNz1DTGFodX1/gYOG
+			i5CSlJmkrbq9ytPY4OP1+P0AAAAAAAABAQAAAAAAAAAjAAAAAAAA
+			AAAAAAAAAAAA/w==
+			</data>
+			<key>name</key>
+			<string>Silver Aerogel</string>
+			<key>type</key>
+			<string>Window Settings</string>
+		</dict>
+		<key>Solid Colors</key>
+		<dict>
+			<key>BackgroundImageBookmark</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFBVYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA1VJG51bGzSCQoLDFYkY2xhc3NX
+			TlMuZGF0YYACTxEB6GJvb2voAQAAAAABEBAAAABMAQAABwAAAAEB
+			AABMaWJyYXJ5ABAAAAABAQAARGVza3RvcCBQaWN0dXJlcwwAAAAB
+			AQAAU29saWQgQ29sb3JzDAAAAAEGAAAEAAAAFAAAACwAAAAIAAAA
+			BAMAAC2ANgMAAAAACAAAAAQDAADa0zgDAAAAAAgAAAAEAwAAl9Q4
+			AwAAAAAMAAAAAQYAAFQAAABkAAAAdAAAABgAAAABAgAAAgAAAAAA
+			AAAPAAAAAAAAAAAAAAAAAAAADAAAAAEBAABNYWNpbnRvc2ggSEQI
+			AAAABAMAAAAAAAAKAAAACAAAAAAEAABBsCdFcgAAACQAAAABAQAA
+			MzU5MDFGNEQtRDVFNS0zQTk4LUI4MDMtNzcwQzQ1QTlEMDZDGAAA
+			AAECAACBAAAAAQAIAO8/AAABAAgAAAAAAAAAAAABAAAAAQEAAC8A
+			AAAAAAAAAQUAAIQAAAD+////AQAAAAAAAAAKAAAABBAAAEAAAAAA
+			AAAABRAAAIQAAAAAAAAAEBAAAJgAAAAAAAAAAiAAADgBAAAAAAAA
+			ECAAALgAAAAAAAAAESAAAOwAAAAAAAAAEiAAAMwAAAAAAAAAEyAA
+			ANwAAAAAAAAAICAAABgBAAAAAAAAMCAAAEQBAAAAAAAA0g4PEBFa
+			JGNsYXNzbmFtZVgkY2xhc3Nlc11OU011dGFibGVEYXRhoxASE1ZO
+			U0RhdGFYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRFhdUcm9v
+			dIABAAgAEQAaACMALQAyADcAOwBBAEYATQBVAFcCQwJIAlMCXAJq
+			Am4CdQJ+ApACkwKYAAAAAAAAAgEAAAAAAAAAGAAAAAAAAAAAAAAA
+			AAAAApo=
+			</data>
+			<key>CursorColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGHyBYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKUHCBEVHFUkbnVsbNQJCgsMDQ4PEF8Q
+			Ek5TQ3VzdG9tQ29sb3JTcGFjZVYkY2xhc3NcTlNDb2xvclNwYWNl
+			V05TV2hpdGWAAoAEEANFMC43NQDSChITFFROU0lEgAMQAtIWFxgZ
+			WiRjbGFzc25hbWVYJGNsYXNzZXNcTlNDb2xvclNwYWNlohobXE5T
+			Q29sb3JTcGFjZVhOU09iamVjdNIWFx0eV05TQ29sb3KiHRtfEA9O
+			U0tleWVkQXJjaGl2ZXLRISJUcm9vdIABAAgAEQAaACMALQAyADcA
+			PQBDAEwAYQBoAHUAfQB/AIEAgwCJAI4AkwCVAJcAnACnALAAvQDA
+			AM0A1gDbAOMA5gD4APsBAAAAAAAAAAIBAAAAAAAAACMAAAAAAAAA
+			AAAAAAAAAAEC
+			</data>
+			<key>Font</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKQHCBESVSRudWxs1AkKCwwNDg8QViRj
+			bGFzc1ZOU05hbWVWTlNTaXplWE5TZkZsYWdzgAOAAiNAJgAAAAAA
+			ABAQXU1lbmxvLVJlZ3VsYXLSExQVFlokY2xhc3NuYW1lWCRjbGFz
+			c2VzVk5TRm9udKIVF1hOU09iamVjdF8QD05TS2V5ZWRBcmNoaXZl
+			ctEaG1Ryb290gAEIERojLTI3PEJLUllgaWttdniGi5afpqmyxMfM
+			AAAAAAAAAQEAAAAAAAAAHAAAAAAAAAAAAAAAAAAAAM4=
+			</data>
+			<key>FontAntialias</key>
+			<true/>
+			<key>FontWidthSpacing</key>
+			<real>1.004032258064516</real>
+			<key>ProfileCurrentVersion</key>
+			<real>2.02</real>
+			<key>name</key>
+			<string>Solid Colors</string>
+			<key>type</key>
+			<string>Window Settings</string>
+		</dict>
+		<key>Visor</key>
+		<dict>
+			<key>BackgroundColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VXTlNXaGl0ZYACEANPEA8wIDAuODk5OTk5
+			OTc2MgDSEBESE1okY2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3Ki
+			EhRYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIAB
+			CBEaIy0yNztBSE9cZGZoen+Kk5uep7m8wQAAAAAAAAEBAAAAAAAA
+			ABkAAAAAAAAAAAAAAAAAAADD
+			</data>
+			<key>CursorBlink</key>
+			<false/>
+			<key>CursorColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhABTxAeMSAwLjk3NjA4OTEx
+			OTkgMCAwLjgwMDAwMDAxMTkA0hAREhNaJGNsYXNzbmFtZVgkY2xh
+			c3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hp
+			dmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZoeMl6Coq7TGyc4A
+			AAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA0A==
+			</data>
+			<key>CursorType</key>
+			<integer>0</integer>
+			<key>DisableANSIColor</key>
+			<false/>
+			<key>Font</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKQHCBESVSRudWxs1AkKCwwNDg8QViRj
+			bGFzc1ZOU05hbWVWTlNTaXplWE5TZkZsYWdzgAOAAiNAKAAAAAAA
+			ABAQVk1vbmFjb9ITFBUWWiRjbGFzc25hbWVYJGNsYXNzZXNWTlNG
+			b250ohUXWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy0RobVHJv
+			b3SAAQgRGiMtMjc8QktSWWBpa212eH+Ej5ifoqu9wMUAAAAAAAAB
+			AQAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAxw==
+			</data>
+			<key>FontAntialias</key>
+			<true/>
+			<key>FontWidthSpacing</key>
+			<real>1.004032258064516</real>
+			<key>Linewrap</key>
+			<true/>
+			<key>ProfileCurrentVersion</key>
+			<real>2.02</real>
+			<key>SelectionColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VXTlNXaGl0ZYACEANNMC4yNTQwMzIyNTQy
+			ANIQERITWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xvcqISFFhO
+			U09iamVjdF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERoj
+			LTI3O0FIT1xkZmh2e4aPl5qjtbi9AAAAAAAAAQEAAAAAAAAAGQAA
+			AAAAAAAAAAAAAAAAAL8=
+			</data>
+			<key>ShowCommandKeyInTitle</key>
+			<true/>
+			<key>ShowShellCommandInTitle</key>
+			<true/>
+			<key>ShowWindowSettingsNameInTitle</key>
+			<false/>
+			<key>TextBoldColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VXTlNXaGl0ZYACEANCMQDSEBESE1okY2xh
+			c3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3RfEA9O
+			U0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSE9cZGZo
+			a3B7hIyPmKqtsgAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAA
+			AAC0
+			</data>
+			<key>TextColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VXTlNXaGl0ZYACEANNMC45NDc1ODA2MzU1
+			ANIQERITWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xvcqISFFhO
+			U09iamVjdF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERoj
+			LTI3O0FIT1xkZmh2e4aPl5qjtbi9AAAAAAAAAQEAAAAAAAAAGQAA
+			AAAAAAAAAAAAAAAAAL8=
+			</data>
+			<key>UseBoldFonts</key>
+			<true/>
+			<key>UseBrightBold</key>
+			<false/>
+			<key>blackColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMBhARmZmZmg52cnD6DnZycPoOdnJw+AYY=
+			</data>
+			<key>blueColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMBhARmZmZmg5eWFj+DzMtLP4P//n4/AYY=
+			</data>
+			<key>brightBlackColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMDhAJmZoOrqqo+AYY=
+			</data>
+			<key>brightBlueColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMBhARmZmZmAAABAYY=
+			</data>
+			<key>brightCyanColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMBhARmZmZmAAEBAYY=
+			</data>
+			<key>brightGreenColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMBhARmZmZmAAEAAYY=
+			</data>
+			<key>brightMagentaColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMBhARmZmZmAQABAYY=
+			</data>
+			<key>brightRedColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMBhARmZmZmAQAAAYY=
+			</data>
+			<key>brightWhiteColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMDhAJmZgEBhg==
+			</data>
+			<key>brightYellowColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMBhARmZmZmAQEAAYY=
+			</data>
+			<key>columnCount</key>
+			<integer>80</integer>
+			<key>cyanColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMBhARmZmZmgxqRHT8BAQGG
+			</data>
+			<key>greenColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMBhARmZmZmg6moKD8Bg8HAwD4Bhg==
+			</data>
+			<key>keyMapBoundKeys</key>
+			<dict>
+				<key>$F708</key>
+				<string>[25~</string>
+				<key>$F709</key>
+				<string>[26~</string>
+				<key>$F70A</key>
+				<string>[28~</string>
+				<key>$F70B</key>
+				<string>[29~</string>
+				<key>$F70C</key>
+				<string>[31~</string>
+				<key>$F70D</key>
+				<string>[22~</string>
+				<key>$F70E</key>
+				<string>[33~</string>
+				<key>$F70F</key>
+				<string>[34~</string>
+				<key>$F729</key>
+				<string>[H</string>
+				<key>$F72B</key>
+				<string>[F</string>
+				<key>$F72C</key>
+				<string>scrollPageUp:</string>
+				<key>$F72D</key>
+				<string>scrollPageDown:</string>
+				<key>F704</key>
+				<string>OP</string>
+				<key>F705</key>
+				<string>OQ</string>
+				<key>F706</key>
+				<string>OR</string>
+				<key>F707</key>
+				<string>OS</string>
+				<key>F708</key>
+				<string>[15~</string>
+				<key>F709</key>
+				<string>[17~</string>
+				<key>F70A</key>
+				<string>[18~</string>
+				<key>F70B</key>
+				<string>[19~</string>
+				<key>F70C</key>
+				<string>[20~</string>
+				<key>F70D</key>
+				<string>[21~</string>
+				<key>F70E</key>
+				<string>[23~</string>
+				<key>F70F</key>
+				<string>[24~</string>
+				<key>F710</key>
+				<string>[25~</string>
+				<key>F711</key>
+				<string>[26~</string>
+				<key>F712</key>
+				<string>[28~</string>
+				<key>F713</key>
+				<string>[29~</string>
+				<key>F714</key>
+				<string>[31~</string>
+				<key>F715</key>
+				<string>[32~</string>
+				<key>F716</key>
+				<string>[33~</string>
+				<key>F717</key>
+				<string>[34~</string>
+				<key>F728</key>
+				<string>[3~</string>
+				<key>F729</key>
+				<string>scrollToBeginningOfDocument:</string>
+				<key>F72B</key>
+				<string>scrollToEndOfDocument:</string>
+				<key>F72C</key>
+				<string>[5~</string>
+				<key>F72D</key>
+				<string>[6~</string>
+				<key>^F702</key>
+				<string>[5D</string>
+				<key>^F703</key>
+				<string>[5C</string>
+				<key>~F704</key>
+				<string>[17~</string>
+				<key>~F705</key>
+				<string>[18~</string>
+				<key>~F706</key>
+				<string>[19~</string>
+				<key>~F707</key>
+				<string>[20~</string>
+				<key>~F708</key>
+				<string>[21~</string>
+				<key>~F709</key>
+				<string>[23~</string>
+				<key>~F70A</key>
+				<string>[24~</string>
+				<key>~F70B</key>
+				<string>[25~</string>
+				<key>~F70C</key>
+				<string>[26~</string>
+				<key>~F70D</key>
+				<string>[28~</string>
+				<key>~F70E</key>
+				<string>[29~</string>
+				<key>~F70F</key>
+				<string>[31~</string>
+				<key>~F710</key>
+				<string>[32~</string>
+				<key>~F711</key>
+				<string>[33~</string>
+				<key>~F712</key>
+				<string>[34~</string>
+			</dict>
+			<key>magentaColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMBhARmZmZmAYPn5uY+g/79fT8Bhg==
+			</data>
+			<key>name</key>
+			<string>Visor</string>
+			<key>redColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMBhARmZmZmAYPZ2Ng+g8HAwD4Bhg==
+			</data>
+			<key>rowCount</key>
+			<integer>24</integer>
+			<key>shellExitAction</key>
+			<integer>2</integer>
+			<key>type</key>
+			<string>Window Settings</string>
+			<key>whiteColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMBhARmZmZmg+/ubj+D7+5uP4Pv7m4/AYY=
+			</data>
+			<key>yellowColour</key>
+			<data>
+			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
+			ZWN0AIWEAWMBhARmZmZmAQGDt7Y2PwGG
 			</data>
 		</dict>
 	</dict>
