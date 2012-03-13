@@ -98,8 +98,6 @@ if [ `id -u` != '0' ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh
   fi
-  #export PIP_VIRTUALENV_BASE=$WORKON_HOME
-  #export PIP_RESPECT_VIRTUALENV=true
 fi
 
 # start a socks proxy on ayreal
