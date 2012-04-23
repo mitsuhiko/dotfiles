@@ -300,6 +300,9 @@ class Checker(ast.NodeVisitor):
             scope.globals.update(dict.fromkeys(node.names))
 
     def visit_ClassDef(self, node):
+        decorators = node.decorator_list
+        self.visit_nodes(decorators)
+
         self.add_binding(node, Assignment(node.name, node))
         self.visit_nodes(node.bases)
 
