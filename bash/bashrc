@@ -93,7 +93,7 @@ export LESS=FRSX
 
 # virtualenvwrapper and pip
 if [ `id -u` != '0' ]; then
-  export VIRTUALENV_USE_DISTRIBUTE=1
+  export VIRTUALENV_DISTRIBUTE=1
   if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh
@@ -164,3 +164,7 @@ bind '"\C-w": unix-filename-rubout'
 if [ x`which ack-grep` != x ]; then
   alias ack=ack-grep
 fi
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
