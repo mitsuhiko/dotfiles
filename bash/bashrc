@@ -164,7 +164,3 @@ bind '"\C-w": unix-filename-rubout'
 if [ x`which ack-grep` != x ]; then
   alias ack=ack-grep
 fi
-
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
