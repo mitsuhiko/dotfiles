@@ -72,7 +72,7 @@ export MITSUHIKOS_BASEPROMPT='\n\e${MITSUHIKOS_USER_COLOR}\u \
 `mitsuhikos_backgroundjobs`\
 `mitsuhikos_virtualenv`\
 \e${MITSUHIKOS_DEFAULT_COLOR}'
-export PS1="${MITSUHIKOS_BASEPROMPT}
+export PS1="\[\033[G\]${MITSUHIKOS_BASEPROMPT}
 $ "
 
 export TERM=xterm-color

@@ -61,3 +61,6 @@ Jinja2
 Genshi
 unoptimize
 timestamp
+unserialize
+hostname
+metadata

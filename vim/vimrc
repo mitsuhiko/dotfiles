@@ -364,3 +364,7 @@ autocmd FileType d setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 " cmake support
 " -------------
 autocmd BufNewFile,BufRead CMakeLists.txt setlocal ft=cmake
+
+" rust
+" ----
+autocmd FileType rust setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
