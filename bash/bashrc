@@ -72,7 +72,7 @@ export MITSUHIKOS_BASEPROMPT='\n\e${MITSUHIKOS_USER_COLOR}\u \
 `mitsuhikos_backgroundjobs`\
 `mitsuhikos_virtualenv`\
 \e${MITSUHIKOS_DEFAULT_COLOR}'
-export PS1="${MITSUHIKOS_BASEPROMPT}
+export PS1="\[\033[G\]${MITSUHIKOS_BASEPROMPT}
 $ "
 
 export TERM=xterm-color
@@ -98,8 +98,6 @@ if [ `id -u` != '0' ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh
   fi
-  #export PIP_VIRTUALENV_BASE=$WORKON_HOME
-  #export PIP_RESPECT_VIRTUALENV=true
 fi
 
 # start a socks proxy on ayreal
