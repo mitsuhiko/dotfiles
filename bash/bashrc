@@ -46,7 +46,7 @@ mitsuhikos_backgroundjobs() {
         string = "%s, and %s" % (", ".join(items[:-1]), items[-1])
       else:
         string = ", ".join(items)
-      print "\033[37m running %s" % string
+      print("\033[37m running %s" % string)
   '
 }
 
@@ -85,7 +85,7 @@ if [ `uname` == "Darwin" ]; then
 else
   alias ls='ls --color=auto'
 fi
-export PATH=/usr/local/bin:~/.bin:$PATH:~/.gem/ruby/1.8/bin
+export PATH=/usr/local/bin:/usr/local/sbin:~/.bin:$PATH:~/.gem/ruby/1.8/bin
 export IGNOREEOF=1
 export PYTHONDONTWRITEBYTECODE=1
 export PYTHONPATH=~/Development/pygments-main/
