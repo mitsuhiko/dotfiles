@@ -164,3 +164,13 @@ bind '"\C-w": unix-filename-rubout'
 if [ x`which ack-grep` != x ]; then
   alias ack=ack-grep
 fi
+
+# For lazy people like me
+from() { expect -c "spawn -noecho python
+expect \">>> \"
+send \"from $*\r\"
+interact +++ return"; }
+import() { expect -c "spawn -noecho python
+expect \">>> \"
+send \"import $*\r\"
+interact +++ return"; }
