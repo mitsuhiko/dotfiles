@@ -35,6 +35,7 @@ hi SignColumn   guibg=#111111
 hi CursorLine   guibg=#001A21
 hi ColorColumn  guibg=#00252e
 hi LineNr       guifg=#aaaaaa   guibg=#00252e
+hi CursorLineNr guifg=#ffffff   guibg=#00252e
 hi MatchParen   guifg=#b1b711   guibg=NONE      gui=bold
 
 " Specials

@@ -174,3 +174,6 @@ import() { expect -c "spawn -noecho python
 expect \">>> \"
 send \"import $*\r\"
 interact +++ return"; }
+
+# Meh OS X
+alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
