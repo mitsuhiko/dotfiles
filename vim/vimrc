@@ -382,3 +382,18 @@ autocmd FileType lua setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " rust
 " ----
 autocmd FileType rust setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
+
+" Small helper that inserts a random uuid4
+" ----------------------------------------
+nnoremap <leader>4 :call InsertUUID4()<CR>
+function! InsertUUID4()
+python << endpython
+if 1:
+    import uuid, vim
+    s = str(uuid.uuid4())
+    cpos = vim.current.window.cursor
+    cline = vim.current.line
+    vim.current.line = cline[:cpos[1] + 1] + s + cline[cpos[1] + 1:]
+    vim.current.window.cursor = (cpos[0], cpos[1] + len(s))
+endpython
+endfunction
