@@ -26,6 +26,7 @@
 	br = branch
 	cp = cherry-pick
 	cps = cherry-pick -s
+	meh = commit --amend
 	slog = log --pretty=oneline --abbrev-commit
 	glog = log --graph --decorate --pretty=oneline --abbrev-commit
 	gloga = log --graph --decorate --pretty=oneline --abbrev-commit --all
