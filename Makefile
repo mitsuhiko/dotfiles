@@ -1,5 +1,6 @@
 install: install-vim install-bash install-virtualenvwrapper \
-         install-terminal-settings install-git
+         install-terminal-settings install-git \
+	 install-python
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
@@ -17,6 +18,10 @@ install-git:
 install-virtualenvwrapper:
 	mkdir -p ~/.virtualenvs
 	ln -s `pwd`/virtualenvwrapper/* ~/.virtualenvs
+
+install-python:
+	rm -f ~/.pythonstartup.py
+	ln -s `pwd`/python/pythonstartup.py ~/.pythonstartup.py
 
 dump-terminal-settings:
 	cp ~/Library/Preferences/com.apple.Terminal.plist terminal
