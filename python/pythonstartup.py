@@ -9,7 +9,10 @@ def _init():
     import pprint
     import hashlib
     import datetime
-    import __builtin__
+    try:
+        import __builtin__
+    except ImportError:
+        import builtins as __builtin__
 
     __import__('rlcompleter')
     histdir = os.path.expanduser('~/.pyhist')
@@ -18,8 +21,13 @@ def _init():
     except OSError:
         pass
 
+    def _b(x):
+        if not isinstance(x, bytes):
+            x = x.encode('utf-8')
+        return x
+
     histfile = os.path.join(histdir, hashlib.sha1(
-        os.path.normpath(os.path.abspath(sys.prefix))).hexdigest())
+        os.path.normpath(_b(os.path.abspath(sys.prefix)))).hexdigest())
 
     try:
         readline.read_history_file(histfile)
