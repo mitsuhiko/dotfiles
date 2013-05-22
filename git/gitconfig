@@ -39,6 +39,7 @@
 	comerge = "!x() { target=`git symbolic-ref HEAD`; git co $1; git merge $target; }; x"
 	pill = pull
 	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
+	serveall = daemon --verbose --export-all --base-path=. --reuseaddr .
 [instaweb]
 	httpd=webrick
 [push]
