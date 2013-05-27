@@ -4,11 +4,16 @@
 " URL:		http://www.hlabs.spb.ru/vim/python.vim
 " Last Change:	$Date: 2007-02-04 16:43:14 +0300 (Вс, 04 фев 2007) $
 " Filenames:	*.py
-" Version:	2.5.6
+" Version:	2.5.6 modified
 " $Rev: 632 $
 "
 " Based on python.vim (from Vim 6.1 distribution)
 " by Neil Schemenauer <nas@python.ca>
+"
+" Notes Armin:
+"
+"     This version of the syntax file works better for 2.x and 3.x without
+"     having to switch modes.
 "
 " Thanks:
 "
@@ -85,10 +90,10 @@ endif
 " Keywords
 syn keyword pythonStatement	break continue del
 syn keyword pythonStatement	exec return
-syn keyword pythonStatement	pass print raise
+syn keyword pythonStatement	pass raise
 syn keyword pythonStatement	global assert
 syn keyword pythonStatement	lambda yield
-syn keyword pythonStatement	with
+syn keyword pythonStatement	with nonlocal True False None
 syn keyword pythonStatement	def class nextgroup=pythonFunction skipwhite
 syn match   pythonFunction	"[a-zA-Z_][a-zA-Z0-9_]*" display contained
 syn keyword pythonRepeat	for while
@@ -96,6 +101,9 @@ syn keyword pythonConditional	if elif else
 syn keyword pythonImport	import from as
 syn keyword pythonException	try except finally
 syn keyword pythonOperator	and in is not or
+
+" Print keyword but only if not used as function
+syn match pythonStatement "print\((\)\@!" display
 
 " Decorators (new in Python 2.4)
 syn match   pythonDecorator	"@" display nextgroup=pythonFunction skipwhite
@@ -136,6 +144,19 @@ syn match  pythonEscape		"\\x\x\{2}" display contained
 syn match  pythonEscapeError	"\\x\x\=\X" display contained
 syn match  pythonEscape		"\\$"
 
+" Byte-Strings
+syn region pythonBString	start=+[bB]'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end=+$+ keepend contains=pythonBEscape,pythonBEscapeError,@Spell
+syn region pythonBString	start=+[bB]"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end=+$+ keepend contains=pythonBEscape,pythonBEscapeError,@Spell
+syn region pythonBString	start=+[bB]"""+ end=+"""+ keepend contains=pythonBEscape,pythonBEscapeError,pythonDocTest2,pythonSpaceError,@Spell
+syn region pythonBString	start=+[bB]'''+ end=+'''+ keepend contains=pythonBEscape,pythonBEscapeError,pythonDocTest,pythonSpaceError,@Spell
+
+syn match  pythonBEscape	+\\[abfnrtv'"\\]+ display contained
+syn match  pythonBEscape	"\\\o\o\=\o\=" display contained
+syn match  pythonBEscapeError	"\\\o\{,2}[89]" display contained
+syn match  pythonBEscape	"\\x\x\{2}" display contained
+syn match  pythonBEscapeError	"\\x\x\=\X" display contained
+syn match  pythonBEscape	"\\$"
+
 " Unicode strings
 syn region pythonUniString	start=+[uU]'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end=+$+ keepend contains=pythonEscape,pythonUniEscape,pythonEscapeError,pythonUniEscapeError,@Spell
 syn region pythonUniString	start=+[uU]"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end=+$+ keepend contains=pythonEscape,pythonUniEscape,pythonEscapeError,pythonUniEscapeError,@Spell
@@ -168,8 +189,8 @@ syn match  pythonUniRawEscapeError	"\([^\\]\(\\\\\)*\)\@<=\\u\x\{,3}\X" display 
 
 if exists("python_highlight_string_formatting") && python_highlight_string_formatting != 0
   " String formatting
-  syn match pythonStrFormat	"%\(([^)]\+)\)\=[-#0 +]*\d*\(\.\d\+\)\=[hlL]\=[diouxXeEfFgGcrs%]" contained containedin=pythonString,pythonUniString,pythonRawString,pythonUniRawString
-  syn match pythonStrFormat	"%[-#0 +]*\(\*\|\d\+\)\=\(\.\(\*\|\d\+\)\)\=[hlL]\=[diouxXeEfFgGcrs%]" contained containedin=pythonString,pythonUniString,pythonRawString,pythonUniRawString
+  syn match pythonStrFormat	"%\(([^)]\+)\)\=[-#0 +]*\d*\(\.\d\+\)\=[hlL]\=[diouxXeEfFgGcrs%]" contained containedin=pythonString,pythonBString,pythonUniString,pythonRawString,pythonUniRawString
+  syn match pythonStrFormat	"%[-#0 +]*\(\*\|\d\+\)\=\(\.\(\*\|\d\+\)\)\=[hlL]\=[diouxXeEfFgGcrs%]" contained containedin=pythonString,pythonBString,pythonUniString,pythonRawString,pythonUniRawString
 endif
 
 if exists("python_highlight_doctests") && python_highlight_doctests != 0
@@ -191,7 +212,7 @@ syn match   pythonHexError	"\<0[xX]\X\+[lL]\=\>" display
 
 if exists("python_highlight_builtins") && python_highlight_builtins != 0
   " Builtin functions, types and objects
-  syn keyword pythonBuiltinObj	True False Ellipsis None NotImplemented
+  syn keyword pythonBuiltinObj	Ellipsis NotImplemented
 
   syn keyword pythonBuiltinFunc	__import__ abs all any apply
   syn keyword pythonBuiltinFunc	basestring bool buffer callable
@@ -271,6 +292,7 @@ if version >= 508 || !exists("did_python_syn_inits")
   HiLink pythonSpaceError	Error
 
   HiLink pythonString		String
+  HiLink pythonBString		String
   HiLink pythonUniString	String
   HiLink pythonRawString	String
   HiLink pythonUniRawString	String
