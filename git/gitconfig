@@ -9,10 +9,11 @@
 	ui = auto
 [color "branch"]
 	current = red
+	local = yellow
 	remote = green
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
+	meta = cyan
+	frag = magenta
 	old = red bold
 	new = green bold
 [color "status"]
@@ -20,16 +21,20 @@
 	changed = green
 	untracked = cyan
 [alias]
-	st = status
+	st = status -sb
 	ci = commit
 	co = checkout
 	br = branch
 	cp = cherry-pick
 	cps = cherry-pick -s
 	meh = commit --amend
-	slog = log --pretty=oneline --abbrev-commit
-	glog = log --graph --decorate --pretty=oneline --abbrev-commit
-	gloga = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	wdiff = git diff --word-diff=color
+	wshow = git show --word-diff=color
+	lasttag = describe --tags --abbrev=0
+	branches = branch -vv
+	slog = log --abbrev-commit --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"
+	glog = log --graph --abbrev-commit --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"
+	gflog = log -p --cc --graph --decorate
 	unci = reset HEAD^
 	uncommit = reset HEAD^
 	ls = ls-files
@@ -38,6 +43,11 @@
 	sync = !git pull && git push
 	comerge = "!x() { target=`git symbolic-ref HEAD`; git co $1; git merge $target; }; x"
 	pill = pull
+	ours = "!f() { git checkout --ours -- $@ && git add -- $@; }; f"
+	theirs = "!f() { git checkout --theirs -- $@ && git add -- $@; }; f"
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
 	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 	serveall = daemon --verbose --export-all --base-path=. --reuseaddr .
 [instaweb]
@@ -46,3 +56,5 @@
 	default=current
 [branch]
 	autosetupmerge = true
+[diff]
+	algorithm = patience

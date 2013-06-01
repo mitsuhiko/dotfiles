@@ -85,10 +85,9 @@ if [ `uname` == "Darwin" ]; then
 else
   alias ls='ls --color=auto'
 fi
-export PATH=/usr/local/bin:/usr/local/sbin:~/.bin:$PATH:~/.gem/ruby/1.8/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:~/.bin:$PATH:~/.gem/ruby/1.8/bin
 export IGNOREEOF=1
 export PYTHONDONTWRITEBYTECODE=1
-export PYTHONPATH=~/Development/pygments-main/
 export LESS=FRSX
 
 # virtualenvwrapper and pip
