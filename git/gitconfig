@@ -48,6 +48,7 @@
 	theirs = "!f() { git checkout --theirs -- $@ && git add -- $@; }; f"
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
+	unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
 	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
 	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 	serveall = daemon --verbose --export-all --base-path=. --reuseaddr .
