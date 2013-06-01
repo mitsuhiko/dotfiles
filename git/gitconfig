@@ -50,6 +50,7 @@
 	unassume = update-index --no-assume-unchanged
 	unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
 	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	authors = shortlog -sn
 	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 	serveall = daemon --verbose --export-all --base-path=. --reuseaddr .
 [instaweb]
