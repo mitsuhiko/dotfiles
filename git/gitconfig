@@ -32,6 +32,7 @@
 	wshow = show --word-diff=color
 	lasttag = describe --tags --abbrev=0
 	branches = branch -vv
+	autotrack = "!x() { branch=\"$(git symbolic-ref --short HEAD 2> /dev/null)\" && git branch -u \"origin/$branch\" || echo \"error: not on a branch\"; }; x"
 	slog = log --abbrev-commit --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"
 	glog = log --graph --abbrev-commit --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"
 	gflog = log -p --cc --graph --decorate
