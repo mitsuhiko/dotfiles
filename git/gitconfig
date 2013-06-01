@@ -28,8 +28,8 @@
 	cp = cherry-pick
 	cps = cherry-pick -s
 	meh = commit --amend
-	wdiff = git diff --word-diff=color
-	wshow = git show --word-diff=color
+	wdiff = diff --word-diff=color
+	wshow = show --word-diff=color
 	lasttag = describe --tags --abbrev=0
 	branches = branch -vv
 	slog = log --abbrev-commit --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"
