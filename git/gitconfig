@@ -33,9 +33,10 @@
 	lasttag = describe --tags --abbrev=0
 	branches = branch -vv
 	autotrack = "!x() { b=`git symbolic-ref -q --short HEAD` && git branch -u \"origin/$b\" || echo \"error: not a branch\"; }; x"
-	slog = log --abbrev-commit --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"
-	glog = log --graph --abbrev-commit --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"
+	slog = log --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"
+	glog = log --graph --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"
 	gflog = log -p --cc --graph --decorate
+	wtf = log --pretty=format:"%C(auto,yellow)%h%C(auto)%d%C(auto,reset)\\ by\\ %C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)%n\\ %s%n" --stat
 	unci = reset HEAD^
 	uncommit = reset HEAD^
 	ls = ls-files
@@ -53,6 +54,7 @@
 	authors = shortlog -sn
 	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 	serveall = daemon --verbose --export-all --base-path=. --reuseaddr .
+	addpr = "!f() { git fetch origin pull/$1/head:pr/$1; }; f"
 [instaweb]
 	httpd=webrick
 [push]
