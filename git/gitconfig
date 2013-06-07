@@ -40,7 +40,8 @@
 	unci = reset HEAD^
 	uncommit = reset HEAD^
 	ls = ls-files
-	out = log HEAD..origin
+	in = !git wtf HEAD..HEAD@{u}
+	out = !git wtf HEAD@{u}..HEAD
 	killbranches = !git branch | grep -v master | xargs git branch -d 2> /dev/null
 	sync = !git pull && git push
 	comerge = "!x() { target=`git symbolic-ref HEAD`; git co $1; git merge $target; }; x"
