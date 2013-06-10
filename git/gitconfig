@@ -40,6 +40,7 @@
 	unci = reset HEAD^
 	uncommit = reset HEAD^
 	ls = ls-files
+        rup = !git remote update `git rev-parse --symbolic-full-name HEAD@{u}|cut -d/ -f3`
 	in = !git wtf HEAD..HEAD@{u}
 	out = !git wtf HEAD@{u}..HEAD
 	killbranches = !git branch | grep -v '\\bmaster\\b' | xargs git branch -d 2> /dev/null
