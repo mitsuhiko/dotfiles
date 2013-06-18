@@ -26,25 +26,27 @@
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{982, 574}</string>
 	<key>NSWindow Frame NSColorPanel</key>
-	<string>803 211 214 321 0 0 1680 1028 </string>
+	<string>804 211 214 316 0 0 1680 1028 </string>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1169 88 445 270 0 0 1680 1028 </string>
 	<key>NSWindow Frame TTAppPreferences</key>
-	<string>985 469 590 478 0 0 1680 1028 </string>
+	<string>393 85 590 478 0 0 1680 1028 </string>
 	<key>NSWindow Frame TTFindPanel</key>
 	<string>4 0 483 144 0 0 1680 1028 </string>
 	<key>NSWindow Frame TTWindow</key>
-	<string>277 292 585 437 0 0 1680 1028 </string>
+	<string>973 103 585 437 0 0 1680 1028 </string>
 	<key>NSWindow Frame TTWindow Basic</key>
 	<string>904 354 585 437 0 0 1680 1028 </string>
 	<key>NSWindow Frame TTWindow Bright</key>
 	<string>1680 282 1019 768 1680 282 1024 768 </string>
 	<key>NSWindow Frame TTWindow Dark</key>
-	<string>88 488 585 437 0 0 1680 1028 </string>
+	<string>64 255 1138 505 0 0 1680 1028 </string>
 	<key>NSWindow Frame TTWindow Man Page</key>
 	<string>4 326 585 702 0 0 1680 1028 </string>
 	<key>NewWindowSettingsBehavior</key>
 	<integer>2</integer>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>ProfileCurrentVersion</key>
 	<real>2.02</real>
 	<key>SecureKeyboardEntry</key>
@@ -624,12 +626,11 @@
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
 			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
-			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAnMC45NDQyMDA1MDE4
-			IDAuOTQ0MjAwNTAxOCAwLjk0NDIwMDUwMTgA0hAREhNaJGNsYXNz
-			bmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNL
-			ZXllZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZpCV
-			oKmxtL3P0tcAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA
-			2Q==
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAkMC44MjU3Mjk5Mjcg
+			MC44MjU3Mjk5MjcgMC44MjU3Mjk5MjcA0hAREhNaJGNsYXNzbmFt
+			ZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNLZXll
+			ZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZo2Snaau
+			sbrMz9QAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA1g==
 			</data>
 			<key>ANSIBrightYellowColor</key>
 			<data>
@@ -676,8 +677,8 @@
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
 			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
-			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAnMC44OTgwMzkyMTU3
-			IDAuMTMzMzMzMzMzMyAwLjEzMzMzMzMzMzMA0hAREhNaJGNsYXNz
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhACTxAnMC45MDI1NDMzMzk0
+			IDAuMTYxMDY5MTkzNyAwLjE2MTA2OTE5MzcA0hAREhNaJGNsYXNz
 			bmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNL
 			ZXllZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZpCV
 			oKmxtL3P0tcAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA
@@ -704,20 +705,24 @@
 			oKmxtL3P0tcAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA
 			2Q==
 			</data>
+			<key>BackgroundAlphaInactive</key>
+			<real>0.90433964416058399</real>
 			<key>BackgroundBlur</key>
-			<real>0.49053375912408759</real>
+			<real>0.0</real>
 			<key>BackgroundColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
 			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
-			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhABTxAvMC4wMjA0MDE4NzA4
-			MyAwLjAxMTM5ODQwNTc3IDAuMDM5OTI2MDIyMjkgMC45NADSEBES
-			E1okY2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmpl
-			Y3RfEA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztB
-			SE9cYmRmmJ2osbm8xdfa3wAAAAAAAAEBAAAAAAAAABkAAAAAAAAA
-			AAAAAAAAAADh
+			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhABTxApMC4wNjUwMTIyNjg3
+			MiAwLjA1Nzc1ODgwODE0IDAuMTE0NDE0MzA0NQDSEBESE1okY2xh
+			c3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3RfEA9O
+			U0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSE9cYmRm
+			kpeiq7O2v9HU2QAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAA
+			AADb
 			</data>
 			<key>BackgroundSettingsForInactiveWindows</key>
+			<true/>
+			<key>Bell</key>
 			<false/>
 			<key>CursorColor</key>
 			<data>
@@ -741,8 +746,10 @@
 			</data>
 			<key>FontAntialias</key>
 			<true/>
+			<key>FontHeightSpacing</key>
+			<real>1</real>
 			<key>FontWidthSpacing</key>
-			<real>1.004032258064516</real>
+			<real>1</real>
 			<key>Linewrap</key>
 			<true/>
 			<key>ProfileCurrentVersion</key>
@@ -754,7 +761,7 @@
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
 			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
 			c1xOU0NvbG9yU3BhY2VVTlNSR0KAAhABTxAsMC44MTg0NzkxMjA3
-			IDAuNzQ4NDA0MzgzNyAwLjk1MjgyOTI0MTggMC4wOADSEBESE1ok
+			IDAuNzQ4NDA0MzgzNyAwLjk1MjgyOTI0MTggMC4xNQDSEBESE1ok
 			Y2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3Rf
 			EA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSE9c
 			YmRmlZqlrra5wtTX3AAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAA
@@ -789,6 +796,8 @@
 			</data>
 			<key>UseBrightBold</key>
 			<false/>
+			<key>VisualBell</key>
+			<true/>
 			<key>WindowTitle</key>
 			<string></string>
 			<key>blackColour</key>
@@ -918,7 +927,7 @@
 				<key>F717</key>
 				<string>[34~</string>
 				<key>F728</key>
-				<string>[3~</string>
+				<string></string>
 				<key>F729</key>
 				<string>scrollToBeginningOfDocument:</string>
 				<key>F72B</key>
@@ -928,9 +937,13 @@
 				<key>F72D</key>
 				<string>[6~</string>
 				<key>^F702</key>
-				<string>[5D</string>
+				<string>b</string>
 				<key>^F703</key>
-				<string>[5C</string>
+				<string>f</string>
+				<key>~F702</key>
+				<string>b</string>
+				<key>~F703</key>
+				<string>f</string>
 				<key>~F704</key>
 				<string>[17~</string>
 				<key>~F705</key>
@@ -978,6 +991,8 @@
 			<integer>1</integer>
 			<key>type</key>
 			<string>Window Settings</string>
+			<key>useOptionAsMetaKey</key>
+			<false/>
 			<key>whiteColour</key>
 			<data>
 			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
