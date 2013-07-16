@@ -1,6 +1,6 @@
 install: install-vim install-bash install-virtualenvwrapper \
          install-terminal-settings install-git \
-	 install-python
+	 install-python install-keybindings
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
@@ -33,3 +33,8 @@ ifeq ($(shell uname),Darwin)
 	cp terminal/com.apple.Terminal.plist ~/Library/Preferences
 	@echo "Old terminal settings were saved in terminal folder"
 endif
+
+install-keybindings:
+	rm -f ~/Library/KeyBindings/DefaultKeyBinding.dict
+	mkdir -p ~/Library/KeyBindings
+	ln -s `pwd`/osx/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
