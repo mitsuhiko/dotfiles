@@ -5,6 +5,7 @@
 	excludesfile = ~/.gitignore
 	autocrlf = input
 	editor = /usr/local/bin/vim
+	mergeoptions = --no-edit
 [color]
 	ui = auto
 [color "branch"]
@@ -61,7 +62,5 @@
 	httpd=webrick
 [push]
 	default=current
-[branch]
-	autosetupmerge = true
 [diff]
 	algorithm = patience
