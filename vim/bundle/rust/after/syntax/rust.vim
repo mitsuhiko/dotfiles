@@ -1,4 +1,4 @@
-if exists('g:no_rust_conceal') || !has('conceal') || &enc != 'utf-8'
+if !exists('g:rust_conceal') || !has('conceal') || &enc != 'utf-8'
 	finish
 endif
 
@@ -10,10 +10,6 @@ endif
 syn match rustRightArrowHead contained ">" conceal cchar= 
 syn match rustRightArrowTail contained "-" conceal cchar=⟶
 syn match rustNiceOperator "->" contains=rustRightArrowHead,rustRightArrowTail
-
-syn match rustLeftRightArrowHead contained ">" conceal cchar= 
-syn match rustLeftRightArrowTail contained "<-" conceal cchar=⟷
-syn match rustNiceOperator "<->" contains=rustLeftRightArrowHead,rustLeftRightArrowTail
 
 syn match rustFatRightArrowHead contained ">" conceal cchar= 
 syn match rustFatRightArrowTail contained "=" conceal cchar=⟹
