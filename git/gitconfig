@@ -27,6 +27,7 @@
 	br = branch
 	cp = cherry-pick
 	cps = cherry-pick -s
+	today = diff @{yesterday}.. --stat
 	meh = commit --amend
 	wdiff = diff --word-diff=color
 	wshow = show --word-diff=color
