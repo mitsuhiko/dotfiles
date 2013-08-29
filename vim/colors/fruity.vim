@@ -60,7 +60,7 @@ hi Comment      guifg=#00d2ff   guibg=#0a1323   gui=italic
 hi Type         guifg=#00A8A0   gui=NONE
 hi Error        guifg=#ffffff   guibg=#ab0000
 hi Identifier   guifg=#79E33B
-hi Label        guifg=#79E33B
+hi Label        guifg=#BD55E6
 hi Operator     guifg=#aaaaaa
 
 " Minibuf Explorer
@@ -179,8 +179,13 @@ hi cString          guifg=#0086d2   guibg=#071320
 hi cFormat          guifg=#fd8900   guibg=#02101d
 hi cSpecial         guifg=#92cd35   guibg=#02101d
 hi cType            guifg=#92cd35   gui=bold
+hi def link cppType cType
 hi cError           guifg=#ff0007   guibg=#200000   gui=bold
 hi cCppOut          guifg=#777777
+hi def link cStorageClass Statement
+hi def link cStructure Statement
+hi def link cppStructure cStructure
+hi cppAccess        guifg=#92cd35  gui=NONE
 
 " Rust Highlighting
 hi rustSigil        guifg=#C8DEB1   gui=NONE
