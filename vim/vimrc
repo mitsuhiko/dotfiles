@@ -101,6 +101,9 @@ nnoremap <Up> gk
 vnoremap <Down> gj
 vnoremap <Up> gk
 
+" Use system keyboard
+set clipboard=unnamed
+
 " And be global by default
 set gdefault
 
@@ -119,13 +122,21 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Ack on <leader>a
 nnoremap <leader>a :Ack
+nnoremap <leader>A :AckFromSearch
 
 " <leader>v selects the just pasted text
 nnoremap <leader>v V`]
 
-" NERDtree on <leader>t
+" NERDTree on <leader>t and <leader>f
 nnoremap <leader>t :NERDTree<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
+
+" Syntax force highlighting
+noremap <leader>p :syntax sync fromstart<CR>
+
+" Resize windows automatically
+autocmd VimResized * :wincmd =
 
 " Scratch
 nmap <leader><tab> :Sscratch<CR><C-W>x<C-J>
@@ -160,6 +171,9 @@ endfunction
 
 " gundo
 nnoremap <Leader>u :GundoToggle<CR>
+
+" Syntax sync
+nnoremap <Leader>i :syntax sync fromstart<CR>
 
 " Make the command line two lines high and change the statusline display to
 " something that looks useful.
