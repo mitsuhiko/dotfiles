@@ -31,7 +31,7 @@ hi VertSplit    guifg=#a0b0c0   guibg=#a0b0c0
 hi Folded       guifg=#111111   guibg=#8090a0
 hi IncSearch    guifg=#708090   guibg=#f0e68c
 hi SignColumn   guibg=#111111
-hi CursorLine   guibg=#001A21
+hi CursorLine   guibg=#001C24
 hi ColorColumn  guibg=#00252e
 hi LineNr       guifg=#aaaaaa   guibg=#00252e
 hi CursorLineNr guifg=#ffffff   guibg=#00252e

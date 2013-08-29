@@ -75,7 +75,7 @@ set ttyfast
 
 " customize the wildmenu
 set wildmenu
-set wildignore=*.dll,*.o,*.pyc,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif,*$py.class,*.class
+set wildignore+=*.dll,*.o,*.pyc,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif,*$py.class,*.class,*.dSYM,*.dylib
 set wildmode=list:full
 
 " change working directory automatically
@@ -84,7 +84,7 @@ set wildmode=list:full
 
 " go with smartindent if there is no plugin indent file.
 " but don't outdent hashes
-set smartindent
+"set smartindent
 inoremap # X#
 
 " quicker window switching
@@ -121,7 +121,7 @@ nnoremap <leader>ev <C-w><C-s><C-l>:e $MYVIMRC<CR>
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Ack on <leader>a
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack 
 nnoremap <leader>A :AckFromSearch<CR>
 
 " <leader>v selects the just pasted text
@@ -130,22 +130,16 @@ nnoremap <leader>v V`]
 " NERDTree on <leader>t and <leader>f
 nnoremap <leader>t :NERDTree<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$', '\.dSYM$']
 
 " Syntax force highlighting
 noremap <leader>p :syntax sync fromstart<CR>
-
-" Resize windows automatically
-autocmd VimResized * :wincmd =
 
 " Scratch
 nmap <leader><tab> :Sscratch<CR><C-W>x<C-J>
 
 " Quit window on <leader>q
 nnoremap <leader>q :q<CR>
-
-" Copy to Lodgeit on ^d
-nnoremap <leader>p :Lodgeit<CR>
 
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
