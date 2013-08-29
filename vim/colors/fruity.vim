@@ -30,13 +30,19 @@ hi StatusLineNC guifg=#506070   guibg=#a0b0c0
 hi VertSplit    guifg=#a0b0c0   guibg=#a0b0c0
 hi Folded       guifg=#111111   guibg=#8090a0
 hi IncSearch    guifg=#708090   guibg=#f0e68c
-hi Pmenu        guifg=#ffffff   guibg=#cb2f27
 hi SignColumn   guibg=#111111
 hi CursorLine   guibg=#001A21
 hi ColorColumn  guibg=#00252e
 hi LineNr       guifg=#aaaaaa   guibg=#00252e
 hi CursorLineNr guifg=#ffffff   guibg=#00252e
 hi MatchParen   guifg=#b1b711   guibg=NONE      gui=bold
+
+" Completion menu
+hi Pmenu        guifg=#ffffff   guibg=#0D4854
+hi PmenuSel     guifg=#ffffff   guibg=#146E80
+
+" Wild menu active item
+hi WildMenu     guibg=#D3E3F2   guifg=#324A61   gui=bold
 
 " Specials
 hi Todo         guifg=#e50808   guibg=#520000   gui=bold
@@ -45,16 +51,17 @@ hi Special      guifg=#fd8900
 
 " Syntax Elements
 hi String       guifg=#0086d2
-hi Constant     guifg=#0086d2
+hi Constant     guifg=#007DC4
 hi Number       guifg=#0086f7                   gui=bold
 hi Statement    guifg=#fb660a                   gui=bold
-hi Function     guifg=#ff0086                   gui=bold
+hi Function     guifg=#00A6FF
 hi PreProc      guifg=#ff0007                   gui=bold
 hi Comment      guifg=#00d2ff   guibg=#0a1323   gui=italic
-hi Type         guifg=#cdcaa9                   gui=bold
+hi Type         guifg=#00A8A0   gui=NONE
 hi Error        guifg=#ffffff   guibg=#ab0000
-hi Identifier   guifg=#ff0086                   gui=bold
-hi Label        guifg=#ff0086
+hi Identifier   guifg=#79E33B
+hi Label        guifg=#79E33B
+hi Operator     guifg=#aaaaaa
 
 " Minibuf Explorer
 hi MBENormal          guifg=#00d2ff
@@ -172,6 +179,16 @@ hi cSpecial         guifg=#92cd35   guibg=#02101d
 hi cType            guifg=#92cd35   gui=bold
 hi cError           guifg=#ff0007   guibg=#200000   gui=bold
 hi cCppOut          guifg=#777777
+
+" Rust Highlighting
+hi rustSigil        guifg=#C8DEB1   gui=NONE
+hi rustModPath      guifg=#57C4FF
+hi rustAttribute    guifg=#63C9FF   gui=italic
+hi rustDeriving     guifg=#ffffff   gui=italic
+hi rustCommentDoc   guifg=#8AF7FF   gui=italic
+hi rustMacro        guifg=#AAFF42
+hi rustLifetime     guifg=#ffffff
+hi rustModPathSep   guifg=#aaaaaa
 
 " ERuby Highlighting
 hi erubyDelimiter   guifg=#2c8a16                   gui=bold
