@@ -122,7 +122,7 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Ack on <leader>a
 nnoremap <leader>a :Ack
-nnoremap <leader>A :AckFromSearch
+nnoremap <leader>A :AckFromSearch<CR>
 
 " <leader>v selects the just pasted text
 nnoremap <leader>v V`]

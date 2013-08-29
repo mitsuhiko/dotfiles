@@ -176,3 +176,9 @@ hi cCppOut          guifg=#777777
 " ERuby Highlighting
 hi erubyDelimiter   guifg=#2c8a16                   gui=bold
 hi erubyComment     guifg=#4d9b3a                   gui=italic
+
+" Directory listings (mostly NERDTree)
+hi Directory        guifg=#6EDE23
+hi NERDTreeUp       guifg=#E3B127
+hi NERDTreeCWD      guifg=#E35627
+hi NERDTreeDirSlash guifg=#E35627
