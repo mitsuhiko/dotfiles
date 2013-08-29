@@ -85,7 +85,6 @@ hi pythonString     guifg=#0086d2   guibg=#031526
 hi pythonEscape     guifg=#fd8900   guibg=#031526
 hi pythonStrFormat  guifg=#fd8900   guibg=#031526
 hi def link pythonOperator pythonStatement
-hi pythonOperator
 
 " JavaScript Highlighting
 hi javaScript                   guifg=#ffffff
