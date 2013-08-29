@@ -194,6 +194,11 @@ hi rustModPathSep   guifg=#aaaaaa
 hi erubyDelimiter   guifg=#2c8a16                   gui=bold
 hi erubyComment     guifg=#4d9b3a                   gui=italic
 
+" Make highlighting
+hi makeTarget       guifg=#69CC56
+hi makeSpecTarget   guifg=#ABE841
+hi makeCommands     guifg=#B0EAEB
+
 " Directory listings (mostly NERDTree)
 hi Directory        guifg=#6EDE23
 hi NERDTreeUp       guifg=#E3B127
