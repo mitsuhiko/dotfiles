@@ -28,3 +28,9 @@
 [submodule "vim/bundle/jinja"]
 	path = vim/bundle/jinja
 	url = https://github.com/mitsuhiko/vim-jinja
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic
+[submodule "vim/bundle/fruity-vim-colorscheme"]
+	path = vim/bundle/fruity-vim-colorscheme
+	url = https://github.com/mitsuhiko/fruity-vim-colorscheme

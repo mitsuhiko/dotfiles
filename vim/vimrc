@@ -3,6 +3,12 @@
 set nocompatible
 set backspace=indent,eol,start
 
+" Add .bin to path
+let $PATH .= ':~/.bin'
+
+" Pathogen
+call pathogen#infect() 
+
 " Menus I like :-)
 " This must happen before the syntax system is enabled
 aunmenu Help.
@@ -37,9 +43,6 @@ autocmd BufEnter * :syntax sync fromstart
 " Move Backup Files to ~/.vim/sessions
 set backupdir=~/.vim/sessions
 set dir=~/.vim/sessions
-
-" Pathogen
-call pathogen#infect() 
 
 " Remember cursor position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
