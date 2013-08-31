@@ -42,7 +42,7 @@ hi Pmenu        guifg=#ffffff   guibg=#0D4854
 hi PmenuSel     guifg=#ffffff   guibg=#146E80
 
 " Wild menu active item
-hi WildMenu     guibg=#D3E3F2   guifg=#324A61   gui=bold
+hi WildMenu     guibg=#324A61   guifg=#D3E3F2   gui=bold
 
 " Specials
 hi Todo         guifg=#e50808   guibg=#520000   gui=bold
