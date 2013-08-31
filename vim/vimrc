@@ -53,8 +53,7 @@ set titleold="Terminal"
 set titlestring=%F
 
 " Enable filetype plugins and indention
-filetype on
-filetype plugin on
+filetype plugin indent on
 
 " sets leader to ',' and localleader to "\"
 let mapleader=","
@@ -340,8 +339,16 @@ autocmd FileType css setlocal commentstring=// %s
 " ---
 autocmd BufNewFile,BufRead *.txt setlocal ft=rst
 autocmd FileType rst setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-\ formatoptions+=nqt textwidth=74
+\ formatoptions+=nqt textwidth=74 nofoldenable
 autocmd FileType css setlocal commentstring=..\ %s
+let g:riv_auto_fold_force=0
+let g:riv_fold_auto_update=0
+let g:riv_fold_blank=9999
+let g:riv_fold_level=9999
+let g:riv_web_browser="open"
+let g:riv_section_levels="=-`~'"
+let g:riv_code_indicator=0
+"let g:riv_python_rst_hl=1
 
 " C#
 autocmd FileType cs setlocal tabstop=8 softtabstop=4 shiftwidth=4 expandtab

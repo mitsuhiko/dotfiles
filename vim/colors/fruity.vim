@@ -19,17 +19,17 @@ hi Normal       guifg=#ffffff   guibg=#001217
 hi NonText      guifg=#444444   guibg=#000000
 hi Cursor       guibg=#aaaaaa
 hi lCursor      guibg=#aaaaaa
+hi Visual       guibg=#004254
 
-" Search
-hi Search       guifg=#800000   guibg=#ffae00
-hi IncSearch    guifg=#800000   guibg=#ffae00
+" Search (IncSearch is also RIV link hover)
+hi Search       guifg=#161C00   guibg=#BEED00   gui=bold
+hi IncSearch    guifg=#004357   guibg=#B8EFFF
 
 " Window Elements
-hi StatusLine   guifg=#ffffff   guibg=#8090a0   gui=bold
-hi StatusLineNC guifg=#506070   guibg=#a0b0c0
+hi StatusLine   guifg=#00243B   guibg=#C1CFDE   gui=NONE
+hi StatusLineNC guifg=#506070   guibg=#DFE9F2
 hi VertSplit    guifg=#a0b0c0   guibg=#a0b0c0
 hi Folded       guifg=#111111   guibg=#8090a0
-hi IncSearch    guifg=#708090   guibg=#f0e68c
 hi SignColumn   guibg=#111111
 hi CursorLine   guibg=#001C24
 hi ColorColumn  guibg=#00252e
@@ -204,6 +204,16 @@ hi erubyComment     guifg=#4d9b3a                   gui=italic
 hi makeTarget       guifg=#69CC56
 hi makeSpecTarget   guifg=#ABE841
 hi makeCommands     guifg=#B0EAEB
+
+" Rst highlighting
+hi rstFileLink                      guifg=#0086d2 gui=NONE
+hi rstFileExtLink                   guifg=#0086d2 gui=NONE
+hi rstStandaloneHyperlink           guifg=#5CB6ED gui=NONE
+hi rstFootnoteReference             guifg=#5CB6ED gui=NONE
+hi rstCitationReference             guifg=#5CB6ED gui=NONE
+hi rstHyperLinkReference            guifg=#5CB6ED gui=NONE
+hi rstInlineInternalTargets         guifg=#5CB6ED gui=NONE
+hi rstPhaseHyperLinkReference       guifg=#5CB6ED gui=NONE
 
 " Directory listings (mostly NERDTree)
 hi Directory        guifg=#6EDE23
