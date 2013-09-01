@@ -31,3 +31,6 @@
 [submodule "vim/bundle/fruity-vim-colorscheme"]
 	path = vim/bundle/fruity-vim-colorscheme
 	url = https://github.com/mitsuhiko/fruity-vim-colorscheme
+[submodule "vim/bundle/rst"]
+	path = vim/bundle/rst
+	url = https://github.com/mitsuhiko/vim-rst
