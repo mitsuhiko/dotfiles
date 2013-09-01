@@ -103,8 +103,11 @@ nnoremap <Up> gk
 vnoremap <Down> gj
 vnoremap <Up> gk
 
+" Use git gutter to always show the signs
+let g:gitgutter_sign_column_always = 1
+
 " Use system keyboard
-set clipboard=unnamed
+"set clipboard=unnamed
 
 " And be global by default
 set gdefault
