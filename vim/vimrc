@@ -242,8 +242,10 @@ cmap W! w !sudo tee % >/dev/null
 set hlsearch
 set incsearch
 
-" Make syntastic auto update the location list
+" Make syntastic auto update the location list and make it also check
+" when the file opens
 let g:syntastic_always_populate_loc_list=1
+let g:syntastic_check_on_open=1
 
 " Error bindings
 noremap <leader>e :lopen<CR>
@@ -381,6 +383,10 @@ autocmd FileType objc setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 autocmd FileType c setlocal commentstring=/*\ %s\ */
 autocmd FileType cpp,objc setlocal commentstring=//\ %s
 let c_no_curly_error=1
+let g:syntastic_cpp_include_dirs = ['include', '../include']
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_c_include_dirs = ['include', '../include']
+let g:syntastic_c_compiler = 'clang'
 
 " Octave/Matlab
 autocmd FileType matlab setlocal tabstop=8 softtabstop=2 shiftwidth=2 expandtab
