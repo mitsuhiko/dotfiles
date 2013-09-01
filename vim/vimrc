@@ -103,8 +103,9 @@ nnoremap <Up> gk
 vnoremap <Down> gj
 vnoremap <Up> gk
 
-" Use git gutter to always show the signs
-let g:gitgutter_sign_column_always = 1
+" Always show a gutter
+sign define dummy
+autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
 
 " Use system keyboard
 "set clipboard=unnamed
