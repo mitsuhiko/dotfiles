@@ -238,6 +238,14 @@ cmap W! w !sudo tee % >/dev/null
 set hlsearch
 set incsearch
 
+" Make syntastic auto update the location list
+let g:syntastic_always_populate_loc_list=1
+
+" Error bindings
+noremap <leader>e :lopen<CR>
+noremap <leader>] :lnext<CR>
+noremap <leader>[ :lprev<CR>
+
 " map :BufClose to :bq and configure it to open a file browser on close
 let g:BufClose_AltBuffer = '.'
 cnoreabbr <expr> bq 'BufClose' 
@@ -261,6 +269,20 @@ let python_highlight_exceptions=0
 let python_highlight_builtins=0
 let python_slow_sync=1
 autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+
+let g:syntastic_python_checkers=['flake8', 'python']
+
+" Don't warn on missing docstrings
+let g:syntastic_python_pylint_args='-d C0111'
+
+" Don't warn on
+"   E121 continuation line indentation is not a multiple of four
+"   E128 continuation line under-indented for visual indent
+"   E301 expected 1 blank line, found 0
+"   E261 at least two spaces before inline comment
+"   E241 multiple spaces after ':'
+"   E124 closing bracket does not match visual indentation
+let g:syntastic_python_flake8_args='--ignore=E121,E128,E301,E261,E241,E124 --max-line-length=84'
 
 " ruby support
 " ------------

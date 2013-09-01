@@ -13,9 +13,6 @@
 [submodule "vim/bundle/commentary"]
 	path = vim/bundle/commentary
 	url = https://github.com/tpope/vim-commentary
-[submodule "vim/bundle/vim"]
-	path = vim/bundle/vim
-	url = https://github.com/tpope/vim-git
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive
@@ -31,3 +28,9 @@
 [submodule "vim/bundle/rst"]
 	path = vim/bundle/rst
 	url = https://github.com/mitsuhiko/vim-rst
+[submodule "vim/bundle/gitgutter"]
+	path = vim/bundle/gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "vim/bundle/git"]
+	path = vim/bundle/git
+	url = https://github.com/tpope/vim-git
