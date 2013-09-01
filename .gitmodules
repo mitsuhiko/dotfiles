@@ -22,9 +22,6 @@
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "vim/bundle/riv"]
-	path = vim/bundle/riv
-	url = https://github.com/Rykka/riv.vim
 [submodule "vim/bundle/jinja"]
 	path = vim/bundle/jinja
 	url = https://github.com/mitsuhiko/vim-jinja

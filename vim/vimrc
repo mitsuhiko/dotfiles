@@ -342,8 +342,8 @@ autocmd FileType css setlocal commentstring=// %s
 " ---
 autocmd BufNewFile,BufRead *.txt setlocal ft=rst
 autocmd FileType rst setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-\ formatoptions+=nqt textwidth=74 nofoldenable
-autocmd FileType css setlocal commentstring=..\ %s
+\ formatoptions+=nqt textwidth=74
+autocmd FileType rst setlocal commentstring=..\ %s
 "let g:riv_highlight_code="lua,python,cpp,c,javascript,vim,sh,html"
 let g:riv_highlight_code=""
 let g:riv_auto_fold_force=0
