@@ -6,7 +6,10 @@ to steal from them.
 You will also need my vcprompt branch if you want to use my
 bash prompt: https://bitbucket.org/mitsuhiko/vcprompt
 
-This is what it looks like: http://plixi.com/p/46381749
+This is what it looks like:
+
+  Terminal: http://pocoo.org/~mitsuhiko/myterm.png
+  Vim: http://pocoo.org/~mitsuhiko/fruity/
 
 If you want fancy colors in the Terminal, you will need the SIMBL
 plugin (http://www.culater.net/software/SIMBL/SIMBL.php) as well
