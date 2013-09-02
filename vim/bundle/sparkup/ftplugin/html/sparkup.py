@@ -1,18 +1,29 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 version = "0.1.3"
 
+import os
+import fileinput
 import getopt
 import sys
 import re
 
 # =============================================================================== 
 
-class Dialect(object):
+class Dialect:
     shortcuts = {}
     synonyms = {}
     required = {}
     short_tags = ()
+
+class XmlDialect(Dialect):
+    shortcuts = {
+        }
+    synonyms = {
+        }
+    short_tags = ()
+    required = {
+    }
 
 class HtmlDialect(Dialect):
     shortcuts = {
@@ -34,8 +45,8 @@ class HtmlDialect(Dialect):
                 '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">\n' +
                 '<html lang="en">\n' +
                 '<head>\n' +
-                '  ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">\n' +
-                '  ' + '<title></title>\n' + 
+                '    ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
+                '    ' + '<title></title>\n' + 
                 '</head>\n' +
                 '<body>',
             'closing_tag':
@@ -47,8 +58,8 @@ class HtmlDialect(Dialect):
                 '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">\n' +
                 '<html lang="en">\n' +
                 '<head>\n' +
-                '  ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">\n' +
-                '  ' + '<title></title>\n' + 
+                '    ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
+                '    ' + '<title></title>\n' + 
                 '</head>\n' +
                 '<body>',
             'closing_tag':
@@ -60,8 +71,8 @@ class HtmlDialect(Dialect):
                 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n' +
                 '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">\n' +
                 '<head>\n' +
-                '  ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
-                '  ' + '<title></title>\n' + 
+                '    ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
+                '    ' + '<title></title>\n' + 
                 '</head>\n' +
                 '<body>',
             'closing_tag':
@@ -73,8 +84,8 @@ class HtmlDialect(Dialect):
                 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">\n' +
                 '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">\n' +
                 '<head>\n' +
-                '  ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
-                '  ' + '<title></title>\n' + 
+                '    ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
+                '    ' + '<title></title>\n' + 
                 '</head>\n' +
                 '<body>',
             'closing_tag':
@@ -86,8 +97,8 @@ class HtmlDialect(Dialect):
                 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">\n' +
                 '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">\n' +
                 '<head>\n' +
-                '  ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
-                '  ' + '<title></title>\n' + 
+                '    ' + '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />\n' +
+                '    ' + '<title></title>\n' + 
                 '</head>\n' +
                 '<body>',
             'closing_tag':
@@ -96,11 +107,11 @@ class HtmlDialect(Dialect):
         'html:5': {
             'expand': True,
             'opening_tag':
-                '<!doctype html>\n' +
+                '<!DOCTYPE html>\n' +
                 '<html lang="en">\n' +
                 '<head>\n' +
-                '  ' + '<meta charset="UTF-8">\n' +
-                '  ' + '<title></title>\n' + 
+                '    ' + '<meta charset="UTF-8" />\n' +
+                '    ' + '<title></title>\n' + 
                 '</head>\n' +
                 '<body>',
             'closing_tag':
@@ -271,22 +282,24 @@ class HtmlDialect(Dialect):
         'meta':   {'content': ''},
     }
 
-class Parser(object):
+class Parser:
     """The parser.
     """
 
     # Constructor
     # --------------------------------------------------------------------------- 
 
-    def __init__(self, options=None, str='', dialect=None):
+    def __init__(self, options=None, str=''):
         """Constructor.
         """
-        if dialect is None:
-            dialect = HtmlDialect()
+
         self.tokens = []
         self.str = str
         self.options = options
-        self.dialect = dialect
+        if self.options.has("xml"):
+            self.dialect = XmlDialect()
+        else:
+            self.dialect = HtmlDialect()
         self.root = Element(parser=self)
         self.caret = []
         self.caret.append(self.root)
@@ -473,7 +486,7 @@ class Parser(object):
 
 # =============================================================================== 
 
-class Element(object):
+class Element:
     """An element.
     """
 
@@ -582,7 +595,7 @@ class Element(object):
                 except: end_guide = (format + " " + guide_str).strip()
                 end_guide = "\n%s<!-- %s -->" % (indent, end_guide)
 
-        # Short, self-closing tags (<br>)
+        # Short, self-closing tags (<br />)
         short_tags = self.parser.dialect.short_tags
 
         # When it should be expanded..
@@ -617,9 +630,9 @@ class Element(object):
                          guide + end_guide + "\n"
             
 
-        # Short, self-closing tags (<br>)
+        # Short, self-closing tags (<br />)
         elif self.name in short_tags: 
-            output = "%s<%s>\n" % (indent, self.get_default_tag())
+            output = "%s<%s />\n" % (indent, self.get_default_tag())
 
         # Tags with text, possibly
         elif self.name != '' or \
@@ -1065,6 +1078,7 @@ class Options:
     cmdline_keys = [
         ('h', 'help', 'Shows help'),
         ('v', 'version', 'Shows the version'),
+        ('', 'html', 'enable html attribute fillings (default)'),
         ('', 'no-guides', 'Deprecated'),
         ('', 'post-tag-guides', 'Adds comments at the end of DIV tags'),
         ('', 'textmate', 'Adds snippet info (textmate mode)'),
@@ -1073,6 +1087,7 @@ class Options:
         ('', 'no-last-newline', 'Skip the trailing newline'),
         ('', 'start-guide-format=', 'To be documented'),
         ('', 'end-guide-format=', 'To be documented'),
+        ('', 'xml', 'skip html attribute fillings'),
     ]
     
     # Property: router
