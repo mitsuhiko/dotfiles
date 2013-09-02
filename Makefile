@@ -6,7 +6,7 @@ vim/bundle/command-t/ruby/command-t/Makefile:
 	cd vim/bundle/command-t/ruby/command-t/ && ruby extconf.rb
 
 vim/bundle/command-t/ruby/command-t/ext.bundle: vim/bundle/command-t/ruby/command-t/Makefile
-	$(MAKE) -c vim/bundle/command-t/ruby/command-t
+	$(MAKE) -C vim/bundle/command-t/ruby/command-t
 
 install-vim: vim/bundle/command-t/ruby/command-t/ext.bundle
 	rm -rf ~/.vim ~/.vimrc
@@ -23,7 +23,7 @@ install-git:
 
 install-virtualenvwrapper:
 	mkdir -p ~/.virtualenvs
-	ln -s `pwd`/virtualenvwrapper/* ~/.virtualenvs
+	ln -sf `pwd`/virtualenvwrapper/* ~/.virtualenvs
 
 install-python:
 	rm -f ~/.pythonstartup.py
