@@ -85,3 +85,6 @@
 [submodule "vim/bundle/kwbdi"]
 	path = vim/bundle/kwbdi
 	url = https://github.com/vim-scripts/kwbdi.vim
+[submodule "vim/bundle/python-combined"]
+	path = vim/bundle/python-combined
+	url = https://github.com/mitsuhiko/vim-python-combined
