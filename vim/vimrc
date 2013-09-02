@@ -344,43 +344,15 @@ autocmd FileType php setlocal shiftwidth=4 tabstop=8 softtabstop=4 expandtab
 " template language support (SGML / XML too)
 " ------------------------------------------
 " and disable taht stupid html rendering (like making stuff bold etc)
-
-fun! s:SelectHTML()
-let n = 1
-while n < 50 && n < line("$")
-  " check for jinja
-  if getline(n) =~ '{%\s*\(extends\|block\|macro\|set\|if\|for\|include\|trans\)\>'
-    setlocal ft=htmljinja
-    return
-  endif
-  " check for mako
-    if getline(n) =~ '<%\(def\|inherit\)'
-      setlocal ft=mako
-      return
-    endif
-    " check for genshi
-    if getline(n) =~ 'xmlns:py\|py:\(match\|for\|if\|def\|strip\|xmlns\)'
-      setlocal ft=genshi
-      return
-    endif
-    let n = n + 1
-  endwhile
-  " go with html
-  setlocal ft=html
-endfun
-
 autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd bufnewfile,bufread *.rhtml setlocal ft=eruby
 autocmd BufNewFile,BufRead *.mako setlocal ft=mako
 autocmd BufNewFile,BufRead *.tmpl setlocal ft=htmljinja
 autocmd BufNewFile,BufRead *.py_tmpl setlocal ft=python
-autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
 let html_no_rendering=1
 
 " Use custom sparkup mappings as the one from sparkup are broken
 let g:sparkupMaps=0
-let g:sparkupExecuteMapping = '<c-e>'
-let g:sparkupNextMapping='<c-l>'
 imap <buffer> <c-e> <Plug>SparkupExecute
 imap <buffer> <c-l> <Plug>SparkupNext
 autocmd FileType html,xhtml setlocal commentstring=<!--\ %s\ -->

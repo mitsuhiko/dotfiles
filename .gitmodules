@@ -76,3 +76,6 @@
 [submodule "vim/bundle/sparkup"]
 	path = vim/bundle/sparkup
 	url = https://github.com/mitsuhiko/vim-sparkup
+[submodule "vim/bundle/glsl"]
+	path = vim/bundle/glsl
+	url = https://github.com/tikhomirov/vim-glsl
