@@ -247,7 +247,7 @@ set incsearch
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_check_on_open=1
 
-" Error bindings
+" Location bindings
 noremap <leader>e :lopen<CR>
 noremap <leader>] :lnext<CR>
 noremap <leader>[ :lprev<CR>
@@ -257,9 +257,10 @@ let g:BufClose_AltBuffer = '.'
 cnoreabbr <expr> bq 'BufClose' 
 
 " Colorcolumns
-if version >= 730
+if version >= 703
   autocmd FileType * setlocal colorcolumn=0
-  autocmd FileType ruby,python,javascript,c,cpp,objc setlocal colorcolumn=79
+  autocmd FileType ruby,python,javascript,c,cpp,objc,rst
+    \ let &colorcolumn="80,".join(range(84,300),",")
 endif
 
 " python support
@@ -288,7 +289,8 @@ let g:syntastic_python_pylint_args='-d C0111'
 "   E261 at least two spaces before inline comment
 "   E241 multiple spaces after ':'
 "   E124 closing bracket does not match visual indentation
-let g:syntastic_python_flake8_args='--ignore=E121,E128,E301,E261,E241,E124 --max-line-length=84'
+let g:syntastic_python_flake8_args='--ignore=E121,E128,E301,E261,E241,E124
+    \ --max-line-length=84'
 
 " ruby support
 " ------------
