@@ -67,3 +67,9 @@
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = https://github.com/sjl/gundo.vim
+[submodule "vim/bundle/cython"]
+	path = vim/bundle/cython
+	url = https://github.com/tshirtman/vim-cython
+[submodule "vim/bundle/go"]
+	path = vim/bundle/go
+	url = https://github.com/fsouza/go.vim
