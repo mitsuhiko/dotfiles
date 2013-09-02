@@ -82,3 +82,6 @@
 [submodule "vim/bundle/ruby"]
 	path = vim/bundle/ruby
 	url = https://github.com/vim-ruby/vim-ruby
+[submodule "vim/bundle/kwbdi"]
+	path = vim/bundle/kwbdi
+	url = https://github.com/vim-scripts/kwbdi.vim

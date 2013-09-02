@@ -285,9 +285,8 @@ noremap <leader>e :lopen<CR>
 noremap <leader>] :lnext<CR>
 noremap <leader>[ :lprev<CR>
 
-" map :BufClose to :bq and configure it to open a file browser on close
-let g:BufClose_AltBuffer = '.'
-cnoreabbr <expr> bq 'BufClose' 
+" map :bq to ,bd which comes from kwbdi to close a buffer
+cnoreabbr <expr> bq 'normal <leader>bd<CR>'
 
 " Colorcolumns
 if version >= 703
