@@ -344,19 +344,12 @@ autocmd FileType php setlocal shiftwidth=4 tabstop=8 softtabstop=4 expandtab
 " template language support (SGML / XML too)
 " ------------------------------------------
 " and disable taht stupid html rendering (like making stuff bold etc)
-autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd bufnewfile,bufread *.rhtml setlocal ft=eruby
-autocmd BufNewFile,BufRead *.mako setlocal ft=mako
-autocmd BufNewFile,BufRead *.tmpl setlocal ft=htmljinja
-autocmd BufNewFile,BufRead *.py_tmpl setlocal ft=python
-let html_no_rendering=1
-
-" Use custom sparkup mappings as the one from sparkup are broken
-let g:sparkupMaps=0
-imap <buffer> <c-e> <Plug>SparkupExecute
-imap <buffer> <c-l> <Plug>SparkupNext
-autocmd FileType html,xhtml setlocal commentstring=<!--\ %s\ -->
+autocmd FileType xml,html,htmljinja,htmldjango setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,htmljinja,htmldjango imap <buffer> <c-e> <Plug>SparkupExecute
+autocmd FileType html,htmljinja,htmldjango imap <buffer> <c-l> <Plug>SparkupNext
+autocmd FileType html setlocal commentstring=<!--\ %s\ -->
 autocmd FileType htmljinja setlocal commentstring={#\ %s\ #}
+let html_no_rendering=1
 
 " GLSL
 " ----
