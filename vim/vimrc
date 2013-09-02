@@ -39,11 +39,29 @@ endif
 
 " Airline
 if has("gui_running")
-  let g:airline_theme='solarized'
+  "let g:airline_theme='solarized'
+  let g:airline_theme='tomorrow'
   let g:airline_powerline_fonts=1
 else
   let g:airline_powerline_fonts=0
 endif
+let g:airline_mode_map = {
+  \ '__' : '-',
+  \ 'n' : 'N',
+  \ 'i' : 'I',
+  \ 'R' : 'R',
+  \ 'c' : 'C',
+  \ 'v' : 'V',
+  \ 'V' : 'V',
+  \ '' : 'V',
+  \ 's' : 'S',
+  \ 'S' : 'S',
+  \ '' : 'S',
+  \ }
+let g:airline#extensions#whitespace#checks = ['indent']
+let g:airline_section_y = airline#section#create_right(['%{printf("%s%s",&fenc,&ff!="unix"?":".&ff:"")}'])
+let g:airline_section_z = airline#section#create_right(['%3l:%2c'])
+let g:airline#extensions#hunks#non_zero_only = 1
 
 " The PC is fast enough, do syntax highlight syncing from start
 autocmd BufEnter * :syntax sync fromstart
@@ -147,7 +165,7 @@ nnoremap <leader>f :NERDTreeFind<CR>
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$', '\.dSYM$']
 
 " Scratch
-nmap <leader><tab> :Sscratch<CR><C-W>x<C-J>
+nmap <leader>- :Sscratch<CR><C-W>x<C-J>
 
 " Quit window on <leader>q
 nnoremap <leader>q :q<CR>
@@ -165,6 +183,7 @@ nnoremap <leader>Tr :set ft=rst<CR>
 let g:ctrlp_map = '<Leader>o'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_match_window = 'bottom,order:top,min:1,max:20'
+nnoremap <leader><tab> :CtrlPMRU<CR>
 
 " toggle between number and relative number on ,l
 nnoremap <leader>l :call ToggleRelativeAbsoluteNumber()<CR>
