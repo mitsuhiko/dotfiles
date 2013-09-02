@@ -58,10 +58,11 @@ let g:airline_mode_map = {
   \ 'S' : 'S',
   \ '' : 'S',
   \ }
-let g:airline#extensions#whitespace#checks = ['indent']
+let g:airline#extensions#whitespace#checks = []
 let g:airline_section_y = airline#section#create_right(['%{printf("%s%s",&fenc,&ff!="unix"?":".&ff:"")}'])
 let g:airline_section_z = airline#section#create_right(['%3l:%2c'])
 let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#ctrlp#color_template = 'replace'
 
 " The PC is fast enough, do syntax highlight syncing from start
 autocmd BufEnter * :syntax sync fromstart
@@ -391,11 +392,12 @@ autocmd FileType verilog setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 " ---
 autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType css setlocal commentstring=/*\ %s\ */
+autocmd FileType css noremap <buffer> <leader>r :call CSSBeautify()<cr>
 
 " Java
 " ----
 autocmd FileType java setlocal shiftwidth=2 tabstop=8 softtabstop=2 expandtab
-autocmd FileType css setlocal commentstring=// %s
+autocmd FileType java setlocal commentstring=//\ %s
 
 " rst
 " ---
@@ -431,6 +433,7 @@ autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufNewFile,BufRead *.json setlocal ft=javascript
 autocmd FileType javascript setlocal commentstring=//\ %s
+autocmd FileType javascript noremap <buffer> <leader>r :call JsBeautify()<cr>
 let javascript_enable_domhtmlcss=1
 
 " CoffeeScript
