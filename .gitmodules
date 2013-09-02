@@ -34,9 +34,9 @@
 [submodule "vim/bundle/git"]
 	path = vim/bundle/git
 	url = https://github.com/tpope/vim-git
-[submodule "vim/bundles/py_jump"]
-	path = vim/bundles/py_jump
-	url = https://github.com/vim-scripts/py_jump.vim
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
 	url = https://github.com/tpope/vim-repeat
+[submodule "vim/bundle/py_jump"]
+	path = vim/bundle/py_jump
+	url = https://github.com/vim-scripts/py_jump.vim
