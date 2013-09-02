@@ -61,3 +61,6 @@
 [submodule "vim/bundle/css"]
 	path = vim/bundle/css
 	url = https://github.com/JulesWang/css.vim
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = https://github.com/tpope/vim-surround
