@@ -1,0 +1,12 @@
+{
+  "undef": true,
+  "unused": true,
+  "globals": { "angular": false },
+
+  "browser": true,
+  "devel": true,
+  "jquery": true,
+  "node": true,
+
+  "indent": 2
+}
