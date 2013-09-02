@@ -6,9 +6,6 @@ set backspace=indent,eol,start
 " Add .bin to path
 let $PATH .= ':~/.bin'
 
-" Pathogen
-call pathogen#infect() 
-
 " Menus I like :-)
 " This must happen before the syntax system is enabled
 aunmenu Help.
@@ -19,6 +16,9 @@ set mousemodel=popup
 " Better modes.  Remeber where we are, support yankring
 set viminfo=!,'100,\"100,:20,<50,s10,h,n~/.viminfo
 
+" Pathogen
+call pathogen#infect()
+
 " Enable Syntax Colors
 "  in GUI mode we go with fruity and Monaco 13
 "  in CLI mode myterm looks better (fruity is GUI only)
@@ -26,7 +26,7 @@ syntax on
 if has("gui_running")
   colorscheme fruity
   if has("mac")
-    set guifont=Consolas:h13
+    set guifont=Powerline\ Consolas:h13
     set fuoptions=maxvert,maxhorz
     " does not work properly on os x
     " au GUIEnter * set fullscreen
@@ -35,6 +35,14 @@ if has("gui_running")
   endif
 else
   colorscheme myterm
+endif
+
+" Airline
+if has("gui_running")
+  let g:airline_theme='solarized'
+  let g:airline_powerline_fonts=1
+else
+  let g:airline_powerline_fonts=0
 endif
 
 " The PC is fast enough, do syntax highlight syncing from start
@@ -153,8 +161,10 @@ nnoremap <leader>Tp :set ft=python<CR>
 nnoremap <leader>Tj :set ft=javascript<CR>
 nnoremap <leader>Tr :set ft=rst<CR>
 
-" Command-T support
-nnoremap <leader>o :CommandT<CR>
+" CTRLP support
+let g:ctrlp_map = '<Leader>o'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_match_window = 'bottom,order:top,min:1,max:20'
 
 " toggle between number and relative number on ,l
 nnoremap <leader>l :call ToggleRelativeAbsoluteNumber()<CR>

@@ -40,3 +40,9 @@
 [submodule "vim/bundle/py_jump"]
 	path = vim/bundle/py_jump
 	url = https://github.com/vim-scripts/py_jump.vim
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim
+[submodule "vim/bundle/airline"]
+	path = vim/bundle/airline
+	url = https://github.com/bling/vim-airline
