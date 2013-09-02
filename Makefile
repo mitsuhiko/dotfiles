@@ -2,7 +2,13 @@ install: install-vim install-bash install-virtualenvwrapper \
          install-terminal-settings install-git \
 	 install-python install-keybindings
 
-install-vim:
+vim/bundle/command-t/ruby/command-t/Makefile:
+	cd vim/bundle/command-t/ruby/command-t/ && ruby extconf.rb
+
+vim/bundle/command-t/ruby/command-t/ext.bundle: vim/bundle/command-t/ruby/command-t/Makefile
+	$(MAKE) -c vim/bundle/command-t/ruby/command-t
+
+install-vim: vim/bundle/command-t/ruby/command-t/ext.bundle
 	rm -rf ~/.vim ~/.vimrc
 	ln -s `pwd`/vim ~/.vim
 	ln -s ~/.vim/vimrc ~/.vimrc

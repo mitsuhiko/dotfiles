@@ -40,3 +40,6 @@
 [submodule "vim/bundle/py_jump"]
 	path = vim/bundle/py_jump
 	url = https://github.com/vim-scripts/py_jump.vim
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = https://github.com/wincent/Command-T
