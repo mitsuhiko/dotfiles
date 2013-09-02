@@ -37,3 +37,6 @@
 [submodule "vim/bundles/py_jump"]
 	path = vim/bundles/py_jump
 	url = https://github.com/vim-scripts/py_jump.vim
+[submodule "vim/bundle/repeat"]
+	path = vim/bundle/repeat
+	url = https://github.com/tpope/vim-repeat
