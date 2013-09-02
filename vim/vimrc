@@ -171,9 +171,6 @@ nnoremap <leader>t :NERDTree<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$', '\.dSYM$']
 
-" Scratch
-nmap <leader>- :Sscratch<CR><C-W>x<C-J>
-
 " Quit window on <leader>q
 nnoremap <leader>q :q<CR>
 
