@@ -143,6 +143,12 @@ set gdefault
 " hide matches on <leader>space
 nnoremap <leader><space> :nohlsearch<cr>
 
+" autoread
+set autoread
+
+" Autoresize windows
+autocmd VimResized * :wincmd =
+
 " tab for brackets
 nnoremap <tab> %
 vnoremap <tab> %
