@@ -34,7 +34,7 @@ hi LineNr	ctermfg=3
 hi Question	ctermfg=green
 hi StatusLine	cterm=bold,reverse ctermfg=lightgray
 hi StatusLineNC cterm=reverse
-hi ColorColumn  ctermbg=lightgray
+hi ColorColumn  ctermbg=NONE
 hi VertSplit	cterm=reverse
 hi Title	ctermfg=5
 hi Visual	cterm=reverse
