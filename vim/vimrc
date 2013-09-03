@@ -4,7 +4,7 @@ set nocompatible
 set backspace=indent,eol,start
 
 " Add .bin to path
-let $PATH .= ':~/.bin'
+let $PATH .= ':' . expand('~/.bin')
 
 " Menus I like :-)
 " This must happen before the syntax system is enabled
@@ -135,8 +135,8 @@ sign define dummy
 autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
 
 " Make git gutter less sluggish
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
+"let g:gitgutter_realtime = 0
+"let g:gitgutter_eager = 0
 
 " Use system keyboard
 "set clipboard=unnamed
@@ -326,9 +326,6 @@ autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 s
 
 let g:syntastic_python_checkers=['flake8', 'python']
 
-" Don't warn on missing docstrings
-let g:syntastic_python_pylint_args='-d C0111'
-
 " Don't warn on
 "   E121 continuation line indentation is not a multiple of four
 "   E128 continuation line under-indented for visual indent
@@ -354,7 +351,7 @@ autocmd FileType php setlocal shiftwidth=4 tabstop=8 softtabstop=4 expandtab
 
 " template language support (SGML / XML too)
 " ------------------------------------------
-" and disable taht stupid html rendering (like making stuff bold etc)
+" and disable that stupid html rendering (like making stuff bold etc)
 autocmd FileType xml,html,htmljinja,htmldjango setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html,htmljinja,htmldjango imap <buffer> <c-e> <Plug>SparkupExecute
 autocmd FileType html,htmljinja,htmldjango imap <buffer> <c-l> <Plug>SparkupNext
