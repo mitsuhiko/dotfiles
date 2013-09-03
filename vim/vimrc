@@ -134,6 +134,10 @@ vnoremap <Up> gk
 sign define dummy
 autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
 
+" Make git gutter less sluggish
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+
 " Use system keyboard
 "set clipboard=unnamed
 
