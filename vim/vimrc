@@ -329,11 +329,13 @@ let g:syntastic_python_checkers=['flake8', 'python']
 " Don't warn on
 "   E121 continuation line indentation is not a multiple of four
 "   E128 continuation line under-indented for visual indent
+"   E711 comparison to None should be 'if cond is not None:'
 "   E301 expected 1 blank line, found 0
 "   E261 at least two spaces before inline comment
 "   E241 multiple spaces after ':'
 "   E124 closing bracket does not match visual indentation
-let g:syntastic_python_flake8_args='--ignore=E121,E128,E301,E261,E241,E124
+"   E126 continuation line over-indented for hanging indent
+let g:syntastic_python_flake8_args='--ignore=E121,E128,E711,E301,E261,E241,E124,E126
     \ --max-line-length=84'
 
 " ruby support
