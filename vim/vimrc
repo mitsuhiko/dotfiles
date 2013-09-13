@@ -316,13 +316,11 @@ endif
 "  scopes and it sucks ass if it's highlighted then. And for exceptions I
 "  don't really want to have different colors for my own exceptions ;-)
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8
-\ formatoptions+=croq softtabstop=4 smartindent
-\ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+\ formatoptions=croqj softtabstop=4 textwidth=74 comments=:#\:,:#
 let python_highlight_all=1
 let python_highlight_exceptions=0
 let python_highlight_builtins=0
 let python_slow_sync=1
-autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 
 let g:syntastic_python_checkers=['flake8', 'python']
 
