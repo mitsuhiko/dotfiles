@@ -359,6 +359,7 @@ autocmd FileType html,htmljinja,htmldjango imap <buffer> <c-l> <Plug>SparkupNext
 autocmd FileType html setlocal commentstring=<!--\ %s\ -->
 autocmd FileType htmljinja setlocal commentstring={#\ %s\ #}
 let html_no_rendering=1
+let g:syntastic_html_checkers = []
 
 " GLSL
 " ----
