@@ -82,3 +82,6 @@
 [submodule "vim/bundle/python-combined"]
 	path = vim/bundle/python-combined
 	url = https://github.com/mitsuhiko/vim-python-combined
+[submodule "vim/bundle/typescript"]
+	path = vim/bundle/typescript
+	url = https://github.com/leafgarland/typescript-vim.git
