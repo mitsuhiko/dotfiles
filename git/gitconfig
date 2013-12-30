@@ -1,6 +1,5 @@
-[user]
-	name = Armin Ronacher
-	email = armin.ronacher@active-4.com
+[include]
+	path = .gitconfig.local
 [core]
 	excludesfile = ~/.gitignore
 	autocrlf = input

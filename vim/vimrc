@@ -422,6 +422,10 @@ let javascript_enable_domhtmlcss=1
 let g:syntastic_javascript_checkers = ['jshint'] 
 let g:syntastic_javascript_jshint_args='--config ~/.vim/extern-cfg/jshint.json'
 
+" Typescript
+" ----------
+let g:syntastic_typescript_checkers = []
+
 " CoffeeScript
 " ------------
 autocmd FileType coffee setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
