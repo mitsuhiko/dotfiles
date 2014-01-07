@@ -414,13 +414,16 @@ autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 " Javascript
 " ----------
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd BufNewFile,BufRead *.json setlocal ft=javascript
 autocmd FileType javascript setlocal commentstring=//\ %s
 autocmd FileType javascript noremap <buffer> <leader>r :call JsBeautify()<cr>
 autocmd FileType javascript let b:javascript_fold = 0
 let javascript_enable_domhtmlcss=1
 let g:syntastic_javascript_checkers = ['jshint'] 
 let g:syntastic_javascript_jshint_args='--config ~/.vim/extern-cfg/jshint.json'
+
+" JSON
+" ----
+autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " Typescript
 " ----------
