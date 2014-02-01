@@ -88,3 +88,6 @@
 [submodule "vim/bundle/vim/bundle/json"]
 	path = vim/bundle/vim/bundle/json
 	url = https://github.com/mitsuhiko/vim-json
+[submodule "vim/bundle/less"]
+	path = vim/bundle/less
+	url = https://github.com/groenewege/vim-less
