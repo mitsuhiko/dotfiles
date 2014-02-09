@@ -377,6 +377,10 @@ autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType css setlocal commentstring=/*\ %s\ */
 autocmd FileType css noremap <buffer> <leader>r :call CSSBeautify()<cr>
 
+" Less
+" ----
+autocmd FileType less setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
+
 " Java
 " ----
 autocmd FileType java setlocal shiftwidth=2 tabstop=8 softtabstop=2 expandtab
