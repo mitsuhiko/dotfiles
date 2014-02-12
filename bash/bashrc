@@ -189,3 +189,6 @@ export PYTHONSTARTUP=~/.pythonstartup.py
 if [ -f ~/.profile_local ]; then
   source ~/.profile_local
 fi
+
+# Make sure window sizes update correctly.
+shopt -s checkwinsize
