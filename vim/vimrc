@@ -13,6 +13,11 @@ aunmenu Window.
 let no_buffers_menu=1
 set mousemodel=popup
 
+" Fix some tmux issues
+if &term =~ '256color'
+  set t_ut=
+endif
+
 " Better modes.  Remeber where we are
 set viminfo=!,'100,\"100,:20,<50,s10,h,n~/.viminfo
 

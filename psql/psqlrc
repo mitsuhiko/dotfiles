@@ -2,7 +2,7 @@
 \set QUIET on
 
 -- nicer rendering for null
-\pset null '❌'
+\pset null '❌ '
 
 -- nicer tables
 \pset linestyle unicode

@@ -61,10 +61,14 @@ mitsuhikos_virtualenv() {
     echo -n $' \033[37mworkon \033[31m'
     echo -n $ENV_NAME
     echo -n $'\033[00m'
+    # Shell title
+    echo -n $'\033]0;venv:'
+    echo -n $ENV_NAME
+    echo -n $'\007'
   fi
 }
 
-export MITSUHIKOS_BASEPROMPT='\n\e${MITSUHIKOS_USER_COLOR}\u \
+export MITSUHIKOS_BASEPROMPT='\e]0;\007\n\e${MITSUHIKOS_USER_COLOR}\u \
 \e${MITSUHIKOS_GRAY_COLOR}at \e${MITSUHIKOS_ORANGE_COLOR}\h \
 \e${MITSUHIKOS_GRAY_COLOR}in \e${MITSUHIKOS_GREEN_COLOR}\w\
 `mitsuhikos_lastcommandfailed`\
@@ -75,7 +79,7 @@ export MITSUHIKOS_BASEPROMPT='\n\e${MITSUHIKOS_USER_COLOR}\u \
 export PS1="\[\033[G\]${MITSUHIKOS_BASEPROMPT}
 $ "
 
-export TERM=xterm-color
+export TERM=xterm-256color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
 if [ `uname` == "Darwin" ]; then

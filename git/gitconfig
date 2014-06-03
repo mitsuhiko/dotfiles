@@ -44,7 +44,7 @@
 	in = !git wtf HEAD..HEAD@{u}
 	out = !git wtf HEAD@{u}..HEAD
 	killbranches = !git branch | grep -v '\\bmaster\\b' | xargs git branch -d 2> /dev/null
-	sync = !git pull && git push
+	sync = !git pull --rebase && git push
 	comerge = "!x() { target=`git symbolic-ref HEAD`; git co $1; git merge $target; }; x"
 	pill = pull
 	ours = "!f() { git checkout --ours -- $@ && git add -- $@; }; f"
