@@ -32,6 +32,8 @@
 	wshow = show --word-diff=color
 	lasttag = describe --tags --abbrev=0
 	branches = branch -vv
+	getbranch = "!x() { git co origin/$1 -b $1; }; x"
+	fixbranch = "!x() { b=`git symbolic-ref -q --short HEAD` && git rebase --onto $b master $1 && git diff --stat $b && git checkout $b; }; x"
 	autotrack = "!x() { b=`git symbolic-ref -q --short HEAD` && git branch -u \"origin/$b\" || echo \"error: not a branch\"; }; x"
 	slog = log --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"
 	glog = log --graph --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"
@@ -45,6 +47,7 @@
 	out = !git wtf HEAD@{u}..HEAD
 	killbranches = !git branch | grep -v '\\bmaster\\b' | xargs git branch -d 2> /dev/null
 	sync = !git pull --rebase && git push
+	down = "!git remote update; git pull --ff-only"
 	comerge = "!x() { target=`git symbolic-ref HEAD`; git co $1; git merge $target; }; x"
 	pill = pull
 	ours = "!f() { git checkout --ours -- $@ && git add -- $@; }; f"
@@ -57,6 +60,14 @@
 	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 	serveall = daemon --verbose --export-all --base-path=. --reuseaddr .
 	addpr = "!f() { git fetch origin pull/$1/head:pr/$1; }; f"
+	addprx = "!f() { b=`git symbolic-ref -q --short HEAD` && \
+		git fetch origin pull/$1/head:pr/$1 && \
+		git fetch -f origin pull/$1/merge:PR_MERGE_HEAD && \
+		git rebase --onto $b PR_MERGE_HEAD^ pr/$1 && \
+		git branch -D PR_MERGE_HEAD && \
+		git checkout $b && echo && \
+		git diff --stat $b..pr/$1 && echo && \
+		git slog $b..pr/$1; }; f"
 [instaweb]
 	httpd=webrick
 [push]
