@@ -61,13 +61,16 @@
 	serveall = daemon --verbose --export-all --base-path=. --reuseaddr .
 	addpr = "!f() { git fetch origin pull/$1/head:pr/$1; }; f"
 	addprx = "!f() { b=`git symbolic-ref -q --short HEAD` && \
+		echo \"Making branch for pull request #$1 [pr/$1]\" && \
 		git fetch origin pull/$1/head:pr/$1 && \
-		git fetch -f origin pull/$1/merge:PR_MERGE_HEAD && \
-		git rebase --onto $b PR_MERGE_HEAD^ pr/$1 && \
-		git branch -D PR_MERGE_HEAD && \
-		git checkout $b && echo && \
+		echo \"Rebasing pr/$1 onto $b...\" && \
+		git fetch -q -f origin pull/$1/merge:refs/PR_MERGE_HEAD && \
+		git rebase -q --onto $b PR_MERGE_HEAD^ pr/$1 && \
+		git checkout -q $b && echo && \
 		git diff --stat $b..pr/$1 && echo && \
-		git slog $b..pr/$1; }; f"
+		git slog $b..pr/$1; \
+		git update-ref -d refs/PR_MERGE_HEAD; \
+		}; f"
 [instaweb]
 	httpd=webrick
 [push]
