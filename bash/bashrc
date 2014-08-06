@@ -2,6 +2,7 @@
 [ -z "$PS1" ] && return
 
 export EDITOR=vim
+export GIT_EDITOR=vim
 
 MITSUHIKOS_DEFAULT_COLOR="[00m"
 MITSUHIKOS_GRAY_COLOR="[37m"
