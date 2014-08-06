@@ -101,6 +101,11 @@ if [ `id -u` != '0' ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh
   fi
+  if [ -f ~/.local/venvs/virtualenvwrapper/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    export VIRTUALENVWRAPPER_PYTHON=~/.local/venvs/virtualenvwrapper/bin/python
+    source ~/.local/venvs/virtualenvwrapper/bin/virtualenvwrapper.sh
+  fi
 fi
 
 # start a socks proxy on ayreal
