@@ -68,7 +68,7 @@
 		git rebase -q --onto $b PR_MERGE_HEAD^ pr/$1 && \
 		git checkout -q $b && echo && \
 		git diff --stat $b..pr/$1 && echo && \
-		git slog $b..pr/$1; \
+		git log --oneline $b..pr/$1; \
 		git update-ref -d refs/PR_MERGE_HEAD; \
 		}; f"
 [instaweb]
