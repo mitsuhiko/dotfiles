@@ -94,3 +94,9 @@
 [submodule "vim/bundle/vim-toml"]
 	path = vim/bundle/vim-toml
 	url = https://github.com/cespare/vim-toml
+[submodule "vim/bundle/pgsql"]
+	path = vim/bundle/pgsql
+	url = https://github.com/exu/pgsql.vim
+[submodule "vim/bundle/vim-ansible-yaml"]
+	path = vim/bundle/vim-ansible-yaml
+	url = git://github.com/chase/vim-ansible-yaml.git

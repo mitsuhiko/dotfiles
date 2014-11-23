@@ -311,8 +311,9 @@ inoremap <c-u> <C-R>=InsertUUID4()<CR>
 " Colorcolumns
 if version >= 703
   autocmd FileType * setlocal colorcolumn=0
-  autocmd FileType ruby,python,javascript,c,cpp,objc,rst
-    \ let &colorcolumn="80,".join(range(84,300),",")
+  " autocmd FileType ruby,python,javascript,c,cpp,objc,rst
+  "  \ let &colorcolumn="80,".join(range(84,300),",")
+  autocmd FileType ruby,python,javascript,c,cpp,objc,rst let &colorcolumn="80"
 endif
 
 " python support
