@@ -67,6 +67,11 @@ mitsuhikos_virtualenv() {
     echo -n $ENV_NAME
     echo -n $'\007'
   fi
+
+  # Also setup our readline properly constantly since
+  # stuff tends to overwrite this.
+  stty werase undef
+  bind '"\C-w": unix-filename-rubout'
 }
 
 export MITSUHIKOS_BASEPROMPT='\e]0;\007\n\e${MITSUHIKOS_USER_COLOR}\u \
@@ -165,10 +170,6 @@ alias bitch,=sudo
 
 # hack to get ppc out of that thing
 export ARCHFLAGS="-arch i386 -arch x86_64"
-
-# ctrl+w and slashes
-stty werase undef
-bind '"\C-w": unix-filename-rubout'
 
 if [ x`which ack-grep` != x ]; then
   alias ack=ack-grep
