@@ -42,4 +42,4 @@ endif
 install-keybindings:
 	rm -f ~/Library/KeyBindings/DefaultKeyBinding.dict
 	mkdir -p ~/Library/KeyBindings
-	ln -s `pwd`/osx/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
+	cp `pwd`/osx/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict

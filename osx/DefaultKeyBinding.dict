@@ -1,4 +1,4 @@
 {
-  "^w" = "deleteWordBackward:";
-  "^u" = "deleteToBeginningOfLine:";
+  "^w" = (deleteWordBackward:);
+  "^u" = (deleteToBeginningOfLine:);
 }
