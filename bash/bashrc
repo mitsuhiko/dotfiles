@@ -208,5 +208,14 @@ export P4CONFIG=.p4rc
 shopt -s checkwinsize
 
 function rustup {
-  curl -s https://static.rust-lang.org/rustup.sh | sudo sh
+  curl -s https://static.rust-lang.org/rustup.sh | sh -s -- "$@"
 }
+
+function clip {
+  [ -t 0 ] && pbpaste || pbcopy
+}
+
+# Reasons
+alias ack=ag
+
+. ~/.bashrc.local
