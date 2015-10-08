@@ -32,7 +32,9 @@ if has("gui_running")
   colorscheme fruity
   if has("mac")
     set guifont=Powerline\ Consolas:h13
-    set fuoptions=maxvert,maxhorz
+    if has("gui_macvim")
+      set fuoptions=maxvert,maxhorz
+    endif
     " does not work properly on os x
     " au GUIEnter * set fullscreen
   else
