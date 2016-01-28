@@ -3,6 +3,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	autocrlf = input
+	precomposeunicode = true
 	editor = /usr/local/bin/vim
 [color]
 	ui = auto

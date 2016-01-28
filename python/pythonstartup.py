@@ -3,7 +3,10 @@ def _init():
     import atexit
     import os
     import sys
-    import readline
+    try:
+        import readline
+    except Exception:
+        readline = None
     import types
     import time
     import uuid
@@ -30,17 +33,18 @@ def _init():
     histfile = os.path.join(histdir, hashlib.sha1(
         os.path.normpath(_b(os.path.abspath(sys.prefix)))).hexdigest())
 
-    try:
-        readline.read_history_file(histfile)
-    except IOError:
-        pass
+    if readline is not None:
+        try:
+            readline.read_history_file(histfile)
+        except IOError:
+            pass
 
-    if 'libedit' in readline.__doc__:
-        readline.parse_and_bind("bind '\t' rl_complete")
-    else:
-        readline.parse_and_bind("tab: complete")
+        if 'libedit' in readline.__doc__:
+            readline.parse_and_bind("bind '\t' rl_complete")
+        else:
+            readline.parse_and_bind("tab: complete")
 
-    atexit.register(readline.write_history_file, histfile)
+        atexit.register(readline.write_history_file, histfile)
 
 
     def _magic_uuid(val=None):

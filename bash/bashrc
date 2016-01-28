@@ -215,6 +215,17 @@ function clip {
   [ -t 0 ] && pbpaste || pbcopy
 }
 
+function docker-env() {
+  eval "$(docker-machine env default)"
+}
+
+function docker-gc() {
+  images=$(docker ps -a -q --filter status=exited --filter status=dead)
+  if [ "x$images" != x ]; then
+    docker rm $images
+  fi
+}
+
 # Reasons
 alias ack=ag
 

@@ -389,6 +389,10 @@ autocmd FileType css noremap <buffer> <leader>r :call CSSBeautify()<cr>
 " ----
 autocmd FileType less setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 
+" Sass
+" ----
+autocmd FileType scss setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
+
 " Java
 " ----
 autocmd FileType java setlocal shiftwidth=2 tabstop=8 softtabstop=2 expandtab
