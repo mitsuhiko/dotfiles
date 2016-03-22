@@ -85,10 +85,6 @@ export MITSUHIKOS_BASEPROMPT='\e]0;\007\n\e${MITSUHIKOS_USER_COLOR}\u \
 export PS1="\[\033[G\]${MITSUHIKOS_BASEPROMPT}
 $ "
 
-if [ "$TERM_PROGRAM" == iTerm.app ]; then
-  export PS1="\033]50;SetProfile=Fancy\a$PS1"
-fi
-
 export TERM=xterm-256color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
@@ -236,5 +232,11 @@ function gif-it() {
 
 # Reasons
 alias ack=ag
+
+# iTerm specifics
+if [ "$TERM_PROGRAM" == iTerm.app ]; then
+  export PS1="\033]50;SetProfile=Fancy\a$PS1"
+  alias ssh='echo -n -e "\033]50;SetProfile=FancySSH\a"; ssh'
+fi
 
 . ~/.bashrc.local
