@@ -85,6 +85,10 @@ export MITSUHIKOS_BASEPROMPT='\e]0;\007\n\e${MITSUHIKOS_USER_COLOR}\u \
 export PS1="\[\033[G\]${MITSUHIKOS_BASEPROMPT}
 $ "
 
+if [ "$TERM_PROGRAM" == iTerm.app ]; then
+  export PS1="\033]50;SetProfile=Fancy\a$PS1"
+fi
+
 export TERM=xterm-256color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
@@ -224,6 +228,10 @@ function docker-gc() {
   if [ "x$images" != x ]; then
     docker rm $images
   fi
+}
+
+function gif-it() {
+  ffmpeg -i "$1" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=6 > "$1.gif"
 }
 
 # Reasons
