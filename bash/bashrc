@@ -207,10 +207,6 @@ export P4CONFIG=.p4rc
 # Make sure window sizes update correctly.
 shopt -s checkwinsize
 
-function rustup {
-  curl -s https://static.rust-lang.org/rustup.sh | sh -s -- "$@"
-}
-
 function clip {
   [ -t 0 ] && pbpaste || pbcopy
 }
@@ -240,3 +236,5 @@ if [ "$TERM_PROGRAM" == iTerm.app ]; then
 fi
 
 . ~/.bashrc.local
+
+export PATH="$HOME/.cargo/bin:$PATH"
