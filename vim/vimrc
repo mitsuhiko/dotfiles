@@ -348,6 +348,7 @@ let g:syntastic_python_flake8_args='--ignore=E121,E128,E711,E301,E261,E241,E124,
 " ruby support
 " ------------
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd BufNewFile,BufRead Podfile setlocal ft=ruby
 
 " go support
 " ----------

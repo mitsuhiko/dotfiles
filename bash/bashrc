@@ -236,5 +236,3 @@ if [ "$TERM_PROGRAM" == iTerm.app ]; then
 fi
 
 . ~/.bashrc.local
-
-export PATH="$HOME/.cargo/bin:$PATH"
