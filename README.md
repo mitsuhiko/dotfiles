@@ -5,4 +5,4 @@ to steal from them.
 
 This is what it looks like:
 
-![Screenshot of terminal](http://mitsuhiko.pocoo.org/fruity-zsh.gif)
+[Screenshot of terminal](http://mitsuhiko.pocoo.org/fruity-zsh.gif)
