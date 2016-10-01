@@ -40,7 +40,7 @@ fi
 # Show the version of rust that is active for the given cargo project.  This is
 # useful if multirust is enabled.
 function rustc_prompt_info() {
-  if $(cargo read-manifest > /dev/null 2&>1); then
+  if $(cargo read-manifest > /dev/null 2>&1); then
     echo " rust %{$fg[magenta]%}$(rustc --version | cut -d' ' -f2)%{$reset_color%}"
   fi
 }
