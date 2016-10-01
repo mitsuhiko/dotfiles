@@ -87,7 +87,7 @@ function _mitsuhiko_precmd() {
 function _mitsuhiko_trapusr1() {
   PROMPT="$(cat $_MITSUHIKO_ASYNC_PROMPT_FN)"
   _MITSUHIKO_ASYNC_PROMPT=0
-  zle reset-prompt
+  zle && zle reset-prompt
 }
 
 # Make sure we clean up our tempfile on exit
