@@ -106,3 +106,6 @@
 [submodule "vim/bundle/php"]
 	path = vim/bundle/php
 	url = https://github.com/StanAngeloff/php.vim
+[submodule "vim/bundle/racer"]
+	path = vim/bundle/racer
+	url = https://github.com/racer-rust/vim-racer

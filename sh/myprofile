@@ -1,0 +1,135 @@
+# Update path
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:~/.bin:$PATH"
+
+export EDITOR=vim
+export GIT_EDITOR=vim
+export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
+export CLICOLOR=1
+
+if [[ `uname` == "Darwin" ]]; then
+  export LC_CTYPE=en_US.utf-8
+  export LC_ALL=en_US.utf-8
+else
+  alias ls='ls --color=auto'
+fi
+export IGNOREEOF=1
+export PYTHONDONTWRITEBYTECODE=1
+export LESS=FRSX
+
+# virtualenvwrapper and pip
+if [[ `id -u` != '0' ]]; then
+  if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+  fi
+  if [ -f ~/.local/venvs/virtualenvwrapper/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    export VIRTUALENVWRAPPER_PYTHON=~/.local/venvs/virtualenvwrapper/bin/python
+    source ~/.local/venvs/virtualenvwrapper/bin/virtualenvwrapper.sh
+  fi
+fi
+
+# start a socks proxy on ayreal
+browsesecure() {
+  python <<SWITCH
+import sys
+from subprocess import Popen, call, PIPE
+
+old_location = None
+out = Popen(['scselect'], stdout=PIPE, stderr=PIPE).communicate()[0]
+for line in out.splitlines():
+    line = line.strip()
+    if line.startswith('*'):
+        old_location = line[line.find('(') + 1:-1]
+
+if old_location is None:
+    print >> sys.stderr, "Can't find old network location"
+    sys.exit(1)
+
+def switch_location(name):
+    call(['scselect', name], stdout=open('/dev/null', 'w'))
+
+switch_location('SOCK Proxied Public')
+print 'SOCKS Proxy on localhost:7890'
+print 'Switched network configuration'
+try:
+    #call(['ssh', '-ND', '7890', '78.46.64.175'])
+    call(['ssh', '-ND', '7890', 'flaskbot'])
+except (KeyboardInterrupt, EOFError):
+    print 'Switched back to', old_location
+    switch_location(old_location)
+SWITCH
+}
+
+if [ x`which hub` != x ]; then
+  alias git=hub
+fi
+alias mq='hg -R $(hg root)/.hg/patches'
+alias rvim="gvim --remote-silent"
+alias pypy-jitlog="PYPYLOG=jit-log-opt,jit-backend-counts:pypyjitlog.log pypy-c"
+alias ..='cd ..'
+
+# don't let virtualenv show prompts by itself
+VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# for the lulz
+alias bitch,=sudo
+
+# hack to get ppc out of that thing
+export ARCHFLAGS="-arch i386 -arch x86_64"
+
+# For lazy people like me
+from() { expect -c "spawn -noecho python
+expect \">>> \"
+send \"from $*\r\"
+interact +++ return"; }
+import() { expect -c "spawn -noecho python
+expect \">>> \"
+send \"import $*\r\"
+interact +++ return"; }
+
+# Useful command for stripping whitespace
+remove_trailing_whitespace() {
+  find . -name $* -exec sed -i '' -e's/[[:space:]]*$//' {} \;
+}
+
+# Meh OS X
+alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+
+# Python
+export PYTHONSTARTUP=~/.pythonstartup.py
+
+# Extra stuff
+if [ -f ~/.profile_local ]; then
+  source ~/.profile_local
+fi
+
+# Perforce shenanigans
+export P4CONFIG=.p4rc
+
+function clip {
+  [ -t 0 ] && pbpaste || pbcopy
+}
+
+function docker-env() {
+  eval "$(docker-machine env default)"
+}
+
+function gif-it() {
+  ffmpeg -i "$1" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=6 > "$1.gif"
+}
+
+# Reasons
+alias ack=ag
+
+# Pretty man
+man() {
+  env \
+    LESS_TERMCAP_md=$'\e[1;36m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[1;40;92m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[1;32m' \
+      man "$@"
+}

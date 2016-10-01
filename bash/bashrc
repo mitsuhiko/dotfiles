@@ -1,31 +1,33 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-export EDITOR=vim
-export GIT_EDITOR=vim
+__DEFAULT_COLOR="[00m"
+__GRAY_COLOR="[37m"
+__PINK_COLOR="[35m"
+__GREEN_COLOR="[32m"
+__ORANGE_COLOR="[33m"
+__RED_COLOR="[31m"
 
-MITSUHIKOS_DEFAULT_COLOR="[00m"
-MITSUHIKOS_GRAY_COLOR="[37m"
-MITSUHIKOS_PINK_COLOR="[35m"
-MITSUHIKOS_GREEN_COLOR="[32m"
-MITSUHIKOS_ORANGE_COLOR="[33m"
-MITSUHIKOS_RED_COLOR="[31m"
 if [ `id -u` == '0' ]; then
-  MITSUHIKOS_USER_COLOR=$MITSUHIKOS_RED_COLOR
+  __USER_COLOR=$__RED_COLOR
 else
-  MITSUHIKOS_USER_COLOR=$MITSUHIKOS_PINK_COLOR
+  __USER_COLOR=$__PINK_COLOR
 fi
 
-MITSUHIKOS_VC_PROMPT=$' on \033[34m%n\033[00m:\033[00m%[unknown]b\033[32m'
-MITSUHIKOS_VC_PROMPT_EX="$MITSUHIKOS_VC_PROMPT%m%u"
+__VC_PROMPT=$' on \033[34m%n\033[00m:\033[00m%[unknown]b\033[32m'
+__VC_PROMPT_EX="$__VC_PROMPT%m%u"
+if hash vcprompt 2> /dev/null; then
+  __HAVE_VCPROMPT=1
+else
+  __HAVE_VCPROMPT=0
+fi
 
 mitsuhikos_vcprompt() {
   path=`pwd`
-  prompt="$MITSUHIKOS_VC_PROMPT"
-  if [[ "$path" != /Users/mitsuhiko/Development/playfire* ]]; then
-    prompt="$MITSUHIKOS_VC_PROMPT_EX"
+  prompt="$__VC_PROMPT_EX"
+  if [ $__HAVE_VCPROMPT == 1 ]; then
+    vcprompt -f "$prompt"
   fi
-  vcprompt -f "$prompt"
 }
 
 mitsuhikos_lastcommandfailed() {
@@ -74,87 +76,25 @@ mitsuhikos_virtualenv() {
   bind '"\C-w": unix-filename-rubout'
 }
 
-export MITSUHIKOS_BASEPROMPT='\e]0;\007\n\e${MITSUHIKOS_USER_COLOR}\u \
-\e${MITSUHIKOS_GRAY_COLOR}at \e${MITSUHIKOS_ORANGE_COLOR}\h \
-\e${MITSUHIKOS_GRAY_COLOR}in \e${MITSUHIKOS_GREEN_COLOR}\w\
+export __BASEPROMPT='\e]0;\007\n\e${__USER_COLOR}\u \
+\e${__GRAY_COLOR}at \e${__ORANGE_COLOR}\h \
+\e${__GRAY_COLOR}in \e${__GREEN_COLOR}\w\
 `mitsuhikos_lastcommandfailed`\
-\e${MITSUHIKOS_GRAY_COLOR}`mitsuhikos_vcprompt`\
+\e${__GRAY_COLOR}`mitsuhikos_vcprompt`\
 `mitsuhikos_backgroundjobs`\
 `mitsuhikos_virtualenv`\
-\e${MITSUHIKOS_DEFAULT_COLOR}'
-export PS1="\[\033[G\]${MITSUHIKOS_BASEPROMPT}
+\e${__DEFAULT_COLOR}'
+export PS1="\[\033[G\]${__BASEPROMPT}
 $ "
 
 export TERM=xterm-256color
-export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
-export CLICOLOR=1
-if [ `uname` == "Darwin" ]; then
-  export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
-  export LC_CTYPE=en_US.utf-8
-  export LC_ALL=en_US.utf-8
-else
-  alias ls='ls --color=auto'
-fi
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:~/.bin:$PATH
-export IGNOREEOF=1
-export PYTHONDONTWRITEBYTECODE=1
-export LESS=FRSX
 
-# virtualenvwrapper and pip
-if [ `id -u` != '0' ]; then
-  export VIRTUALENV_DISTRIBUTE=1
-  if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
-  fi
-  if [ -f ~/.local/venvs/virtualenvwrapper/bin/virtualenvwrapper.sh ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    export VIRTUALENVWRAPPER_PYTHON=~/.local/venvs/virtualenvwrapper/bin/python
-    source ~/.local/venvs/virtualenvwrapper/bin/virtualenvwrapper.sh
-  fi
-fi
-
-# start a socks proxy on ayreal
-browsesecure() {
-  python <<SWITCH
-import sys
-from subprocess import Popen, call, PIPE
-
-old_location = None
-out = Popen(['scselect'], stdout=PIPE, stderr=PIPE).communicate()[0]
-for line in out.splitlines():
-    line = line.strip()
-    if line.startswith('*'):
-        old_location = line[line.find('(') + 1:-1]
-
-if old_location is None:
-    print >> sys.stderr, "Can't find old network location"
-    sys.exit(1)
-
-def switch_location(name):
-    call(['scselect', name], stdout=open('/dev/null', 'w'))
-
-switch_location('SOCK Proxied Public')
-print 'SOCKS Proxy on localhost:7890'
-print 'Switched network configuration'
-try:
-    #call(['ssh', '-ND', '7890', '78.46.64.175'])
-    call(['ssh', '-ND', '7890', 'flaskbot'])
-except (KeyboardInterrupt, EOFError):
-    print 'Switched back to', old_location
-    switch_location(old_location)
-SWITCH
-}
-
-if [ x`which hub` != x ]; then
-  alias git=hub
-fi
-alias mq='hg -R $(hg root)/.hg/patches'
-alias rvim="gvim --remote-silent"
-alias pypy-jitlog="PYPYLOG=jit-log-opt,jit-backend-counts:pypyjitlog.log pypy-c"
-alias ..='cd ..'
 shopt -s histappend
 
+# Make sure window sizes update correctly.
+shopt -s checkwinsize
+
+# Completions
 if [ -f /usr/local/git/contrib/completion ]; then
   . /usr/local/git/contrib/completion/git-completion.bash
 fi
@@ -162,77 +102,5 @@ if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
 
-# don't let virtualenv show prompts by itself
-VIRTUAL_ENV_DISABLE_PROMPT=1
-
-# for the lulz
-alias bitch,=sudo
-
-# hack to get ppc out of that thing
-export ARCHFLAGS="-arch i386 -arch x86_64"
-
-if [ x`which ack-grep` != x ]; then
-  alias ack=ack-grep
-fi
-
-# For lazy people like me
-from() { expect -c "spawn -noecho python
-expect \">>> \"
-send \"from $*\r\"
-interact +++ return"; }
-import() { expect -c "spawn -noecho python
-expect \">>> \"
-send \"import $*\r\"
-interact +++ return"; }
-
-# Useful command for stripping whitespace
-remove_trailing_whitespace() {
-  find . -name $* -exec sed -i '' -e's/[[:space:]]*$//' {} \;
-}
-
-# Meh OS X
-alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-
-# Python
-export PYTHONSTARTUP=~/.pythonstartup.py
-
-# Extra stuff
-if [ -f ~/.profile_local ]; then
-  source ~/.profile_local
-fi
-
-# Perforce shenanigans
-export P4CONFIG=.p4rc
-
-# Make sure window sizes update correctly.
-shopt -s checkwinsize
-
-function clip {
-  [ -t 0 ] && pbpaste || pbcopy
-}
-
-function docker-env() {
-  eval "$(docker-machine env default)"
-}
-
-function docker-gc() {
-  images=$(docker ps -a -q --filter status=exited --filter status=dead)
-  if [ "x$images" != x ]; then
-    docker rm $images
-  fi
-}
-
-function gif-it() {
-  ffmpeg -i "$1" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=6 > "$1.gif"
-}
-
-# Reasons
-alias ack=ag
-
-# iTerm specifics
-if [ "$TERM_PROGRAM" == iTerm.app ]; then
-  export PS1="\033]50;SetProfile=Fancy\a$PS1"
-  alias ssh='echo -n -e "\033]50;SetProfile=FancySSH\a"; ssh'
-fi
-
 . ~/.bashrc.local
+. ~/.myprofile
