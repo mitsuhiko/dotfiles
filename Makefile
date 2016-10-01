@@ -1,7 +1,6 @@
 install: install-vim install-bash install-zsh install-psql \
          install-virtualenvwrapper \
-         install-terminal-settings install-git \
-	 install-python install-keybindings
+         install-git install-python install-keybindings
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
