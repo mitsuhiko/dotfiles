@@ -19,7 +19,7 @@ function workenv_check_and_run() {
   cat $1
   echo -e "$fg_no_bold[green]----------------$reset_color"
   echo
-  echo -n "Are you sure you want to allow this? (yN)"
+  echo -n "Are you sure you want to allow this? (yN) "
   read answer
   if [[ "$answer" == "y" ]] || [[ "$answer" == "Y" ]]; then
     echo "$1:$2" >> $WORKENV_AUTH_FILE
