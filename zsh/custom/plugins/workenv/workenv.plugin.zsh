@@ -86,13 +86,17 @@ _WORKENV_ACTIVE_PATHS=()
 
 # Enables a given virtualenv
 function workenv_enable_virtualenv() {
+  local VENV="$1"
+  if [[ "${VENV#*/}" != "$1" ]]; then
+    VENV="${VENV:A}"
+  fi
   WORKENV_ENABLED=0
   local OLD_ENV=$_WORKENV_ACTIVE_VIRTUALENVS[-1]
   if [[ ! -z $OLD_ENV ]]; then
     _workenv_disable_virtualenv
   fi
-  _WORKENV_ACTIVE_VIRTUALENVS+=($1)
-  _workenv_enable_virtualenv "$1"
+  _WORKENV_ACTIVE_VIRTUALENVS+=($VENV)
+  _workenv_enable_virtualenv "$VENV"
   WORKENV_ENABLED=1
 }
 
@@ -130,8 +134,13 @@ function workenv_path_reset() {
 
 function _workenv_enable_virtualenv() {
   echo -n "Enabling virtualenv $1 ... "
-  if [[ "${1#*:/}" != "$1" ]]; then
-    source "$1/bin/activate"
+  if [[ "${1#*/}" != "$1" ]]; then
+    if [ -f "$1/bin/activate" ]; then
+      source "$1/bin/activate"
+    else
+      echo -e "$fg_no_bold[red]Not Found$reset_color"
+      return
+    fi
   else
     workon $1
   fi
@@ -141,6 +150,9 @@ function _workenv_enable_virtualenv() {
 function _workenv_disable_virtualenv() {
   local ENV_NAME=$_WORKENV_ACTIVE_VIRTUALENVS[-1]
   echo -n "Disabling virtualenv $ENV_NAME ... "
-  deactivate 2> /dev/null
-  echo -e "$fg_no_bold[green]Done$reset_color"
+  if deactivate 2> /dev/null; then
+    echo -e "$fg_no_bold[green]Done$reset_color"
+  else
+    echo -e "$fg_no_bold[red]Not Found$reset_color"
+  fi
 }
