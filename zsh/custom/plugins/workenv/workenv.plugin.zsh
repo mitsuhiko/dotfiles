@@ -7,8 +7,9 @@ fi
 WORKENV_ENABLED=1
 
 function workenv_check_and_run() {
+  echo
   echo "$fg_no_bold[red]WARNING$reset_color"
-  echo "This is the first time you are about to source a work env file"
+  echo "This is the first time you are about to source a workenv file"
   echo -e "  file: $1"
   echo
   echo -e "$fg_no_bold[green]----------------$reset_color"
@@ -21,6 +22,7 @@ function workenv_check_and_run() {
     echo "$1:$2" >> $WORKENV_AUTH_FILE
     envfile=$1
     shift
+    echo "Trusting workenv file."
     source $envfile
   fi
 }
@@ -80,7 +82,9 @@ chpwd_functions+=( workenv_init )
 # Helpers that make working with workenv more fun
 
 _WORKENV_ACTIVE_VIRTUALENVS=()
+_WORKENV_ACTIVE_PATHS=()
 
+# Enables a given virtualenv
 function workenv_enable_virtualenv() {
   WORKENV_ENABLED=0
   local OLD_ENV=$_WORKENV_ACTIVE_VIRTUALENVS[-1]
@@ -92,6 +96,7 @@ function workenv_enable_virtualenv() {
   WORKENV_ENABLED=1
 }
 
+# Disables the currently active virtualenv
 function workenv_disable_virtualenv() {
   WORKENV_ENABLED=0
   _workenv_disable_virtualenv
@@ -101,6 +106,25 @@ function workenv_disable_virtualenv() {
     _workenv_enable_virtualenv "$OLD_ENV"
   fi
   WORKENV_ENABLED=1
+}
+
+# Prepends a path to PATH
+function workenv_path_prepend() {
+  _WORKENV_ACTIVE_PATHS+=($PATH)
+  export PATH="${1:A}:$PATH"
+}
+
+# Appends a path to PATH
+function workenv_path_append() {
+  _WORKENV_ACTIVE_PATHS+=($PATH)
+  export PATH="$PATH:${1:A}"
+}
+
+# Resets the PATH to what it was before
+function workenv_path_reset() {
+  local OLD_PATH=$_WORKENV_ACTIVE_PATHS[-1]
+  _WORKENV_ACTIVE_PATHS=($_WORKENV_ACTIVE_PATHS[1,-2])
+  export PATH="$OLD_PATH"
 }
 
 

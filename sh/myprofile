@@ -1,5 +1,5 @@
 # Update path
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:~/.bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:$HOME/.bin:$PATH"
 
 export EDITOR=vim
 export GIT_EDITOR=vim
