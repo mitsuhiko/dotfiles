@@ -65,7 +65,6 @@ function workenv_init() {
       workenv_check_and_exec "$_WORKENV_OLDPATH/$WORKENV_ENTER"
     fi
   done
-
 }
 
 if [[ -f "./$WORKENV_ENTER" ]]; then
