@@ -56,3 +56,5 @@ ZSH_CUSTOM=/Users/mitsuhiko/.zsh-custom
 plugins=(git-prompt mercurial better-virtualenv osx workenv multirust)
 
 source $ZSH/oh-my-zsh.sh
+
+unsetopt share_history
