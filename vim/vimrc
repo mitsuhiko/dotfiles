@@ -31,7 +31,8 @@ syntax on
 if has("gui_running")
   colorscheme fruity
   if has("mac")
-    set guifont=Powerline\ Consolas:h13
+    "set guifont=Powerline\ Consolas:h13
+    set guifont=Operator\ Mono\ Book\ for\ Powerline:h13
     if has("gui_macvim")
       set fuoptions=maxvert,maxhorz
     endif
