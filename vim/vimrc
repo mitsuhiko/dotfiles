@@ -31,8 +31,9 @@ syntax on
 if has("gui_running")
   colorscheme fruity
   if has("mac")
+    set linespace=2
     "set guifont=Powerline\ Consolas:h13
-    set guifont=Operator\ Mono\ Book\ for\ Powerline:h13
+    set guifont=Operator\ Mono\ Book\ for\ Powerline:h14
     if has("gui_macvim")
       set fuoptions=maxvert,maxhorz
     endif
@@ -50,6 +51,12 @@ if has("gui_running")
   "let g:airline_theme='solarized'
   let g:airline_theme='tomorrow'
   let g:airline_powerline_fonts=1
+  "let g:airline_right_alt_sep = ''
+  "let g:airline_right_sep = ''
+  "let g:airline_left_alt_sep= ''
+  "let g:airline_left_sep = ''
+  let g:airline_right_sep = ''
+  let g:airline_left_sep = ''
 else
   let g:airline_powerline_fonts=0
 endif
