@@ -9,7 +9,7 @@
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/rust"]
 	path = vim/bundle/rust
-	url = https://github.com/wting/rust.vim.git
+	url = https://github.com/rust-lang/rust.vim.git
 [submodule "vim/bundle/commentary"]
 	path = vim/bundle/commentary
 	url = https://github.com/tpope/vim-commentary
