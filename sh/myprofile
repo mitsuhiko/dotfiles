@@ -119,8 +119,12 @@ function gif-it() {
   ffmpeg -i "$1" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=6 > "$1.gif"
 }
 
+function highlight-it {
+  pbpaste -Prefer txt | pygmentize -f rtf -O 'ensurenl=False,style=perldoc,fontface=Operator Mono Book,fontsize=84' -l "$1" | pbcopy
+}
+
 # Reasons
-alias ack=ag
+alias ack=rg
 
 # Pretty man
 man() {
