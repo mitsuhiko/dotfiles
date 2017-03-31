@@ -485,6 +485,7 @@ autocmd FileType lua setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " ----
 autocmd FileType rust setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 autocmd FileType rust setlocal commentstring=//\ %s
-let g:rustfmt_autosave = 1
+"let g:rustfmt_autosave = 1
+let g:syntastic_rust_checkers=[]
 "let g:racer_cmd = "/Users/mitsuhiko/.cargo/bin/racer"
 let $RUST_SRC_PATH="/Users/mitsuhiko/Development/rust/src"
