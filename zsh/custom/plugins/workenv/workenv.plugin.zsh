@@ -28,17 +28,17 @@ function workenv_check_and_run() {
 }
 
 function workenv_check_and_exec() {
+  envfile="$1:A"
   if which shasum &> /dev/null; then
-    hash=$(shasum "$1" | cut -d' ' -f 1)
+    hash=$(shasum "$envfile" | cut -d' ' -f 1)
   else
-    hash=$(sha1sum "$1" | cut -d' ' -f 1)
+    hash=$(sha1sum "$envfile" | cut -d' ' -f 1)
   fi
-  if grep -sq "$1:$hash" "$WORKENV_AUTH_FILE"; then
-    envfile=$1
+  if grep -sq "$envfile:$hash" "$WORKENV_AUTH_FILE"; then
     shift
     source $envfile
   else
-    workenv_check_and_run $1 $hash
+    workenv_check_and_run $envfile $hash
   fi
 }
 
@@ -67,16 +67,6 @@ function workenv_init() {
     fi
   done
 }
-
-if [[ -f "./.workenv" ]]; then
-  workenv_check_and_exec "./.workenv"
-fi
-
-() {
-  local OLDPWD='/'
-  workenv_init
-}
-chpwd_functions+=( workenv_init )
 
 
 # Helpers that make working with workenv more fun
@@ -156,3 +146,14 @@ function _workenv_disable_virtualenv() {
     echo -e "$fg_no_bold[red]Not Found$reset_color"
   fi
 }
+
+() {
+  local OLDPWD='/'
+  workenv_init
+}
+chpwd_functions+=( workenv_init )
+
+# Run this last
+if [[ -f "./.workenv" ]]; then
+  workenv_init
+fi
