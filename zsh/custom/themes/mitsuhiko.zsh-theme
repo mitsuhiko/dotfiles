@@ -21,6 +21,8 @@ ZSH_THEME_VIRTUALENV_SUFFIX="%{$reset_color%}"
 ZSH_THEME_MULTIRUST_PREFIX=" rust %{$fg[magenta]%}"
 ZSH_THEME_MULTIRUST_SUFFIX="%{$reset_color%}"
 
+ZSH_THEME_PLANEINFO_TEMPLATE=" on-route %{$fg[cyan]%}:orig_airport%{$reset_color%} to %{$fg[yellow]%}:dst_airport%{$reset_color%} dst %{$fg[green]%}:dist_to_dst%{$reset_color%}%{$fg[red]%}:not_online_marker%{$reset_color%}"
+
 # If iTerm is detected these themes are used for regular windows
 # and ssh respectively
 MITSUHIKO_ITERM_NORMAL_PROFILE='Fancy'
@@ -67,11 +69,11 @@ function _mitsuhiko_precmd() {
     precmd_update_git_vars
 
     #
-    echo -n $'\n'$_MITSUHIKO_PROMPT$' '$(git_super_status)$(hg_prompt_info)$(virtualenv_prompt_info)$(multirust_prompt_info) > $_MITSUHIKO_ASYNC_PROMPT_FN
+    echo -n $'\n'$_MITSUHIKO_PROMPT$' '$(git_super_status)$(hg_prompt_info)$(virtualenv_prompt_info)$(multirust_prompt_info)$(planestatus_prompt_info) > $_MITSUHIKO_ASYNC_PROMPT_FN
     if [[ x$_mitsuhiko_rv != x0 ]]; then
       echo -n " exited %{$fg[red]%}$_mitsuhiko_rv%{$reset_color%}" >> $_MITSUHIKO_ASYNC_PROMPT_FN
     fi
-    echo -n $'\n$ ' >> $_MITSUHIKO_ASYNC_PROMPT_FN
+    echo -n $' \n$ ' >> $_MITSUHIKO_ASYNC_PROMPT_FN
 
     # signal parent
     kill -s USR1 $$
