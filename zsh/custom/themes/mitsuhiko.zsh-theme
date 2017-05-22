@@ -21,7 +21,7 @@ ZSH_THEME_VIRTUALENV_SUFFIX="%{$reset_color%}"
 ZSH_THEME_MULTIRUST_PREFIX=" rust %{$fg[magenta]%}"
 ZSH_THEME_MULTIRUST_SUFFIX="%{$reset_color%}"
 
-ZSH_THEME_PLANEINFO_TEMPLATE=" on-route %{$fg[cyan]%}:orig_airport%{$reset_color%} to %{$fg[yellow]%}:dst_airport%{$reset_color%} dst %{$fg[green]%}:dist_to_dst%{$reset_color%}%{$fg[red]%}:not_online_marker%{$reset_color%}"
+ZSH_THEME_PLANEINFO_TEMPLATE=" en-route %{$fg[cyan]%}:orig_airport%{$reset_color%} to %{$fg[yellow]%}:dst_airport%{$reset_color%} on %{$fg[magenta]%}:flight_number%{$reset_color%} dst %{$fg[green]%}:dist_to_dst%{$reset_color%} miles%{$fg[red]%}:not_online_marker%{$reset_color%}"
 
 # If iTerm is detected these themes are used for regular windows
 # and ssh respectively
