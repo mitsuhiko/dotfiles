@@ -75,7 +75,7 @@ class AustrianPlaneInfo(object):
         dist = self.dist_to_dst
         speed = self.ground_speed
         if dist is not None and speed:
-            minutes = dist / (speed * 0.8) * 60
+            minutes = dist / (speed * 0.65) * 60
             return '%02d:%02d' % (
                 minutes // 60,
                 int(minutes % 60),
