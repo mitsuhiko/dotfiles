@@ -52,7 +52,7 @@ class AustrianPlaneInfo(object):
             if rv.code == 200:
                 self._cache = json.load(rv)
                 return self._cache
-        except IOError:
+        except Exception:
             pass
 
     @property
@@ -68,6 +68,18 @@ class AustrianPlaneInfo(object):
     ground_speed = StatusProperty('groundSpeed')
     altitude = StatusProperty('altitude')
     dist_to_dst = StatusProperty('distDest', ty=float)
+    elapsed_time = StatusProperty('elapsedFlightTime')
+
+    @property
+    def eta(self):
+        dist = self.dist_to_dst
+        speed = self.ground_speed
+        if dist is not None and speed is not None:
+            minutes = dist / (speed * 0.8) * 60
+            return '%02d:%02d' % (
+                minutes // 60,
+                int(minutes % 60),
+            )
 
     def get_data(self):
         rv = {}
@@ -75,6 +87,7 @@ class AustrianPlaneInfo(object):
             val = getattr(self.__class__, key, None)
             if isinstance(val, StatusProperty):
                 rv[key] = val.__get__(self)
+        rv['eta'] = self.eta
         return rv
 
 
