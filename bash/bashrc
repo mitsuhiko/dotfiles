@@ -104,3 +104,6 @@ fi
 
 . ~/.bashrc.local
 . ~/.myprofile
+
+# added by travis gem
+[ -f /Users/mitsuhiko/.travis/travis.sh ] && source /Users/mitsuhiko/.travis/travis.sh

@@ -53,8 +53,11 @@ ZSH_CUSTOM=/Users/mitsuhiko/.zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git-prompt mercurial better-virtualenv osx workenv planestatus multirust)
+plugins=(git-prompt mercurial better-virtualenv osx workenv transportstatus multirust)
 
 source $ZSH/oh-my-zsh.sh
 
 unsetopt share_history
+
+# added by travis gem
+[ -f /Users/mitsuhiko/.travis/travis.sh ] && source /Users/mitsuhiko/.travis/travis.sh
