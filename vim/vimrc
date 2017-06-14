@@ -481,6 +481,10 @@ autocmd BufNewFile,BufRead *.sls setlocal ft=yaml
 " -----------
 autocmd FileType lua setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
+" Groovy
+" ------
+autocmd FileType groovy setlocal shiftwidth=4 tabstop=8 softtabstop=4 expandtab
+
 " rust
 " ----
 autocmd FileType rust setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
