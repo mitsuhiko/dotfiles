@@ -8,8 +8,13 @@ import datetime
 import subprocess
 
 
+_station_re = re.compile(r'\s+(Hbf|hl\.?\s+n\.?)$(?i)')
 _pattern_re = re.compile(r':([a-z_+]+)')
-socket.setdefaulttimeout(15.0)
+socket.setdefaulttimeout(5.0)
+
+
+def strip_station(station):
+    return _station_re.sub('', station)
 
 
 def get_wifi_info():
@@ -147,18 +152,18 @@ class OebbTrainInfo(TrainInfo):
         line = d.get('lineNumber')
         train_type = d.get('trainType')
         if line and train_type:
-            return '%s%s' % (train_type, line)
+            return '%s-%s' % (train_type, line)
         return str(train_type or line or '')
 
     @property
     def orig_station(self):
         d = self._get_status_dict() or {}
-        return (d.get('start') or {}).get('all')
+        return strip_station((d.get('start') or {}).get('all'))
 
     @property
     def dst_station(self):
         d = self._get_status_dict() or {}
-        return (d.get('destination') or {}).get('all')
+        return strip_station((d.get('destination') or {}).get('all'))
 
     @property
     def eta(self):
