@@ -109,3 +109,6 @@
 [submodule "vim/bundle/racer"]
 	path = vim/bundle/racer
 	url = https://github.com/racer-rust/vim-racer
+[submodule "vim/bundle/groovy"]
+	path = vim/bundle/groovy
+	url = https://github.com/modille/groovy.vim
