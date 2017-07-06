@@ -13,6 +13,10 @@ _pattern_re = re.compile(r':([a-z_+]+)')
 socket.setdefaulttimeout(5.0)
 
 
+def parse_time(ts):
+    return datetime.datetime.strptime(ts, '%Y-%m-%dT%H:%M:%S')
+
+
 def strip_station(station):
     return _station_re.sub('', station)
 
@@ -22,7 +26,7 @@ def get_wifi_info():
     for line in subprocess.Popen(
         ['airport', '--getinfo'],
         stdout=subprocess.PIPE).communicate()[0].splitlines():
-        args = [x.strip() for x in line.split(':')]
+        args = [x.strip().decode('utf-8') for x in line.split(b':')]
         if len(args) == 2:
             rv[args[0]] = args[1]
     return rv
@@ -95,17 +99,7 @@ class PlaneInfo(TransportInfo):
     altitude = None
     dist_to_dst = None
     elapsed_time = None
-
-    @property
-    def eta(self):
-        dist = self.dist_to_dst
-        speed = self.ground_speed
-        if dist is not None and speed:
-            minutes = dist / (speed * 0.65) * 60
-            return '%02d:%02d' % (
-                minutes // 60,
-                int(minutes % 60),
-            )
+    eta = None
 
 
 class TrainInfo(TransportInfo):
@@ -124,6 +118,25 @@ class AustrianPlaneInfo(PlaneInfo):
         rv = urllib.urlopen('https://www.myaustrian-flynet.com/fapi/flightData')
         if rv.code == 200:
             return json.load(rv)
+
+    @property
+    def eta(self):
+        d = (self._get_status_dict() or {}).get('dest')
+        if d and 'localTimeAtArrival' in d:
+            now = parse_time(d['localTime'])
+            landing = parse_time(d['localTimeAtArrival'])
+            minutes = (landing - now).total_seconds() // 60
+        else:
+            dist = self.dist_to_dst
+            speed = self.ground_speed
+            if dist is not None and speed:
+                minutes = dist / (speed * 0.65) * 60
+            else:
+                return
+        return '%02d:%02d' % (
+            minutes // 60,
+            int(minutes % 60),
+        )
 
     is_online = StatusProperty('internetAvailable', default=False)
     flight_number = StatusProperty('flightNumber')
