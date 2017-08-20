@@ -368,6 +368,10 @@ autocmd FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4
 " -----------
 autocmd FileType php setlocal shiftwidth=4 tabstop=8 softtabstop=4 expandtab
 
+" shell support
+" -----------
+autocmd FileType sh setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+
 " template language support (SGML / XML too)
 " ------------------------------------------
 " and disable that stupid html rendering (like making stuff bold etc)
