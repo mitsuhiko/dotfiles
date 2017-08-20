@@ -150,6 +150,48 @@ class AustrianPlaneInfo(PlaneInfo):
     elapsed_time = StatusProperty('elapsedFlightTime')
 
 
+class LufthansaPlaneInfo(PlaneInfo):
+
+    def _fetch_status_dict(self):
+        rv = urllib.urlopen('http://services.inflightpanasonic.aero/inflight/services/flightdata/v1/flightdata')
+        if rv.code == 200:
+            return json.load(rv)
+
+    @property
+    def is_online(self):
+        rv = urllib.urlopen('http://services.inflightpanasonic.aero/inflight/services/exconnect/v1/status')
+        if rv.code == 200:
+            d = json.load(rv)
+            return bool(d and d.get('internet_connectivity_status'))
+        return False
+
+    @property
+    def flight_number(self):
+        rv = (self.flight_number_raw or '').strip()
+        if rv[:1] == 'D':
+            rv = rv[1:]
+        return rv or None
+
+    @property
+    def eta(self):
+        d = self._get_status_dict()
+        if not d:
+            return None
+        ttl = d.get('td_id_fltdata_time_to_destination')
+        return '%02d:%02d' % (
+            int(ttl[:2]),
+            int(ttl[2:4]),
+        )
+
+    flight_number_raw = StatusProperty('td_id_fltdata_flight_number')
+    aircraft_registration = StatusProperty('td_id_airframe_tail_number')
+    orig_airport = StatusProperty('td_id_fltdata_departure_baggage_id')
+    dst_airport = StatusProperty('td_id_fltdata_destination_baggage_id')
+    ground_speed = StatusProperty('td_id_fltdata_ground_speed', ty=int)
+    altitude = StatusProperty('td_id_fltdata_altitude', ty=int)
+    dist_to_dst = StatusProperty('distDest', ty=float)
+
+
 class OebbTrainInfo(TrainInfo):
 
     def _fetch_status_dict(self):
@@ -202,6 +244,8 @@ def get_transport_info():
     info = get_wifi_info()
     if info.get('SSID') == 'myAustrian FlyNet':
         info = AustrianPlaneInfo()
+    elif info.get('SSID') == 'Telekom_FlyNet':
+        info = LufthansaPlaneInfo()
     elif info.get('SSID') == 'OEBB':
         info = OebbTrainInfo()
     else:
