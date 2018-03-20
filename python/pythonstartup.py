@@ -1,4 +1,3 @@
-foo = 42
 def _init():
     import atexit
     import os
