@@ -184,3 +184,7 @@ symbolicate
 mmap
 UUID
 Crashlytics
+config
+refcounted
+configs
+cloneable

@@ -126,6 +126,8 @@ function highlight-it {
 # Reasons
 alias ack=rg
 
+alias gti="(afplay -v 100 ~/Development/dotfiles/audio/engine.wav &); git"
+
 # Pretty man
 man() {
   env \
