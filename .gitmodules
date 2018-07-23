@@ -103,3 +103,6 @@
 [submodule "vim/bundle/groovy"]
 	path = vim/bundle/groovy
 	url = https://github.com/modille/groovy.vim
+[submodule "vim/bundle/fruity-vim-colorscheme"]
+	path = vim/bundle/fruity-vim-colorscheme
+	url = https://github.com/mitsuhiko/fruity-vim-colorscheme
