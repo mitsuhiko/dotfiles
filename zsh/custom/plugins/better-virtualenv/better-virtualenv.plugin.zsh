@@ -1,7 +1,7 @@
 function virtualenv_prompt_info() {
   [[ -n ${VIRTUAL_ENV} ]] || return
   local NAME="${VIRTUAL_ENV:t}"
-  if [[ $NAME == "venv" || $NAME == "env" ]]; then
+  if [[ $NAME == "venv" || $NAME == "env" || $NAME == ".venv" ]]; then
     local BASE="${VIRTUAL_ENV:h}"
     NAME="${BASE:t}"
   fi
