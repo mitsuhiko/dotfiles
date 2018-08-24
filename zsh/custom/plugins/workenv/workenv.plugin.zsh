@@ -121,6 +121,13 @@ function workenv_path_reset() {
   export PATH="$OLD_PATH"
 }
 
+# Executes nvm use for lazy loaded nvms
+function workenv_use_nvm() {
+  echo -n "Activating nvm ... "
+  nvm use > /dev/null
+  echo "$fg_no_bold[cyan]node:$(node --version)$reset_color"
+}
+
 
 function _workenv_enable_virtualenv() {
   echo -n "Enabling virtualenv $1 ... "

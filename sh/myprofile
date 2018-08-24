@@ -61,9 +61,6 @@ except (KeyboardInterrupt, EOFError):
 SWITCH
 }
 
-if [ x`which hub` != x ]; then
-  alias git=hub
-fi
 alias mq='hg -R $(hg root)/.hg/patches'
 alias rvim="gvim --remote-silent"
 alias pypy-jitlog="PYPYLOG=jit-log-opt,jit-backend-counts:pypyjitlog.log pypy-c"

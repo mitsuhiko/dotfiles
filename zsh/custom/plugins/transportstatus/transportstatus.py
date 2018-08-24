@@ -8,7 +8,7 @@ import datetime
 import subprocess
 
 
-_station_re = re.compile(r'\s+(Hbf|hl\.?\s+n\.?)$(?i)')
+_station_re = re.compile(r'(?i)\s+(Hbf|hl\.?\s+n\.?)$')
 _pattern_re = re.compile(r':([a-z_+]+)')
 socket.setdefaulttimeout(5.0)
 
