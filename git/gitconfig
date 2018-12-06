@@ -60,6 +60,7 @@
 	authors = shortlog -sn
 	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 	serveall = daemon --verbose --export-all --base-path=. --reuseaddr .
+	tip = rev-parse HEAD
 	addpr = "!f() { git fetch origin pull/$1/head:pr/$1; }; f"
 	addprx = "!f() { b=`git symbolic-ref -q --short HEAD` && \
 		echo \"Making branch for pull request #$1 [pr/$1]\" && \
@@ -72,6 +73,7 @@
 		git log --oneline $b..pr/$1; \
 		git update-ref -d refs/PR_MERGE_HEAD; \
 		}; f"
+	resetmodules = "!git submodule deinit -f . && rm -rf \"$(git rev-parse --git-dir)/modules\" && git submodule update --init"
 [instaweb]
 	httpd=webrick
 [push]
