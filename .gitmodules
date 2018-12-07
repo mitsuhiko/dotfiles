@@ -4,9 +4,6 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/ack"]
-	path = vim/bundle/ack
-	url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/rust"]
 	path = vim/bundle/rust
 	url = https://github.com/rust-lang/rust.vim.git
@@ -106,3 +103,6 @@
 [submodule "vim/bundle/fruity-vim-colorscheme"]
 	path = vim/bundle/fruity-vim-colorscheme
 	url = https://github.com/mitsuhiko/fruity-vim-colorscheme
+[submodule "vim/bundle/ripgrep"]
+	path = vim/bundle/ripgrep
+	url = https://github.com/jremmen/vim-ripgrep

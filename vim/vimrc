@@ -36,6 +36,7 @@ if has("gui_running")
     set guifont=Operator\ Mono\ Book\ for\ Powerline:h13
     if has("gui_macvim")
       set fuoptions=maxvert,maxhorz
+      set guioptions=
     endif
     " does not work properly on os x
     " au GUIEnter * set fullscreen
@@ -177,10 +178,6 @@ nnoremap <leader>ev <C-w><C-s><C-l>:e $MYVIMRC<CR>
 
 " Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
-
-" Ack on <leader>a
-nnoremap <leader>a :Ack 
-nnoremap <leader>A :AckFromSearch<CR>
 
 " <leader>v selects the just pasted text
 nnoremap <leader>v V`]
@@ -497,3 +494,12 @@ autocmd FileType rust setlocal commentstring=//\ %s
 let g:syntastic_rust_checkers=[]
 "let g:racer_cmd = "/Users/mitsuhiko/.cargo/bin/racer"
 let $RUST_SRC_PATH="/Users/mitsuhiko/Development/rust/src"
+
+" fzf
+set rtp+=/usr/local/opt/fzf
+let $FZF_DEFAULT_COMMAND="rg --files || find ."
+noremap <leader>p :FZF<CR>
+noremap  :FZF<CR>
+
+" Rg on <leader>a
+nnoremap <leader>a :Rg<CR>
