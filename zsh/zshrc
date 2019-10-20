@@ -61,3 +61,8 @@ unsetopt share_history
 
 # added by travis gem
 [ -f /Users/mitsuhiko/.travis/travis.sh ] && source /Users/mitsuhiko/.travis/travis.sh
+
+export VOLTA_HOME="$HOME/.volta"
+[ -s "$VOLTA_HOME/load.sh" ] && \. "$VOLTA_HOME/load.sh"
+export PATH="${VOLTA_HOME}/bin:$PATH"
+#export PATH="/usr/local/opt/ruby/bin:$PATH"

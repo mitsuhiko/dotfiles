@@ -14,7 +14,9 @@ else
 fi
 export IGNOREEOF=1
 export PYTHONDONTWRITEBYTECODE=1
+export PIP_USE_PEP517=false
 export LESS=FRSX
+export NOTION_UNSAFE_GLOBAL=1
 
 # virtualenvwrapper and pip
 if [[ `id -u` != '0' ]]; then
@@ -131,6 +133,8 @@ alias skvi='f(){ x="$(sk --bind "ctrl-p:toggle-preview" --ansi --preview="previe
 alias rgvi='f(){ x="$(sk --bind "ctrl-p:toggle-preview" --ansi -i -c "rg --color=always --line-number \"{}\"" --preview="preview.sh -v {}" --preview-window=up:50%:hidden)"; [[ $? -eq 0 ]] && vim "$(echo $x|cut -d: -f1)" "+$(echo $x|cut -d: -f2)" || true }; f'
 alias skvim='f(){ x="$(sk --bind "ctrl-p:toggle-preview" --ansi --preview="preview.sh -v {}" --preview-window=up:50%:hidden)"; [[ $? -eq 0 ]] && gvim --remote-silent "$x" || true }; f'
 alias rgvim='f(){ x="$(sk --bind "ctrl-p:toggle-preview" --ansi -i -c "rg --color=always --line-number \"{}\"" --preview="preview.sh -v {}" --preview-window=up:50%:hidden)"; [[ $? -eq 0 ]] && gvim --remote-silent +":$(echo $x|cut -d: -f2)|" "$(echo $x|cut -d: -f1)" || true }; f'
+alias skcode='f(){ x="$(sk --bind "ctrl-p:toggle-preview" --ansi --preview="preview.sh -v {}" --preview-window=up:50%:hidden)"; [[ $? -eq 0 ]] && code "$x" || true }; f'
+alias rgcode='f(){ x="$(sk --bind "ctrl-p:toggle-preview" --ansi -i -c "rg --color=always --line-number \"{}\"" --preview="preview.sh -v {}" --preview-window=up:50%:hidden)"; [[ $? -eq 0 ]] && code -g "$(echo $x|cut -d: -f1-2)" || true }; f'
 
 # Pretty man
 man() {

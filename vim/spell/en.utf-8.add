@@ -188,3 +188,8 @@ config
 refcounted
 configs
 cloneable
+JINJA
+symbolicator
+semver
+tokio
+CVE
