@@ -177,10 +177,10 @@ class LufthansaPlaneInfo(PlaneInfo):
         d = self._get_status_dict()
         if not d:
             return None
-        ttl = d.get('td_id_fltdata_time_to_destination')
+        ttl = int(d.get('td_id_fltdata_time_to_destination'))
         return '%02d:%02d' % (
-            int(ttl[:2]),
-            int(ttl[2:4]),
+            int(ttl / 60.0),
+            int(ttl % 60.0),
         )
 
     flight_number_raw = StatusProperty('td_id_fltdata_flight_number')
