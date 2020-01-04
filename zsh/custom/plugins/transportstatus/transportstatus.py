@@ -192,6 +192,41 @@ class LufthansaPlaneInfo(PlaneInfo):
     dist_to_dst = StatusProperty('distDest', ty=float)
 
 
+class AeroflotPlaneInfo(PlaneInfo):
+
+    def _fetch_status_dict(self):
+        rv = urllib.urlopen('https://map.boardconnect.aero/api/flightdata')
+        if rv.code == 200:
+            return json.load(rv)
+
+    @property
+    def is_online(self):
+        # For now I have only observed inflight entertainment flights
+        return False
+
+    @property
+    def flight_number(self):
+        rv = (self.flight_number_raw or '').strip()
+        if rv[:1] == 'D':
+            rv = rv[1:]
+        return rv or None
+
+    @property
+    def eta(self):
+        d = self._get_status_dict()
+        if not d:
+            return None
+        return d.get('timeDest')
+
+    flight_number_raw = StatusProperty('flightNumber')
+    aircraft_registration = StatusProperty('aircraftRegistration')
+    orig_airport = StatusProperty('orig.code')
+    dst_airport = StatusProperty('dest.code')
+    ground_speed = StatusProperty('groundSpeed', ty=int)
+    altitude = StatusProperty('altitude', ty=int)
+    dist_to_dst = StatusProperty('distDest', ty=float)
+
+
 class OebbTrainInfo(TrainInfo):
 
     def _fetch_status_dict(self):
@@ -246,6 +281,8 @@ def get_transport_info():
         info = AustrianPlaneInfo()
     elif info.get('SSID') == 'Telekom_FlyNet':
         info = LufthansaPlaneInfo()
+    elif info.get('SSID') == 'Aeroflot.entertainment':
+        info = AeroflotPlaneInfo()
     elif info.get('SSID') == 'OEBB':
         info = OebbTrainInfo()
     else:
