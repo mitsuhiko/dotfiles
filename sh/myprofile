@@ -14,7 +14,6 @@ else
 fi
 export IGNOREEOF=1
 export PYTHONDONTWRITEBYTECODE=1
-export PIP_USE_PEP517=false
 export LESS=FRSX
 export NOTION_UNSAFE_GLOBAL=1
 
