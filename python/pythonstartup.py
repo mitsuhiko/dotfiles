@@ -9,6 +9,7 @@ def _init():
     import types
     import time
     import uuid
+    import json
     import pprint
     import hashlib
     import subprocess
@@ -64,7 +65,6 @@ def _init():
 
 
     def _dump_json(x, as_string=False, indent=2, cp=False):
-        import json
         s = '\n'.join(x.rstrip() for x in json.dumps(x, indent=indent).rstrip().splitlines())
         if cp:
             _copy(s)
@@ -85,10 +85,16 @@ def _init():
     def _tpaste():
         return _paste().decode('utf-8')
 
+    def _jpaste():
+        return json.loads(_paste())
+
     def _copy(val):
         if isinstance(val, text_type):
             val = val.encode('utf-8')
         return subprocess.Popen(['pbcopy'], stdin=subprocess.PIPE).communicate(val)
+
+    def _jcopy(val, indent=None):
+        _copy(_dump_json(val, indent=indent, as_string=True))
 
 
     helpers = types.ModuleType('helpers')
@@ -108,9 +114,12 @@ def _init():
     helpers.cat = _cat
     helpers.tcat = _tcat
     helpers.cp = _copy
+    helpers.jcp = _jcopy
     helpers.copy = _copy
+    helpers.jcopy = _jcopy
     helpers.paste = _paste
     helpers.tpaste = _tpaste
+    helpers.jpaste = _jpaste
     __builtin__.h = helpers
     __builtin__.true = True
     __builtin__.false = False
