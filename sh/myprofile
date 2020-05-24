@@ -66,6 +66,8 @@ alias mq='hg -R $(hg root)/.hg/patches'
 alias rvim="gvim --remote-silent"
 alias pypy-jitlog="PYPYLOG=jit-log-opt,jit-backend-counts:pypyjitlog.log pypy-c"
 alias ..='cd ..'
+alias stand-up="idasen-control -m 52"
+alias sit-down="idasen-control -m 10"
 
 # don't let virtualenv show prompts by itself
 VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -146,3 +148,5 @@ man() {
     LESS_TERMCAP_us=$'\e[1;32m' \
       man "$@"
 }
+
+alias clickhouse-client="docker run --rm -it --net=host yandex/clickhouse-client:19.17.4.11 -h host.docker.internal ${@:1}"

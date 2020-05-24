@@ -5,6 +5,7 @@
 	autocrlf = input
 	precomposeunicode = true
 	editor = /usr/local/bin/vim
+	#pager = delta --dark --plus-color="#012800" --minus-color="#340001"
 [color]
 	ui = auto
 [color "branch"]
@@ -46,7 +47,7 @@
         rup = !git remote update `git rev-parse --symbolic-full-name HEAD@{u}|cut -d/ -f3`
 	in = !git wtf HEAD..HEAD@{u}
 	out = !git wtf HEAD@{u}..HEAD
-	killbranches = !git branch | grep -v '\\bmaster\\b' | xargs git branch -d 2> /dev/null
+	killbranches = "!git branch | grep -v '\\bmaster\\b' | xargs git branch -d 2> /dev/null; comm -12 <(git branch | sed 's/ *//g') <(git remote prune origin | sed 's/^.*origin\\///g') | xargs -L1 -J % git branch -D %"
 	sync = !git pull --rebase && git push
 	down = "!git remote update; git pull --ff-only"
 	comerge = "!x() { target=`git symbolic-ref HEAD`; git co $1; git merge $target; }; x"
@@ -74,6 +75,7 @@
 		git update-ref -d refs/PR_MERGE_HEAD; \
 		}; f"
 	resetmodules = "!git submodule deinit -f . && rm -rf \"$(git rev-parse --git-dir)/modules\" && git submodule update --init"
+	sup = submodule update --init --recursive
 [instaweb]
 	httpd=webrick
 [push]
@@ -92,3 +94,7 @@
 	trustExitCode = true
 [rerere]
 	enabled = true
+[interactive]
+	#diffFilter = delta --color-only
+[submodule]
+	recurse = true

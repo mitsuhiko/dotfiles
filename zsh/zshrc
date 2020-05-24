@@ -59,10 +59,18 @@ source $ZSH/oh-my-zsh.sh
 
 unsetopt share_history
 
+# bind esc + ,
+autoload -Uz copy-earlier-word
+zle -N copy-earlier-word
+bindkey '\e,' copy-earlier-word
+
 # added by travis gem
 [ -f /Users/mitsuhiko/.travis/travis.sh ] && source /Users/mitsuhiko/.travis/travis.sh
 
 #export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# My desk
+export IDASEN_ADDR=ea-1d-f1-ab-d6-b1
 
 # Wasmer
 export WASMER_DIR="/Users/mitsuhiko/.wasmer"
