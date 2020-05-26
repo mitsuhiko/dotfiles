@@ -23,7 +23,7 @@ ZSH_THEME_MULTIRUST_SUFFIX="%{$reset_color%}"
 
 ZSH_THEME_PLANEINFO_TEMPLATE=" aboard %{$fg[cyan]%}:orig_airport%{$reset_color%}-%{$fg[yellow]%}:dst_airport%{$reset_color%} on %{$fg[magenta]%}:flight_number%{$reset_color%} eta %{$fg[green]%}T-:eta%{$reset_color%}%{$fg[red]%}:not_online_marker%{$reset_color%}"
 ZSH_THEME_TRAININFO_TEMPLATE=" aboard %{$fg[magenta]%}:train_number%{$reset_color%} to %{$fg[cyan]%}:dst_station%{$reset_color%} eta %{$fg[green]%}T-:eta%{$reset_color%}%{$fg[red]%}:not_online_marker%{$reset_color%}"
-ZSH_THEME_IDASEN_PROMPT_TEMPLATE="%{$fg[red]%}%(sittingWarning)s%{$reset_color%} %{$fg[cyan]%}%(standingHint)s%{$reset_color%}"
+ZSH_THEME_IDASEN_PROMPT_TEMPLATE=" %{$fg[red]%}%(sittingWarning)s%{$reset_color%}%{$fg[cyan]%}%(standingHint)s%{$reset_color%}"
 
 # If iTerm is detected these themes are used for regular windows
 # and ssh respectively
