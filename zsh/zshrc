@@ -69,9 +69,6 @@ bindkey '\e,' copy-earlier-word
 
 #export PATH="/usr/local/opt/ruby/bin:$PATH"
 
-# My desk
-export IDASEN_ADDR=ea-1d-f1-ab-d6-b1
-
 # Wasmer
 export WASMER_DIR="/Users/mitsuhiko/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
