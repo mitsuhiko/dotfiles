@@ -503,3 +503,8 @@ noremap  :FZF<CR>
 
 " Rg on <leader>a
 nnoremap <leader>a :Rg<CR>
+
+" Goyo
+let g:goyo_width=80
+let g:goyo_height=90
+noremap <leader>` :Goyo<CR>

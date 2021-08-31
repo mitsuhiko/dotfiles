@@ -106,3 +106,9 @@
 [submodule "vim/bundle/ripgrep"]
 	path = vim/bundle/ripgrep
 	url = https://github.com/jremmen/vim-ripgrep
+[submodule "vim/bundle/focus.vim"]
+	path = vim/bundle/focus.vim
+	url = https://github.com/merlinrebrovic/focus.vim
+[submodule "vim/bundle/goyo.vim"]
+	path = vim/bundle/goyo.vim
+	url = https://github.com/junegunn/goyo.vim

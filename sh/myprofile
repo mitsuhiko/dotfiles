@@ -150,3 +150,7 @@ man() {
 }
 
 alias clickhouse-client="docker run --rm -it --net=host yandex/clickhouse-client:19.17.4.11 -h host.docker.internal ${@:1}"
+
+export SENTRY_KUBE_ROOT=~/Development/ops
+#alias sentry-connect="USER=mitsuhiko sentry-kube connect --site=europe --      ttl 14400"
+alias sentry-connect="USER=mitsuhiko sentry-kube connect --ttl 14400"

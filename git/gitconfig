@@ -98,3 +98,8 @@
 	#diffFilter = delta --color-only
 [submodule]
 	recurse = true
+[user]
+	name = Armin Ronacher
+	email = armin.ronacher@active-4.com
+[init]
+	defaultBranch = main
