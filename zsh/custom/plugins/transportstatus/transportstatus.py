@@ -24,7 +24,7 @@ def strip_station(station):
 def get_wifi_info():
     rv = {}
     for line in subprocess.Popen(
-        ['airport', '--getinfo'],
+        ['/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport', '--getinfo'],
         stdout=subprocess.PIPE).communicate()[0].splitlines():
         args = [x.strip().decode('utf-8') for x in line.split(b':')]
         if len(args) == 2:
