@@ -33,7 +33,7 @@ if has("gui_running")
   if has("mac")
     set linespace=3
     "set guifont=Powerline\ Consolas:h13
-    set guifont=Operator\ Mono\ Book\ for\ Powerline:h13
+    set guifont=MonoLisa-400normal:h13
     if has("gui_macvim")
       set fuoptions=maxvert,maxhorz
       set guioptions=
@@ -505,6 +505,6 @@ noremap  :FZF<CR>
 nnoremap <leader>a :Rg<CR>
 
 " Goyo
-let g:goyo_width=80
+let g:goyo_width=90
 let g:goyo_height=90
 noremap <leader>` :Goyo<CR>

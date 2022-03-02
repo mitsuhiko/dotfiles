@@ -4,7 +4,7 @@
 	excludesfile = /Users/mitsuhiko/.gitignore
 	autocrlf = input
 	precomposeunicode = true
-	editor = /usr/local/bin/vim
+	editor = vim
 	#pager = delta --dark --plus-color="#012800" --minus-color="#340001"
 [color]
 	ui = auto
@@ -103,3 +103,5 @@
 	email = armin.ronacher@active-4.com
 [init]
 	defaultBranch = main
+[pull]
+	rebase = false

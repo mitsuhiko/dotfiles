@@ -83,3 +83,5 @@ if [ -f '/Users/mitsuhiko/.local/google-cloud-sdk/path.zsh.inc' ]; then . '/User
 if [ -f '/Users/mitsuhiko/.local/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mitsuhiko/.local/google-cloud-sdk/completion.zsh.inc'; fi
 export VOLTA_HOME="/Users/mitsuhiko/.volta"
 grep --silent "$VOLTA_HOME/bin" <<< $PATH || export PATH="$VOLTA_HOME/bin:$PATH"
+
+source ~/.myprofile
