@@ -75,9 +75,6 @@ VIRTUAL_ENV_DISABLE_PROMPT=1
 # for the lulz
 alias bitch,=sudo
 
-# hack to get ppc out of that thing
-export ARCHFLAGS="-arch i386 -arch x86_64"
-
 # For lazy people like me
 from() { expect -c "spawn -noecho python
 expect \">>> \"
