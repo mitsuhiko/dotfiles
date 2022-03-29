@@ -73,5 +73,6 @@ export VOLTA_HOME="/Users/mitsuhiko/.volta"
 grep --silent "$VOLTA_HOME/bin" <<< $PATH || export PATH="$VOLTA_HOME/bin:$PATH"
 
 eval "$(pyenv init -)"
+eval "$(direnv hook zsh)"
 
 source ~/.myprofile
