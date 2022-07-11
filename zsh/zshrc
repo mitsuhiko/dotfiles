@@ -53,7 +53,7 @@ ZSH_CUSTOM=/Users/mitsuhiko/.zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git-prompt mercurial better-virtualenv osx workenv transportstatus multirust fzf idasen-control)
+plugins=(git-prompt mercurial better-virtualenv osx transportstatus multirust fzf idasen-control)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -66,9 +66,6 @@ bindkey '\e,' copy-earlier-word
 
 # added by travis gem
 [ -f /Users/mitsuhiko/.travis/travis.sh ] && source /Users/mitsuhiko/.travis/travis.sh
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/mitsuhiko/.local/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mitsuhiko/.local/google-cloud-sdk/completion.zsh.inc'; fi
 export VOLTA_HOME="/Users/mitsuhiko/.volta"
 grep --silent "$VOLTA_HOME/bin" <<< $PATH || export PATH="$VOLTA_HOME/bin:$PATH"
 
