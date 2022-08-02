@@ -76,6 +76,7 @@
 		}; f"
 	resetmodules = "!git submodule deinit -f . && rm -rf \"$(git rev-parse --git-dir)/modules\" && git submodule update --init"
 	sup = submodule update --init --recursive
+	mainalias = "!f() { if (git show-ref --verify -q refs/heads/main && !git show-ref --verify -q refs/heads/master); then (git symbolic-ref refs/heads/master refs/heads/main); else (git symbolic-ref refs/heads/main refs/heads/master); fi }; f"
 [instaweb]
 	httpd=webrick
 [push]
