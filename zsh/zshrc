@@ -72,4 +72,6 @@ grep --silent "$VOLTA_HOME/bin" <<< $PATH || export PATH="$VOLTA_HOME/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(direnv hook zsh)"
 
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 source ~/.myprofile

@@ -1,6 +1,7 @@
 install: install-vim install-bash install-zsh install-psql \
          install-virtualenvwrapper \
-         install-git install-python install-keybindings
+         install-git install-python install-keybindings \
+	 install-vscode
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
@@ -51,3 +52,10 @@ install-keybindings:
 	rm -f ~/Library/KeyBindings/DefaultKeyBinding.dict
 	mkdir -p ~/Library/KeyBindings
 	cp `pwd`/osx/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
+
+install-vscode:
+	mkdir -p ~/Library/Application Support/Code/User
+	rm -f ~/Library/Application\ Support/Code/User/settings.json
+	rm -f ~/Library/Application\ Support/Code/User/keybindings.json
+	ln -s `pwd`/vscode/settings.json ~/Library/Application\ Support/Code/User
+	ln -s `pwd`/vscode/keybindings.json ~/Library/Application\ Support/Code/User
