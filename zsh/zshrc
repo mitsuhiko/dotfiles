@@ -75,3 +75,12 @@ eval "$(direnv hook zsh)"
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 source ~/.myprofile
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
+. "/Users/mitsuhiko/.wasmedge/env"
+
+# Wasmer
+export WASMER_DIR="/Users/mitsuhiko/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"

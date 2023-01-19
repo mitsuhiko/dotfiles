@@ -60,9 +60,6 @@
 	unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
 	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
 	authors = shortlog -sn
-	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
-	serveall = daemon --verbose --export-all --base-path=. --reuseaddr .
-	tip = rev-parse HEAD
 	addpr = "!f() { git fetch origin pull/$1/head:pr/$1; }; f"
 	addprx = "!f() { b=`git symbolic-ref -q --short HEAD` && \
 		echo \"Making branch for pull request #$1 [pr/$1]\" && \
@@ -77,7 +74,9 @@
 		}; f"
 	resetmodules = "!git submodule deinit -f . && rm -rf \"$(git rev-parse --git-dir)/modules\" && git submodule update --init"
 	sup = submodule update --init --recursive
-	mainalias = "!f() { if (git show-ref --verify -q refs/heads/main && !git show-ref --verify -q refs/heads/master); then (git symbolic-ref refs/heads/master refs/heads/main); else (git symbolic-ref refs/heads/main refs/heads/master); fi }; f"
+	main-branch = "!f() { gitHeadsDir=\"$(git rev-parse --show-toplevel)/.git/refs/heads\"; if [ -f \"$gitHeadsDir/main\" ]; then echo 'main'; elif [ -f \"$gitHeadsDir/master\" ]; then echo 'master'; else git remote show origin | grep 'HEAD branch' | cut -d' ' -f5; fi; }; f"
+	main-alias = "!f() { if (git show-ref --verify -q refs/heads/main && !git show-ref --verify -q refs/heads/master); then (git symbolic-ref refs/heads/master refs/heads/main); else (git symbolic-ref refs/heads/main refs/heads/master); fi }; f"
+	rebase-branch = "!f() { git rebase -i $(git merge-base $(git main-branch) HEAD); }; f"
 [instaweb]
 	httpd=webrick
 [push]

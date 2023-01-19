@@ -5,12 +5,10 @@
   "editor.fontSize": 13,
   "extensions.autoUpdate": false,
   "workbench.sideBar.location": "right",
-  "editor.minimap.enabled": false,
   "vim.gdefault": true,
   "vim.hlsearch": true,
   "cmake.configureOnOpen": false,
   "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
-  "rust-analyzer.inlayHints.lifetimeElisionHints": "skip_trivial",
   "editor.parameterHints.enabled": false,
   "editor.bracketPairColorization.enabled": false,
   "workbench.colorCustomizations": {
@@ -52,7 +50,7 @@
     "markdown": false,
     "c": true,
     "python": true,
-    "rust": true
+    "rust": false
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -73,11 +71,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
-  "window.zoomLevel": 1,
   "rust-analyzer.imports.granularity.group": "module",
   "rust-analyzer.imports.prefix": "crate",
   "rust-analyzer.inlayHints.chainingHints.enable": true,
-  "rust-analyzer.inlayHints.closureReturnTypeHints.enable": true,
-  "rust-analyzer.inlayHints.reborrowHints.enable": true,
-  "rust-analyzer.inlayHints.typeHints.enable": true
+  "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
+  "rust-analyzer.inlayHints.reborrowHints.enable": "always",
+  "rust-analyzer.inlayHints.typeHints.enable": true,
+  "editor.minimap.enabled": false
 }

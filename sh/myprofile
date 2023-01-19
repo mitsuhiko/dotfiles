@@ -16,6 +16,8 @@ export IGNOREEOF=1
 export PYTHONDONTWRITEBYTECODE=1
 export LESS=FRSX
 export NOTION_UNSAFE_GLOBAL=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+export PIP_REQUIRE_VENV=1
 
 # virtualenvwrapper and pip
 if [[ `id -u` != '0' ]]; then
@@ -156,6 +158,7 @@ alias sentry-connect="USER=mitsuhiko sentry-kube connect --ttl 14400"
 
 alias mkvenv="python3 -mvenv .venv; .venv/bin/pip install --upgrade pip; . .venv/bin/activate"
 alias venvit=". .venv/bin/activate"
+alias docker-rust="docker run -it -v `pwd`:`pwd` -v $HOME/.cargo/git:/usr/local/cargo/git -v $HOME/.cargo/registry:/usr/local/cargo/registry rust"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/mitsuhiko/Development/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mitsuhiko/Development/google-cloud-sdk/path.zsh.inc'; fi
