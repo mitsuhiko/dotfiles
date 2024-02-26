@@ -155,6 +155,7 @@ man() {
 alias unfuckbalance="osascript -e $'set vol to output volume of (get volume settings)\nset volume output volume vol'"
 
 alias clickhouse-client="docker run --rm -it --net=host yandex/clickhouse-client:19.17.4.11 -h host.docker.internal ${@:1}"
+alias psql="docker run -it --rm --network sentry postgres psql -h host.docker.internal -U postgres"
 
 export SENTRY_KUBE_ROOT=~/Development/ops
 #alias sentry-connect="USER=mitsuhiko sentry-kube connect --site=europe --      ttl 14400"
