@@ -3,9 +3,9 @@ import re
 import sys
 import json
 import socket
-import urllib
 import datetime
 import subprocess
+from urllib.request import urlopen
 
 
 _station_re = re.compile(r'(?i)\s+(Hbf|hl\.?\s+n\.?)$')
@@ -46,6 +46,8 @@ class StatusProperty(object):
         if status is not None:
             rv = status
             for part in self.name.split('.'):
+                if part not in rv:
+                    return self.default
                 rv = rv[part]
             return (self.ty or (lambda x: x))(rv)
         return self.default
@@ -115,7 +117,7 @@ class TrainInfo(TransportInfo):
 class AustrianPlaneInfo(PlaneInfo):
 
     def _fetch_status_dict(self):
-        rv = urllib.urlopen('https://www.myaustrian-flynet.com/fapi/flightData')
+        rv = urlopen('https://www.myaustrian-flynet.com/fapi/flightData')
         if rv.code == 200:
             return json.load(rv)
 
@@ -153,13 +155,13 @@ class AustrianPlaneInfo(PlaneInfo):
 class LufthansaPlaneInfo(PlaneInfo):
 
     def _fetch_status_dict(self):
-        rv = urllib.urlopen('http://services.inflightpanasonic.aero/inflight/services/flightdata/v1/flightdata')
+        rv = urlopen('http://services.inflightpanasonic.aero/inflight/services/flightdata/v1/flightdata')
         if rv.code == 200:
             return json.load(rv)
 
     @property
     def is_online(self):
-        rv = urllib.urlopen('http://services.inflightpanasonic.aero/inflight/services/exconnect/v1/status')
+        rv = urlopen('http://services.inflightpanasonic.aero/inflight/services/exconnect/v1/status')
         if rv.code == 200:
             d = json.load(rv)
             return bool(d and d.get('internet_connectivity_status'))
@@ -192,10 +194,48 @@ class LufthansaPlaneInfo(PlaneInfo):
     dist_to_dst = StatusProperty('distDest', ty=float)
 
 
+class AirCanadaPlaneInfo(PlaneInfo):
+
+    def _fetch_status_dict(self):
+        rv = urlopen('https://wifi.inflightinternet.com/abp/v2/statusTray?fig2=true')
+        if rv.code == 200:
+            return json.load(rv).get('Response') or {}
+
+    @property
+    def is_online(self):
+        d = self._get_status_dict()
+        if not d:
+            return False
+        return d.get('systemInfo', {}).get('linkState') == 'UP'
+
+    @property
+    def flight_number(self):
+        return self.flight_number_raw
+
+    @property
+    def eta(self):
+        d = self._get_status_dict()
+        if not d:
+            return None
+        ttl = int((d.get('systemInfo') or {}).get('timeToLand') or 0)
+        return '%02d:%02d' % (
+            int(ttl / 60.0),
+            int(ttl % 60.0),
+        )
+
+    flight_number_raw = StatusProperty('flightInfo.flightNumberInfo')
+    aircraft_registration = StatusProperty('flightInfoFIG2.aircraft.registration_number')
+    orig_airport = StatusProperty('flightInfo.departureAirportCodeIata')
+    dst_airport = StatusProperty('flightInfo.destinationAirportCodeIata')
+    ground_speed = StatusProperty('flightInfoFIG2.flight.gps.estimated.speed', ty=int)
+    altitude = StatusProperty('flightInfo.altitude', ty=int)
+    dist_to_dst = StatusProperty('flightInfoFIG2.flight.gps.calculations.distance_to_arrival', ty=float)
+
+
 class AeroflotPlaneInfo(PlaneInfo):
 
     def _fetch_status_dict(self):
-        rv = urllib.urlopen('https://map.boardconnect.aero/api/flightdata')
+        rv = urlopen('https://map.boardconnect.aero/api/flightdata')
         if rv.code == 200:
             return json.load(rv)
 
@@ -230,7 +270,7 @@ class AeroflotPlaneInfo(PlaneInfo):
 class OebbTrainInfo(TrainInfo):
 
     def _fetch_status_dict(self):
-        rv = urllib.urlopen('http://railnet.oebb.at/api/trainInfo')
+        rv = urlopen('http://railnet.oebb.at/api/trainInfo')
         if rv.code == 200:
             return json.load(rv)
 
@@ -283,6 +323,8 @@ def get_transport_info():
         info = LufthansaPlaneInfo()
     elif info.get('SSID') == 'Aeroflot.entertainment':
         info = AeroflotPlaneInfo()
+    elif info.get('SSID') == 'ACWiFi':
+        info = AirCanadaPlaneInfo()
     elif info.get('SSID') == 'OEBB':
         info = OebbTrainInfo()
     else:
@@ -305,4 +347,5 @@ def prompt():
     print(_pattern_re.sub(_handle_match, info.get_template()))
 
 
-prompt()
+if __name__ == '__main__':
+    prompt()

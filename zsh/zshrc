@@ -69,7 +69,6 @@ bindkey '\e,' copy-earlier-word
 export VOLTA_HOME="/Users/mitsuhiko/.volta"
 grep --silent "$VOLTA_HOME/bin" <<< $PATH || export PATH="$VOLTA_HOME/bin:$PATH"
 
-eval "$(pyenv init -)"
 eval "$(direnv hook zsh)"
 
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -79,8 +78,15 @@ source ~/.myprofile
 export WASMTIME_HOME="$HOME/.wasmtime"
 
 export PATH="$WASMTIME_HOME/bin:$PATH"
-. "/Users/mitsuhiko/.wasmedge/env"
 
 # Wasmer
 export WASMER_DIR="/Users/mitsuhiko/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+
+# bun completions
+[ -s "/Users/mitsuhiko/.bun/_bun" ] && source "/Users/mitsuhiko/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/Users/mitsuhiko/.local/share/sentry-devenv/bin:$PATH"

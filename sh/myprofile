@@ -1,5 +1,5 @@
 # Update path
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:$HOME/.bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:$HOME/.bin:$HOME/.local/bin:$PATH"
 
 export EDITOR=vim
 export GIT_EDITOR=vim
@@ -115,7 +115,11 @@ function docker-env() {
 }
 
 function gif-it() {
-  ffmpeg -i "$1" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=6 > "$1.gif"
+  ffmpeg -i "$1" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=10 > "$1.gif"
+}
+
+function ql() {
+  qlmanage -p "$1" > /dev/null
 }
 
 function highlight-it {
