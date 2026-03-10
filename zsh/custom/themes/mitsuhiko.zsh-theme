@@ -95,11 +95,21 @@ function _mitsuhiko_precmd() {
 
 # This is the trap for the signal that updates our prompt and
 # redraws it.  We intentionally do not delete the tempfile here
-# so that we can reuse the last prompt for successive commands
-function _mitsuhiko_trapusr1() {
+# so that we can reuse the last prompt for successive commands.
+#
+# Uses the function form (TRAPUSR1) for proper zle integration.
+# Guards reset-prompt to avoid calling it during interactive
+# widgets like fzf-history-widget or isearch, as that would
+# corrupt their terminal state and break Enter/accept behavior.
+function TRAPUSR1() {
   PROMPT="$(cat $_MITSUHIKO_ASYNC_PROMPT_FN)"
   _MITSUHIKO_ASYNC_PROMPT=0
-  zle && zle reset-prompt
+  if zle; then
+    case "$WIDGET" in
+      *fzf*|*isearch*|*history-search*|*complete*) ;;
+      *) zle reset-prompt ;;
+    esac
+  fi
 }
 
 # Make sure we clean up our tempfile on exit
@@ -110,4 +120,3 @@ function _mitsuhiko_zshexit() {
 # Hook our precmd and zshexit functions and USR1 trap
 precmd_functions+=(_mitsuhiko_precmd)
 zshexit_functions+=(_mitsuhiko_zshexit)
-trap '_mitsuhiko_trapusr1' USR1

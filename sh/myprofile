@@ -1,14 +1,14 @@
 # Update path
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:$HOME/.bin:$HOME/.local/bin:$PATH"
 
-export EDITOR=vim
-export GIT_EDITOR=vim
+export EDITOR=nvim
+export GIT_EDITOR=nvim
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
 
 if [[ `uname` == "Darwin" ]]; then
-  export LC_CTYPE=en_US.utf-8
-  export LC_ALL=en_US.utf-8
+  export LC_CTYPE=en_US.UTF-8
+  export LC_ALL=en_US.UTF-8
 else
   alias ls='ls --color=auto'
 fi
@@ -155,7 +155,6 @@ man() {
 alias unfuckbalance="osascript -e $'set vol to output volume of (get volume settings)\nset volume output volume vol'"
 
 alias clickhouse-client="docker run --rm -it --net=host yandex/clickhouse-client:19.17.4.11 -h host.docker.internal ${@:1}"
-alias psql="docker run -it --rm --network sentry postgres psql -h host.docker.internal -U postgres"
 
 export SENTRY_KUBE_ROOT=~/Development/ops
 #alias sentry-connect="USER=mitsuhiko sentry-kube connect --site=europe --      ttl 14400"
@@ -164,9 +163,5 @@ alias sentry-connect="USER=mitsuhiko sentry-kube connect --ttl 14400"
 alias mkvenv="python3 -mvenv .venv; .venv/bin/pip install --upgrade pip; . .venv/bin/activate"
 alias venvit=". .venv/bin/activate"
 alias docker-rust="docker run -it -v `pwd`:`pwd` -v $HOME/.cargo/git:/usr/local/cargo/git -v $HOME/.cargo/registry:/usr/local/cargo/registry rust"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/mitsuhiko/Development/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mitsuhiko/Development/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/mitsuhiko/Development/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mitsuhiko/Development/google-cloud-sdk/completion.zsh.inc'; fi
+alias claude-yolo="claude --dangerously-skip-permissions"
+alias claude-update="cd ~/.claude/local && npm update @anthropic-ai/claude-code"

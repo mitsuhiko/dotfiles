@@ -81,12 +81,9 @@
 	httpd=webrick
 [push]
 	default=current
+	autoSetupRemote = true
 [diff]
 	algorithm = patience
-[filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -106,3 +103,16 @@
 	defaultBranch = main
 [pull]
 	rebase = false
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential

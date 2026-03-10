@@ -90,3 +90,7 @@ export WASMER_DIR="/Users/mitsuhiko/.wasmer"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/Users/mitsuhiko/.local/share/sentry-devenv/bin:$PATH"
+. "$HOME/.cargo/env"
+
+export PATH=$PATH:/Users/mitsuhiko/.spicetify
+alias mygit="git --version"

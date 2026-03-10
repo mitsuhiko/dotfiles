@@ -22,7 +22,7 @@
     "editorInlayHint.foreground": "#a8bad5"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.tabSize": 2
   },
   "[javascript]": {
@@ -46,16 +46,12 @@
   "editor.inlineSuggest.enabled": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
   "github.copilot.enable": {
-    "*": true,
-    "yaml": false,
     "plaintext": false,
     "markdown": false,
-    "c": true,
-    "python": true,
-    "rust": false
+    "scminput": false
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "vscode.json-language-features",
     "editor.tabSize": 2
   },
   "[dart]": {
@@ -100,5 +96,24 @@
   "githubPullRequests.pullBranch": "never",
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
-  }
+  },
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "makefile.configureOnOpen": false,
+  "amp.url": "https://ampcode.com/",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "github.copilot.selectedCompletionModel": "",
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "go.toolsManagement.autoUpdate": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "amp.tab.enabled": true,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+  "biome.suggestInstallingGlobally": false,
+  "zig.zls.enabled": "on",
+  "chat.viewSessions.orientation": "stacked"
 }

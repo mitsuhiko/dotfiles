@@ -22,6 +22,7 @@ def strip_station(station):
 
 
 def get_wifi_info():
+    return {}
     rv = {}
     for line in subprocess.Popen(
         ['/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport', '--getinfo'],
