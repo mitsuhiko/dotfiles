@@ -3,7 +3,7 @@
   "editor.fontLigatures": false,
   "editor.fontSize": 15,
   "editor.fontWeight": "400",
-  "extensions.autoUpdate": false,
+  "extensions.autoUpdate": "off",
   "workbench.sideBar.location": "right",
   "vim.gdefault": true,
   "vim.hlsearch": true,
@@ -26,7 +26,7 @@
     "editor.tabSize": 2
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.tabSize": 2
   },
   "[rust]": {
@@ -92,7 +92,6 @@
   },
   "git.autofetch": true,
   "editor.codeActionsOnSave": {},
-  "workbench.colorTheme": "Night Owl (No Italics)",
   "githubPullRequests.pullBranch": "never",
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
@@ -115,5 +114,8 @@
   "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
   "biome.suggestInstallingGlobally": false,
   "zig.zls.enabled": "on",
-  "chat.viewSessions.orientation": "stacked"
+  "chat.viewSessions.orientation": "stacked",
+  "workbench.colorTheme": "Night Owl",
+  "git.blame.editorDecoration.enabled": false,
+  "git.blame.statusBarItem.enabled": true
 }

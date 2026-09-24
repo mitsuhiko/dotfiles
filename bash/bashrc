@@ -120,3 +120,9 @@ export PATH="/Users/mitsuhiko/.local/share/sentry-devenv/bin:$PATH"
 export PATH="$PATH:/Users/mitsuhiko/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+. "$HOME/.local/bin/env"
+
+. "/var/folders/jb/2vxs3jtx225gmcp81qzmvk000000gn/T/tmp.p7t4adpEzH/cargo/env"
+
+. "/var/folders/jb/2vxs3jtx225gmcp81qzmvk000000gn/T/tmp.ZyAVFVUEJa/cargo/env"

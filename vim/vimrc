@@ -496,7 +496,7 @@ let g:syntastic_rust_checkers=[]
 let $RUST_SRC_PATH="/Users/mitsuhiko/Development/rust/src"
 
 " fzf
-set rtp+=/usr/local/opt/fzf
+set rtp+=/opt/homebrew/opt/fzf
 let $FZF_DEFAULT_COMMAND="rg --files || find ."
 noremap <leader>p :FZF<CR>
 noremap  :FZF<CR>
