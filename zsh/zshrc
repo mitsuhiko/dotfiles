@@ -55,6 +55,12 @@ ZSH_CUSTOM=/Users/mitsuhiko/.zsh-custom
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git-prompt mercurial better-virtualenv transportstatus multirust fzf idasen-control)
 
+# Skip compaudit's insecure-directory scan on every startup (~25ms).
+ZSH_DISABLE_COMPFIX=true
+
+# Avoid the fzf plugin shelling out to `brew --prefix fzf` (~10ms).
+[[ -d /opt/homebrew/opt/fzf ]] && export FZF_BASE=/opt/homebrew/opt/fzf
+
 source $ZSH/oh-my-zsh.sh
 
 unsetopt share_history
@@ -94,3 +100,11 @@ export PATH="/Users/mitsuhiko/.local/share/sentry-devenv/bin:$PATH"
 
 export PATH=$PATH:/Users/mitsuhiko/.spicetify
 alias mygit="git --version"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/mitsuhiko/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# opencode
+export PATH=/Users/mitsuhiko/.opencode/bin:$PATH

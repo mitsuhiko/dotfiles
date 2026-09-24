@@ -67,8 +67,13 @@ function _mitsuhiko_precmd() {
   _mitsuhiko_rv=$?
 
   function async_prompt() {
-    # Run the git var update here instead of in the parent
-    precmd_update_git_vars
+    # Run the git var update here instead of in the parent.  We are in
+    # a subshell, so we can then make git_super_status's own call to
+    # precmd_update_git_vars a no-op; otherwise gitstatus.py (python +
+    # git status) runs twice per prompt.
+    update_current_git_vars
+    ZSH_THEME_GIT_PROMPT_CACHE=1
+    unset __EXECUTED_GIT_COMMAND
 
     #
     echo -n $'\n'$_MITSUHIKO_PROMPT$' '$(git_super_status)$(hg_prompt_info)$(virtualenv_prompt_info)$(multirust_prompt_info)$(transportstatus_prompt_info) > $_MITSUHIKO_ASYNC_PROMPT_FN
